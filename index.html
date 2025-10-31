@@ -61,18 +61,18 @@
     }
 
     .logo-mark {
-      width: 64px;
-      height: 64px;
+      width: 72px;
+      height: 72px;
       margin: 0;
-      border-radius: 18px;
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.35), rgba(14, 165, 233, 0.15));
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      display: grid;
-      place-items: center;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      color: #bae6fd;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
+    }
+
+    .logo-mark svg {
+      width: 72px;
+      height: 72px;
     }
 
     h1 {
@@ -345,7 +345,15 @@
 <body>
   <header>
     <div class="hero-heading">
-      <div class="logo-mark">SG</div>
+      <div class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" fill-rule="evenodd">
+            <path d="M20 8h20v52h48v20H20zM40 32h24v24H40z" fill="#e2e8f0" fill-rule="evenodd" stroke="#0f172a" stroke-width="5" stroke-linejoin="round"/>
+            <path d="M34 18h6M34 26h10M34 34h6M34 42h10M34 50h6" stroke="#0f172a" stroke-width="4" stroke-linecap="round"/>
+            <path d="M52 68v10M60 68v14M68 68v10M76 68v14M84 68v10" stroke="#0f172a" stroke-width="4" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
       <h1>STLGauge</h1>
     </div>
     <p class="subtitle">
