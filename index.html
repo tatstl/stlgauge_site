@@ -290,6 +290,12 @@
       background: rgba(30, 41, 59, 0.65);
     }
 
+    .download-card.is-active {
+      border-color: rgba(56, 189, 248, 0.85);
+      background: rgba(56, 189, 248, 0.18);
+      box-shadow: 0 18px 45px rgba(14, 165, 233, 0.25);
+    }
+
     .download-card strong {
       font-size: 1.05rem;
       font-weight: 600;
@@ -387,15 +393,15 @@
     <h2>Download STLGauge</h2>
     <p>Choose the build that matches your platform. Each download includes native performance, high-resolution rendering, and automatic theme detection.</p>
     <div class="download-grid">
-      <a class="download-card" href="https://github.com/stlgauge/stlgauge/releases/latest/download/STLGaugeSetup.exe">
+      <a class="download-card" data-os="windows" href="https://github.com/stlgauge/stlgauge/releases/latest/download/STLGaugeSetup.exe">
         <strong>Windows</strong>
         <span>Installer package · 64-bit</span>
       </a>
-      <a class="download-card" href="https://github.com/stlgauge/stlgauge/releases/latest/download/STLGauge.dmg">
+      <a class="download-card" data-os="macos" href="https://github.com/stlgauge/stlgauge/releases/latest/download/STLGauge.dmg">
         <strong>macOS</strong>
         <span>Universal binary · Apple silicon &amp; Intel</span>
       </a>
-      <a class="download-card" href="https://github.com/stlgauge/stlgauge/releases/latest/download/stlgauge.AppImage">
+      <a class="download-card" data-os="linux" href="https://github.com/stlgauge/stlgauge/releases/latest/download/stlgauge.AppImage">
         <strong>Linux</strong>
         <span>AppImage · Works across major distributions</span>
       </a>
@@ -409,25 +415,55 @@
   <script>
     (() => {
       const slider = document.querySelector("[data-slider]");
-      if (!slider) return;
-      const overlay = slider.querySelector("[data-overlay]");
-      const divider = slider.querySelector("[data-divider]");
-      const range = slider.querySelector(".slider-range");
+      if (slider) {
+        const overlay = slider.querySelector("[data-overlay]");
+        const divider = slider.querySelector("[data-divider]");
+        const range = slider.querySelector(".slider-range");
 
-      const setPosition = (value) => {
-        const position = Math.min(Math.max(value, 0), 100);
-        const percentage = `${position}%`;
-        slider.style.setProperty("--slider-position", percentage);
-        overlay.style.width = percentage;
-        divider.style.left = percentage;
+        const setPosition = (value) => {
+          const position = Math.min(Math.max(value, 0), 100);
+          const percentage = `${position}%`;
+          slider.style.setProperty("--slider-position", percentage);
+          overlay.style.width = percentage;
+          divider.style.left = percentage;
+        };
+
+        range.addEventListener("input", (event) => {
+          setPosition(event.target.value);
+        });
+
+        setPosition(range.value || 50);
+      }
+
+      const cards = document.querySelectorAll(".download-card");
+      if (!cards.length) return;
+
+      const detectOS = () => {
+        const uaDataPlatform = navigator.userAgentData && navigator.userAgentData.platform;
+        const platform = (uaDataPlatform || navigator.platform || "").toLowerCase();
+        const userAgent = (navigator.userAgent || "").toLowerCase();
+        const target = platform || userAgent;
+
+        if (/mac|darwin/.test(target)) return "macos";
+        if (/win/.test(target)) return "windows";
+        if (/linux|x11/.test(target)) return "linux";
+        if (/iphone|ipad|ipod/.test(userAgent)) return "macos";
+        if (/android/.test(userAgent)) return "linux";
+        return null;
       };
 
-      range.addEventListener("input", (event) => {
-        setPosition(event.target.value);
-      });
+      const activeOS = detectOS();
+      if (!activeOS) return;
 
-      // Initialize to default position
-      setPosition(range.value || 50);
+      cards.forEach((card) => {
+        if (card.dataset.os === activeOS) {
+          card.classList.add("is-active");
+          card.setAttribute("aria-current", "true");
+        } else {
+          card.classList.remove("is-active");
+          card.removeAttribute("aria-current");
+        }
+      });
     })();
   </script>
 </body>
