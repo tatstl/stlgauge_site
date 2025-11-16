@@ -51,15 +51,60 @@
     }
 
     :root {
-      color-scheme: dark;
-      --accent: #38bdf8;
-      --surface: rgba(15, 23, 42, 0.7);
-      --border: rgba(148, 163, 184, 0.2);
-      --text-primary: #e2e8f0;
-      --text-muted: rgba(226, 232, 240, 0.7);
+      color-scheme: light dark;
       --section-gap: clamp(3rem, 6vw, 5.5rem);
       --hero-max: 960px;
       --slider-position: 50%;
+    }
+
+    /* Dark mode (default) */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --accent: #38bdf8;
+        --accent-hover: #0ea5e9;
+        --surface: rgba(15, 23, 42, 0.7);
+        --surface-elevated: rgba(30, 41, 59, 0.65);
+        --border: rgba(148, 163, 184, 0.2);
+        --text-primary: #e2e8f0;
+        --text-muted: rgba(226, 232, 240, 0.7);
+        --bg-gradient-start: #111827;
+        --bg-gradient-mid: #030712;
+        --bg-gradient-end: #010409;
+        --cta-text: #0b1120;
+        --slider-border: rgba(226, 232, 240, 0.5);
+        --slider-divider: rgba(226, 232, 240, 0.45);
+        --grip-bg: rgba(15, 23, 42, 0.55);
+        --grip-border: rgba(226, 232, 240, 0.55);
+        --grip-text: rgba(226, 232, 240, 0.9);
+        --carousel-indicator: rgba(226, 232, 240, 0.5);
+        --footer-text: rgba(148, 163, 184, 0.6);
+      }
+    }
+
+    /* Light mode */
+    @media (prefers-color-scheme: light) {
+      :root {
+        color-scheme: light;
+        --accent: #0284c7;
+        --accent-hover: #0369a1;
+        --surface: rgba(255, 255, 255, 0.8);
+        --surface-elevated: rgba(248, 250, 252, 0.95);
+        --border: rgba(100, 116, 139, 0.2);
+        --text-primary: #0f172a;
+        --text-muted: rgba(51, 65, 85, 0.7);
+        --bg-gradient-start: #f8fafc;
+        --bg-gradient-mid: #e2e8f0;
+        --bg-gradient-end: #cbd5e1;
+        --cta-text: #ffffff;
+        --slider-border: rgba(51, 65, 85, 0.3);
+        --slider-divider: rgba(51, 65, 85, 0.4);
+        --grip-bg: rgba(255, 255, 255, 0.9);
+        --grip-border: rgba(100, 116, 139, 0.4);
+        --grip-text: rgba(15, 23, 42, 0.9);
+        --carousel-indicator: rgba(100, 116, 139, 0.4);
+        --footer-text: rgba(100, 116, 139, 0.7);
+      }
     }
 
     * {
@@ -69,7 +114,7 @@
     html, body {
       margin: 0;
       font-family: "Fira Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #111827 0%, #030712 55%, #010409 100%);
+      background: radial-gradient(circle at top, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 55%, var(--bg-gradient-end) 100%);
       color: var(--text-primary);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -147,7 +192,7 @@
       border-radius: 999px;
       text-decoration: none;
       font-weight: 500;
-      color: #0b1120;
+      color: var(--cta-text);
       background: var(--accent);
       transition: transform 0.25s ease, background 0.25s ease;
       box-shadow: 0 10px 35px rgba(56, 189, 248, 0.15);
@@ -156,18 +201,18 @@
     .cta-row a:hover,
     .cta-row a:focus-visible {
       transform: translateY(-2px);
-      background: #0ea5e9;
+      background: var(--accent-hover);
     }
 
     .comparison-wrapper {
       width: min(100%, 1080px);
-      background: rgba(15, 23, 42, 0.35);
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 28px;
       padding: clamp(1.8rem, 4vw, 3rem);
       backdrop-filter: blur(18px);
       box-shadow:
-        0 25px 80px rgba(15, 23, 42, 0.55),
+        0 25px 80px rgba(15, 23, 42, 0.35),
         inset 0 0 0 1px rgba(148, 163, 184, 0.05);
     }
 
@@ -215,7 +260,7 @@
       width: var(--slider-position);
       max-width: 100%;
       overflow: hidden;
-      border-right: 1px solid rgba(226, 232, 240, 0.5);
+      border-right: 1px solid var(--slider-border);
       box-shadow: 12px 0 30px rgba(15, 23, 42, 0.35);
       transition: width 0.1s ease-out;
     }
@@ -236,7 +281,7 @@
       display: block;
       height: 100%;
       width: 2px;
-      background: rgba(226, 232, 240, 0.45);
+      background: var(--slider-divider);
       border-radius: 999px;
     }
 
@@ -246,15 +291,15 @@
       height: 54px;
       border-radius: 50%;
       backdrop-filter: blur(8px);
-      border: 1px solid rgba(226, 232, 240, 0.55);
-      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid var(--grip-border);
+      background: var(--grip-bg);
       display: grid;
       place-items: center;
-      color: rgba(226, 232, 240, 0.9);
+      color: var(--grip-text);
       font-size: 1.1rem;
       font-weight: 600;
       letter-spacing: 0.04em;
-      box-shadow: 0 18px 45px rgba(2, 6, 23, 0.45);
+      box-shadow: 0 18px 45px rgba(2, 6, 23, 0.35);
     }
 
     .slider-range {
@@ -286,13 +331,13 @@
 
     .carousel-section {
       width: min(100%, 1080px);
-      background: rgba(15, 23, 42, 0.35);
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 28px;
       padding: clamp(1.8rem, 4vw, 3rem);
       backdrop-filter: blur(18px);
       box-shadow:
-        0 25px 80px rgba(15, 23, 42, 0.55),
+        0 25px 80px rgba(15, 23, 42, 0.35),
         inset 0 0 0 1px rgba(148, 163, 184, 0.05);
     }
 
@@ -335,7 +380,7 @@
     }
 
     .carousel-indicators [data-bs-target] {
-      background-color: rgba(226, 232, 240, 0.5);
+      background-color: var(--carousel-indicator);
       border: none;
       height: 8px;
       border-radius: 4px;
@@ -378,7 +423,7 @@
       gap: 0.45rem;
       padding: 1.35rem 1.4rem;
       border-radius: 16px;
-      background: rgba(15, 23, 42, 0.5);
+      background: var(--surface);
       border: 1px solid var(--border);
       text-decoration: none;
       color: inherit;
@@ -392,7 +437,7 @@
       transform: translateY(-4px);
       border-color: rgba(56, 189, 248, 0.45);
       outline: none;
-      background: rgba(30, 41, 59, 0.65);
+      background: var(--surface-elevated);
     }
 
     .download-card.is-active {
@@ -415,7 +460,7 @@
     footer {
       margin-top: auto;
       padding-bottom: 1rem;
-      color: rgba(148, 163, 184, 0.6);
+      color: var(--footer-text);
       font-size: 0.85rem;
     }
 
@@ -428,7 +473,7 @@
 
     footer a:hover,
     footer a:focus-visible {
-      border-color: rgba(148, 163, 184, 0.6);
+      border-color: var(--footer-text);
     }
 
     @media (max-width: 720px) {
