@@ -567,19 +567,19 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="img/carousel/one.png" alt="STLGauge feature showcase 1">
+          <img class="theme-image" data-image="one.png" src="img/carousel/dark/one.png" alt="STLGauge feature showcase 1">
         </div>
         <div class="carousel-item">
-          <img src="img/carousel/two.png" alt="STLGauge feature showcase 2">
+          <img class="theme-image" data-image="two.png" src="img/carousel/dark/two.png" alt="STLGauge feature showcase 2">
         </div>
         <div class="carousel-item">
-          <img src="img/carousel/three.png" alt="STLGauge feature showcase 3">
+          <img class="theme-image" data-image="three.png" src="img/carousel/dark/three.png" alt="STLGauge feature showcase 3">
         </div>
         <div class="carousel-item">
-          <img src="img/carousel/four.png" alt="STLGauge feature showcase 4">
+          <img class="theme-image" data-image="four.png" src="img/carousel/dark/four.png" alt="STLGauge feature showcase 4">
         </div>
         <div class="carousel-item">
-          <img src="img/carousel/five.png" alt="STLGauge feature showcase 5">
+          <img class="theme-image" data-image="five.png" src="img/carousel/dark/five.png" alt="STLGauge feature showcase 5">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#featureCarousel" data-bs-slide="prev">
@@ -667,6 +667,28 @@
           card.classList.remove("is-active");
           card.removeAttribute("aria-current");
         }
+      });
+
+      // Theme detection and carousel image switching
+      const updateCarouselImages = (isDark) => {
+        const themeImages = document.querySelectorAll(".theme-image");
+        const themeFolder = isDark ? "dark" : "light";
+
+        themeImages.forEach((img) => {
+          const imageName = img.dataset.image;
+          img.src = `img/carousel/${themeFolder}/${imageName}`;
+        });
+      };
+
+      // Check if user prefers dark mode
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+      // Set initial theme
+      updateCarouselImages(prefersDark.matches);
+
+      // Listen for theme changes
+      prefersDark.addEventListener("change", (e) => {
+        updateCarouselImages(e.matches);
       });
     })();
   </script>
