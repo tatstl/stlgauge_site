@@ -390,6 +390,101 @@
       background-color: var(--accent);
     }
 
+    .features-section {
+      width: min(100%, 1200px);
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .features-section h2 {
+      margin: 0;
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .features-section > p {
+      margin: 0 auto;
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 48rem;
+      font-size: 1rem;
+    }
+
+    .features-grid {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .feature-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1.5rem, 4vw, 3rem);
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      backdrop-filter: blur(18px);
+      box-shadow:
+        0 15px 50px rgba(15, 23, 42, 0.25),
+        inset 0 0 0 1px rgba(148, 163, 184, 0.05);
+    }
+
+    .feature-item:nth-child(even) {
+      direction: rtl;
+    }
+
+    .feature-item:nth-child(even) > * {
+      direction: ltr;
+    }
+
+    .feature-image {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.3);
+      line-height: 0;
+    }
+
+    .feature-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .feature-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .feature-content h3 {
+      margin: 0;
+      font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .feature-content p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 900px) {
+      .feature-item {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .feature-item:nth-child(even) {
+        direction: ltr;
+      }
+    }
+
     .download-section {
       width: min(100%, 960px);
       display: flex;
@@ -598,6 +693,83 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
+    </div>
+  </section>
+
+  <section class="features-section" aria-label="Detailed features">
+    <h2>Features in Detail</h2>
+    <p>Discover the powerful tools and capabilities that make STLGauge an essential application for STL inspection and measurement.</p>
+
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-image">
+          <img class="theme-image" data-image="one.png" src="img/carousel/dark/one.png" alt="Quick tips and keyboard shortcuts">
+        </div>
+        <div class="feature-content">
+          <h3>Quick Tips & Shortcuts</h3>
+          <p>Access comprehensive keyboard shortcuts and mouse gestures for efficient navigation. Rotate with left-click drag, zoom with scroll wheel or middle-click drag, and pan with right-click or two-finger drag. Jump to standard views (Top/Bottom/Left/Right/Front/Back) with Cmd/Ctrl + 1-6, and toggle section planes with Cmd/Ctrl + X/Y/Z. The quick tips panel provides an always-accessible reference for mastering the interface.</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-image">
+          <img class="theme-image" data-image="two.png" src="img/carousel/dark/two.png" alt="Measurement and markup tools">
+        </div>
+        <div class="feature-content">
+          <h3>Measurement & Markup Tools</h3>
+          <p>Capture precise measurements with multiple specialized tools: point picking for XYZ coordinates (rounded to 0.001), point-to-point distance with draggable offset handles, edge length measurement in wireframe modes, and edge tape for chaining multiple connected edges. Add custom text markups anchored to surface points, all with optional vertex snapping enabled by default for maximum accuracy.</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-image">
+          <img class="theme-image" data-image="three.png" src="img/carousel/dark/three.png" alt="Sectioning and cross-sections">
+        </div>
+        <div class="feature-content">
+          <h3>Sectioning & Cross-Sections</h3>
+          <p>Slice through your models with axis-aligned section planes (X/Y/Z) controlled by an intuitive slider (0-100%). Section caps and outlines regenerate automatically as you move the plane, with a flip switch to choose which side to keep. The active section footer provides real-time controls, and you can save the clipped mesh with baked-in cap triangles for further analysis.</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-image">
+          <img class="theme-image" data-image="four.png" src="img/carousel/dark/four.png" alt="Pinnable measurements and outlines">
+        </div>
+        <div class="feature-content">
+          <h3>Pinnable Measurements & Outlines</h3>
+          <p>Lock important measurements and section outlines in place as you explore different views and slices. Pin thickness readings, dimensional callouts, and cross-section profiles to maintain reference points throughout your inspection workflow. All pinned elements persist during navigation and can be managed individually or cleared as a group.</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-image">
+          <img class="theme-image" data-image="five.png" src="img/carousel/dark/five.png" alt="3D thickness analysis">
+        </div>
+        <div class="feature-content">
+          <h3>3D Thickness Computation</h3>
+          <p>Analyze wall thickness throughout your entire model by firing reverse normals from every triangle to detect the nearest opposing face. A background worker processes the computation with real-time progress tracking and instant cancel support. Results display as a false-color heatmap keyed to min/max thickness values, with live readouts on hover and clickable pins to mark critical measurements.</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-image">
+          <img class="theme-image" data-image="six.png" src="img/carousel/dark/six.png" alt="2D section thickness analysis">
+        </div>
+        <div class="feature-content">
+          <h3>2D Section Thickness</h3>
+          <p>Measure in-plane thickness on any active section cap by remeshing the slice into a uniform grid. The worker computes the shortest line segment passing through each triangle centroid and terminating on the section outline, displaying results as a color-coded overlay that mirrors the 3D thickness palette. Hover for instant thickness readouts at any point on the sectioned surface.</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-image">
+          <img class="theme-image" data-image="seven.png" src="img/carousel/dark/seven.png" alt="Tight fitting bounding box">
+        </div>
+        <div class="feature-content">
+          <h3>Tight Fitting Bounding Box</h3>
+          <p>Compute the minimum-volume oriented bounding box by sampling approximately 200 different orientations in a background worker. The algorithm estimates the smallest box that fully contains your geometry, displaying width/height/depth dimension callouts. Track progress in a modal with instant cancel capability, and toggle visibility without recomputation once the solve completes.</p>
+        </div>
+      </div>
     </div>
   </section>
 
