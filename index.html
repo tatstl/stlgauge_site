@@ -50,6 +50,30 @@
       font-display: swap;
     }
 
+    @font-face {
+      font-family: "Noto Sans JP";
+      src: url("fonts/NotoSansJP-VariableFont_wght.ttf") format("truetype");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Noto Sans KR";
+      src: url("fonts/NotoSansKR-VariableFont_wght.ttf") format("truetype");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Noto Sans SC";
+      src: url("fonts/NotoSansSC-VariableFont_wght.ttf") format("truetype");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root {
       color-scheme: light dark;
       --section-gap: clamp(3rem, 6vw, 5.5rem);
@@ -672,6 +696,9 @@
     <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
     <button type="button" class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
     <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
+    <button type="button" class="lang-btn" data-lang="ja" aria-pressed="false">JA</button>
+    <button type="button" class="lang-btn" data-lang="ko" aria-pressed="false">KO</button>
+    <button type="button" class="lang-btn" data-lang="zh" aria-pressed="false">ZH</button>
   </div>
 
   <header>
@@ -1122,6 +1149,204 @@
           footer: {
             text: "&middot; Pour l'aide et le support, contactez-nous à <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;"
           }
+        },
+        ja: {
+          pageTitle: "STLGauge · 精密STLビューア",
+          hero: {
+            subtitle: "邪魔にならない測定ツールを備えた高精度STL検査。ダークテーマとライトテーマの両方でモデルを探索し、正確な寸法を測定できます。",
+            download: "ダウンロード"
+          },
+          comparison: {
+            ariaLabel: "ライトモードとダークモードを比較",
+            title: "クロスプラットフォーム、軽量でモダン",
+            description: "STLGaugeはElectronで構築されたデスクトップアプリで、お好みのプラットフォームで動作します。ライトモードとダークモードに対応したモダンなユーザーインターフェースを備えています。現在、正確な頂点スナップをサポートするポイント、ポイント間、エッジ、テープ測定をサポートしています。また、標準軸に沿った断面と断面上のポイント測定もサポートしています。さらに、3Dおよび2D断面でモデルの厚さを計算できます。モデルの近似的な密着境界ボックスも計算できます。",
+            sliderAria: "ライトとダークのプレビューバランスを調整"
+          },
+          carousel: {
+            ariaLabel: "機能紹介",
+            title: "機能の実演",
+            description: "アプリのインターフェースとツールを紹介するこれらのスクリーンショットを通じて、STLGaugeの機能を探索してください。",
+            previous: "前へ",
+            next: "次へ"
+          },
+          features: {
+            ariaLabel: "詳細な機能",
+            title: "機能の詳細",
+            description: "STLGaugeをSTL検査と測定に不可欠なアプリケーションにする強力なツールと機能をご覧ください。",
+            feature1: {
+              title: "クイックヒントとショートカット",
+              description: "効率的なナビゲーションのための包括的なキーボードショートカットとマウスジェスチャーにアクセスできます。左クリックドラッグで回転、スクロールホイールまたは中クリックドラッグでズーム、右クリックまたは2本指ドラッグでパン。Cmd/Ctrl + 1-6で標準ビュー（上/下/左/右/前/後）にジャンプし、Cmd/Ctrl + X/Y/Zで断面平面を切り替えます。クイックヒントパネルは、インターフェースをマスターするための常にアクセス可能なリファレンスを提供します。"
+            },
+            feature2: {
+              title: "測定とマークアップツール",
+              description: "複数の専門ツールで正確な測定を行えます：XYZ座標のポイント選択（0.001に丸め）、ドラッグ可能なオフセットハンドルを備えたポイント間距離、ワイヤーフレームモードでのエッジ長測定、複数の接続されたエッジをチェーンするエッジテープ。表面ポイントに固定されたカスタムテキストマークアップを追加でき、すべて最大精度のためにデフォルトで有効になっているオプションの頂点スナップ付きです。"
+            },
+            feature3: {
+              title: "断面と横断面",
+              description: "直感的なスライダー（0-100%）で制御される軸整列断面平面（X/Y/Z）でモデルをスライスします。平面を移動すると断面キャップとアウトラインが自動的に再生成され、保持する側を選択するフリップスイッチがあります。アクティブな断面フッターはリアルタイム制御を提供し、焼き付けられたキャップ三角形を含むクリップされたメッシュを保存してさらに分析できます。"
+            },
+            feature4: {
+              title: "ピン留め可能な測定とアウトライン",
+              description: "さまざまなビューとスライスを探索する際に、重要な測定値と断面アウトラインをその場に固定します。厚さの読み取り値、寸法の注釈、横断面プロファイルをピン留めして、検査ワークフロー全体で参照ポイントを維持します。すべてのピン留めされた要素はナビゲーション中も持続し、個別に管理するか、グループとしてクリアできます。"
+            },
+            feature5: {
+              title: "3D厚さ計算",
+              description: "すべての三角形から逆法線を発射して最も近い対向面を検出することにより、モデル全体の壁の厚さを分析します。バックグラウンドワーカーがリアルタイムの進行状況追跡と即座のキャンセルサポートで計算を処理します。結果は最小/最大厚さ値に合わせた偽色ヒートマップとして表示され、ホバー時のライブ読み取り値と重要な測定値をマークするためのクリック可能なピンがあります。"
+            },
+            feature6: {
+              title: "2D断面厚さ",
+              description: "スライスを均一なグリッドに再メッシュ化することにより、任意のアクティブな断面キャップで面内厚さを測定します。ワーカーは各三角形の重心を通過し、断面アウトラインで終了する最短の線分を計算し、3D厚さパレットを反映するカラーコードされたオーバーレイとして結果を表示します。断面化された表面の任意のポイントで即座の厚さ読み取り値を得るためにホバーします。"
+            },
+            feature7: {
+              title: "密着境界ボックス",
+              description: "バックグラウンドワーカーで約200の異なる方向をサンプリングすることにより、最小体積の向き境界ボックスを計算します。アルゴリズムはジオメトリを完全に含む最小のボックスを推定し、幅/高さ/深さの寸法注釈を表示します。即座のキャンセル機能を備えたモーダルで進行状況を追跡し、解決が完了したら再計算なしで可視性を切り替えます。"
+            }
+          },
+          download: {
+            title: "ダウンロード",
+            description: "プラットフォームに合ったビルドを選択してください。各ダウンロードには、ネイティブパフォーマンス、高解像度レンダリング、自動テーマ検出が含まれています。<u>注意 - これはアルファソフトウェアであり、バイナリは署名されていません。セキュリティチェックをバイパスするために、プラットフォーム固有の指示に従ってください。</u>",
+            windows: "Windows",
+            windowsDesc: "インストーラーパッケージ · 64ビット",
+            macos: "macOS",
+            macosDesc: "ディスクイメージ · Apple silicon",
+            linux: "Linux",
+            linuxDesc: "Deb · 64ビットDebianベースのディストリビューション"
+          },
+          footer: {
+            text: "&middot; ヘルプとサポートについては <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> までお問い合わせください &middot;"
+          }
+        },
+        ko: {
+          pageTitle: "STLGauge · 정밀 STL 뷰어",
+          hero: {
+            subtitle: "방해가 되지 않는 측정 도구를 갖춘 고품질 STL 검사. 어두운 테마와 밝은 테마 모두에서 모델을 탐색하고 정확한 치수를 측정하세요.",
+            download: "다운로드"
+          },
+          comparison: {
+            ariaLabel: "밝은 모드와 어두운 모드 비교",
+            title: "크로스 플랫폼, 경량 및 현대적",
+            description: "STLGauge는 Electron으로 구축된 데스크톱 앱으로 선택한 플랫폼에서 실행됩니다. 밝은 모드와 어두운 모드를 지원하는 현대적인 사용자 인터페이스를 갖추고 있습니다. 현재 정확한 정점 스냅을 지원하는 포인트, 포인트 간, 에지 및 테이프 측정을 지원합니다. 또한 표준 축을 따라 단면화와 단면의 포인트 측정을 지원합니다. 이 외에도 3D 및 2D 단면에서 모델의 두께를 계산할 수 있습니다. 모델의 근사 밀착 경계 상자도 계산할 수 있습니다.",
+            sliderAria: "밝고 어두운 미리보기 균형 조정"
+          },
+          carousel: {
+            ariaLabel: "기능 쇼케이스",
+            title: "작동 중인 기능",
+            description: "앱의 인터페이스와 도구를 보여주는 이러한 스크린샷을 통해 STLGauge의 기능을 탐색하세요.",
+            previous: "이전",
+            next: "다음"
+          },
+          features: {
+            ariaLabel: "자세한 기능",
+            title: "기능 상세 정보",
+            description: "STLGauge를 STL 검사 및 측정에 필수적인 애플리케이션으로 만드는 강력한 도구와 기능을 알아보세요.",
+            feature1: {
+              title: "빠른 팁 및 단축키",
+              description: "효율적인 탐색을 위한 포괄적인 키보드 단축키와 마우스 제스처에 액세스하세요. 왼쪽 클릭 드래그로 회전, 스크롤 휠 또는 가운데 클릭 드래그로 확대/축소, 오른쪽 클릭 또는 두 손가락 드래그로 이동합니다. Cmd/Ctrl + 1-6으로 표준 뷰(위/아래/왼쪽/오른쪽/앞/뒤)로 이동하고 Cmd/Ctrl + X/Y/Z로 단면 평면을 전환합니다. 빠른 팁 패널은 인터페이스를 마스터하기 위한 항상 액세스 가능한 참조를 제공합니다."
+            },
+            feature2: {
+              title: "측정 및 마크업 도구",
+              description: "여러 전문 도구로 정확한 측정을 캡처하세요: XYZ 좌표용 포인트 선택(0.001로 반올림), 드래그 가능한 오프셋 핸들이 있는 포인트 간 거리, 와이어프레임 모드의 에지 길이 측정, 여러 연결된 에지를 체인하는 에지 테이프. 표면 포인트에 고정된 사용자 정의 텍스트 마크업을 추가할 수 있으며, 최대 정확도를 위해 기본적으로 활성화된 선택적 정점 스냅이 모두 포함되어 있습니다."
+            },
+            feature3: {
+              title: "단면 및 횡단면",
+              description: "직관적인 슬라이더(0-100%)로 제어되는 축 정렬 단면 평면(X/Y/Z)으로 모델을 슬라이스합니다. 평면을 이동할 때 단면 캡과 윤곽선이 자동으로 재생성되며, 유지할 면을 선택하는 플립 스위치가 있습니다. 활성 단면 바닥글은 실시간 제어를 제공하며, 구운 캡 삼각형이 포함된 클리핑된 메시를 저장하여 추가 분석을 수행할 수 있습니다."
+            },
+            feature4: {
+              title: "고정 가능한 측정 및 윤곽선",
+              description: "다양한 뷰와 슬라이스를 탐색하는 동안 중요한 측정값과 단면 윤곽선을 제자리에 고정합니다. 두께 판독값, 치수 표기 및 횡단면 프로파일을 고정하여 검사 워크플로 전체에서 참조 포인트를 유지합니다. 모든 고정된 요소는 탐색 중에도 지속되며 개별적으로 관리하거나 그룹으로 지울 수 있습니다."
+            },
+            feature5: {
+              title: "3D 두께 계산",
+              description: "모든 삼각형에서 역방향 법선을 발사하여 가장 가까운 대향면을 감지함으로써 전체 모델의 벽 두께를 분석합니다. 백그라운드 워커가 실시간 진행 상황 추적 및 즉각적인 취소 지원으로 계산을 처리합니다. 결과는 최소/최대 두께 값에 맞춘 거짓 색상 히트맵으로 표시되며, 마우스를 올릴 때 라이브 판독값과 중요한 측정값을 표시하기 위한 클릭 가능한 핀이 있습니다."
+            },
+            feature6: {
+              title: "2D 단면 두께",
+              description: "슬라이스를 균일한 그리드로 재메싱하여 활성 단면 캡의 평면 내 두께를 측정합니다. 워커는 각 삼각형 중심을 통과하고 단면 윤곽선에서 종료되는 가장 짧은 선분을 계산하여 3D 두께 팔레트를 반영하는 색상 코드 오버레이로 결과를 표시합니다. 단면화된 표면의 모든 지점에서 즉각적인 두께 판독값을 보려면 마우스를 올리세요."
+            },
+            feature7: {
+              title: "밀착 경계 상자",
+              description: "백그라운드 워커에서 약 200개의 다른 방향을 샘플링하여 최소 부피 방향 경계 상자를 계산합니다. 알고리즘은 기하학을 완전히 포함하는 가장 작은 상자를 추정하고 너비/높이/깊이 치수 표기를 표시합니다. 즉각적인 취소 기능이 있는 모달에서 진행 상황을 추적하고 해결이 완료되면 재계산 없이 가시성을 전환합니다."
+            }
+          },
+          download: {
+            title: "다운로드",
+            description: "플랫폼에 맞는 빌드를 선택하세요. 각 다운로드에는 네이티브 성능, 고해상도 렌더링 및 자동 테마 감지가 포함되어 있습니다. <u>참고 - 이것은 알파 소프트웨어이며 바이너리가 서명되지 않았습니다. 보안 검사를 우회하려면 플랫폼별 지침을 따르세요.</u>",
+            windows: "Windows",
+            windowsDesc: "설치 프로그램 패키지 · 64비트",
+            macos: "macOS",
+            macosDesc: "디스크 이미지 · Apple silicon",
+            linux: "Linux",
+            linuxDesc: "Deb · 64비트 데비안 기반 배포판"
+          },
+          footer: {
+            text: "&middot; 도움말 및 지원은 <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a>으로 문의하세요 &middot;"
+          }
+        },
+        zh: {
+          pageTitle: "STLGauge · 精密STL查看器",
+          hero: {
+            subtitle: "配备不碍事的测量工具的高保真STL检查。在深色和浅色主题中探索您的模型并进行精确测量。",
+            download: "下载"
+          },
+          comparison: {
+            ariaLabel: "比较浅色和深色模式",
+            title: "跨平台、轻量级且现代",
+            description: "STLGauge是用Electron构建的桌面应用程序，可在您选择的平台上运行。它具有现代化的用户界面，支持浅色和深色模式。目前支持点、点对点、边缘和胶带测量，并具有精确的顶点吸附支持。它还支持沿标准轴的切面和切面上的点测量。除此之外，您可以计算3D模型和2D切面的厚度。还可以计算模型的近似紧密拟合边界框。",
+            sliderAria: "调整浅色和深色预览平衡"
+          },
+          carousel: {
+            ariaLabel: "功能展示",
+            title: "功能演示",
+            description: "通过这些展示应用程序界面和工具的屏幕截图探索STLGauge的功能。",
+            previous: "上一个",
+            next: "下一个"
+          },
+          features: {
+            ariaLabel: "详细功能",
+            title: "功能详情",
+            description: "了解使STLGauge成为STL检查和测量必备应用程序的强大工具和功能。",
+            feature1: {
+              title: "快速提示和快捷键",
+              description: "访问全面的键盘快捷键和鼠标手势以实现高效导航。左键拖动旋转，滚轮或中键拖动缩放，右键或双指拖动平移。使用Cmd/Ctrl + 1-6跳转到标准视图（顶部/底部/左侧/右侧/前面/后面），使用Cmd/Ctrl + X/Y/Z切换切面平面。快速提示面板提供了始终可访问的界面掌握参考。"
+            },
+            feature2: {
+              title: "测量和标记工具",
+              description: "使用多种专业工具捕获精确测量：用于XYZ坐标的点选择（四舍五入到0.001），带可拖动偏移手柄的点对点距离，线框模式下的边缘长度测量，以及用于链接多个连接边缘的边缘胶带。添加锚定到表面点的自定义文本标记，所有这些都默认启用可选的顶点吸附以实现最大精度。"
+            },
+            feature3: {
+              title: "切面和横截面",
+              description: "使用由直观滑块（0-100%）控制的轴对齐切面平面（X/Y/Z）切片您的模型。当您移动平面时，切面盖和轮廓会自动重新生成，并带有翻转开关来选择要保留的一侧。活动切面页脚提供实时控制，您可以保存带有烘焙盖三角形的裁剪网格以进行进一步分析。"
+            },
+            feature4: {
+              title: "可固定的测量和轮廓",
+              description: "在探索不同视图和切片时，将重要的测量值和切面轮廓锁定到位。固定厚度读数、尺寸标注和横截面轮廓，以在整个检查工作流程中维护参考点。所有固定的元素在导航期间保持不变，可以单独管理或作为组清除。"
+            },
+            feature5: {
+              title: "3D厚度计算",
+              description: "通过从每个三角形发射反向法线来检测最近的对面，分析整个模型的壁厚。后台工作进程通过实时进度跟踪和即时取消支持处理计算。结果显示为适应最小/最大厚度值的伪彩色热图，具有悬停时的实时读数和可点击的图钉以标记关键测量。"
+            },
+            feature6: {
+              title: "2D切面厚度",
+              description: "通过将切片重新网格化为均匀网格来测量任何活动切面盖上的平面内厚度。工作进程计算通过每个三角形质心并在切面轮廓处终止的最短线段，将结果显示为反映3D厚度调色板的彩色编码覆盖。悬停以获取切面表面上任意点的即时厚度读数。"
+            },
+            feature7: {
+              title: "紧密拟合边界框",
+              description: "通过在后台工作进程中采样约200个不同的方向来计算最小体积的定向边界框。该算法估计完全包含您的几何图形的最小框，显示宽度/高度/深度尺寸标注。在具有即时取消功能的模态中跟踪进度，并在求解完成后切换可见性而无需重新计算。"
+            }
+          },
+          download: {
+            title: "下载",
+            description: "选择与您的平台匹配的构建。每个下载都包括本机性能、高分辨率渲染和自动主题检测。<u>注意 - 这是alpha软件，二进制文件未签名。请遵循特定平台的说明以绕过安全检查。</u>",
+            windows: "Windows",
+            windowsDesc: "安装程序包 · 64位",
+            macos: "macOS",
+            macosDesc: "磁盘映像 · Apple silicon",
+            linux: "Linux",
+            linuxDesc: "Deb · 64位基于Debian的发行版"
+          },
+          footer: {
+            text: "&middot; 如需帮助和支持，请通过 <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> 联系我们 &middot;"
+          }
         }
       };
 
@@ -1144,6 +1369,16 @@
         localStorage.setItem('language', lang);
         document.documentElement.setAttribute('lang', lang);
         document.title = translations[lang].pageTitle;
+
+        // Update font-family based on language
+        const fontMap = {
+          'ja': '"Noto Sans JP", "Fira Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+          'ko': '"Noto Sans KR", "Fira Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+          'zh': '"Noto Sans SC", "Fira Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
+        };
+
+        const defaultFont = '"Fira Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+        document.body.style.fontFamily = fontMap[lang] || defaultFont;
 
         // Update all elements with data-i18n attribute
         document.querySelectorAll('[data-i18n]').forEach((element) => {
