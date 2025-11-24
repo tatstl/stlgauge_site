@@ -1350,7 +1350,45 @@
         }
       };
 
-      let currentLang = localStorage.getItem('language') || 'en';
+      // Function to detect browser language and map to supported languages
+      const detectBrowserLanguage = () => {
+        // Get browser language (e.g., "en-US", "ja", "zh-CN")
+        const browserLang = navigator.language || navigator.userLanguage || 'en';
+        const langCode = browserLang.toLowerCase();
+
+        // Map browser language codes to our supported languages
+        const languageMap = {
+          'en': 'en',
+          'es': 'es',
+          'de': 'de',
+          'fr': 'fr',
+          'ja': 'ja',
+          'ko': 'ko',
+          'zh': 'zh',
+          'zh-cn': 'zh',
+          'zh-hans': 'zh',
+          'zh-tw': 'zh',
+          'zh-hk': 'zh',
+          'zh-hant': 'zh'
+        };
+
+        // Check exact match first
+        if (languageMap[langCode]) {
+          return languageMap[langCode];
+        }
+
+        // Check language prefix (e.g., "en" from "en-US")
+        const langPrefix = langCode.split('-')[0];
+        if (languageMap[langPrefix]) {
+          return languageMap[langPrefix];
+        }
+
+        // Default to English if no match
+        return 'en';
+      };
+
+      // Initialize language: use saved preference or detect browser language
+      let currentLang = localStorage.getItem('language') || detectBrowserLanguage();
 
       // Function to get nested translation value
       const getTranslation = (lang, key) => {
