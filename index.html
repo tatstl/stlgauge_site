@@ -50,6 +50,30 @@
       font-display: swap;
     }
 
+    @font-face {
+      font-family: "Noto Sans JP";
+      src: url("fonts/NotoSansJP-VariableFont_wght.ttf") format("truetype");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Noto Sans KR";
+      src: url("fonts/NotoSansKR-VariableFont_wght.ttf") format("truetype");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Noto Sans SC";
+      src: url("fonts/NotoSansSC-VariableFont_wght.ttf") format("truetype");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root {
       color-scheme: light dark;
       --section-gap: clamp(3rem, 6vw, 5.5rem);
@@ -571,6 +595,61 @@
       border-color: var(--footer-text);
     }
 
+    .language-switcher {
+      position: fixed;
+      top: 2rem;
+      right: 2rem;
+      z-index: 1000;
+    }
+
+    .lang-select {
+      padding: 0.6rem 2.5rem 0.6rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.2);
+      transition: all 0.2s ease;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.8rem center;
+      background-size: 12px;
+    }
+
+    .lang-select:hover {
+      background-color: var(--surface-elevated);
+      border-color: var(--accent);
+    }
+
+    .lang-select:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .lang-select option {
+      background: var(--surface);
+      color: var(--text-primary);
+      padding: 0.5rem;
+    }
+
+    @media (max-width: 720px) {
+      .language-switcher {
+        top: 1rem;
+        right: 1rem;
+      }
+
+      .lang-select {
+        padding: 0.5rem 2rem 0.5rem 0.8rem;
+        font-size: 0.85rem;
+      }
+    }
+
     @media (max-width: 720px) {
       body {
         padding-top: clamp(2rem, 10vw, 3rem);
@@ -615,6 +694,18 @@
   </style>
 </head>
 <body>
+  <div class="language-switcher" role="navigation" aria-label="Language selection">
+    <select class="lang-select" aria-label="Select language">
+      <option value="en">English</option>
+      <option value="es">Español</option>
+      <option value="de">Deutsch</option>
+      <option value="fr">Français</option>
+      <option value="ja">日本語</option>
+      <option value="ko">한국어</option>
+      <option value="zh">中文</option>
+    </select>
+  </div>
+
   <header>
     <div class="hero-heading">
       <div class="logo-mark" aria-hidden="true">
@@ -622,18 +713,18 @@
       </div>
       <h1>STLGauge</h1>
     </div>
-    <p class="subtitle">
+    <p class="subtitle" data-i18n="hero.subtitle">
       High-fidelity STL inspection with measurement tools that stay out of the way. Explore your models and take precise dimensions in both dark and light themes.
     </p>
     <div class="cta-row">
-      <a href="#download">Download</a>
+      <a href="#download" data-i18n="hero.download">Download</a>
     </div>
   </header>
 
-  <section class="comparison-wrapper" aria-label="Compare light and dark modes">
+  <section class="comparison-wrapper" data-i18n-aria="comparison.ariaLabel" aria-label="Compare light and dark modes">
     <div class="comparison-header">
-      <h2>Cross-platform, lightweight &amp; modern</h2>
-      <p>STLGauge is a desktop app built on Electron and runs on the platform of your choice. It has a modern user-interface with support for light and dark modes. Currently it supports point, point-to-point, edge and tape measurements with accurate snap to vertex support. It also supports sectioning along the standard axes and point measurement on the section. In addition to this you can compute the thickness of the model in 3D and across 2D sections. Approximate tight fitting bounding box of the model can also be computed.</p>
+      <h2 data-i18n="comparison.title">Cross-platform, lightweight &amp; modern</h2>
+      <p data-i18n="comparison.description">STLGauge is a desktop app built on Electron and runs on the platform of your choice. It has a modern user-interface with support for light and dark modes. Currently it supports point, point-to-point, edge and tape measurements with accurate snap to vertex support. It also supports sectioning along the standard axes and point measurement on the section. In addition to this you can compute the thickness of the model in 3D and across 2D sections. Approximate tight fitting bounding box of the model can also be computed.</p>
     </div>
     <div class="comparison-slider" data-slider>
       <figure class="slider-image-base">
@@ -642,16 +733,16 @@
       <figure class="slider-image-overlay" data-overlay>
         <img src="img/light.png" alt="STLGauge in light mode">
       </figure>
-      <input type="range" class="slider-range" min="0" max="100" value="50" aria-label="Adjust light and dark preview balance">
+      <input type="range" class="slider-range" min="0" max="100" value="50" data-i18n-aria="comparison.sliderAria" aria-label="Adjust light and dark preview balance">
       <div class="slider-divider" data-divider>
         <span class="slider-grip" aria-hidden="true">⇆</span>
       </div>
     </div>
   </section>
 
-  <section class="carousel-section" aria-label="Feature showcase">
-    <h2>Features in Action</h2>
-    <p>Explore STLGauge's capabilities through these screenshots showcasing the app's interface and tools.</p>
+  <section class="carousel-section" data-i18n-aria="carousel.ariaLabel" aria-label="Feature showcase">
+    <h2 data-i18n="carousel.title">Features in Action</h2>
+    <p data-i18n="carousel.description">Explore STLGauge's capabilities through these screenshots showcasing the app's interface and tools.</p>
     <div id="featureCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#featureCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -687,18 +778,18 @@
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#featureCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span class="visually-hidden" data-i18n="carousel.previous">Previous</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#featureCarousel" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        <span class="visually-hidden" data-i18n="carousel.next">Next</span>
       </button>
     </div>
   </section>
 
-  <section class="features-section" aria-label="Detailed features">
-    <h2>Features in Detail</h2>
-    <p>Discover the powerful tools and capabilities that make STLGauge an essential application for STL inspection and measurement.</p>
+  <section class="features-section" data-i18n-aria="features.ariaLabel" aria-label="Detailed features">
+    <h2 data-i18n="features.title">Features in Detail</h2>
+    <p data-i18n="features.description">Discover the powerful tools and capabilities that make STLGauge an essential application for STL inspection and measurement.</p>
 
     <div class="features-grid">
       <div class="feature-item">
@@ -706,8 +797,8 @@
           <img class="theme-image" data-image="one.png" src="img/carousel/dark/one.png" alt="Quick tips and keyboard shortcuts">
         </div>
         <div class="feature-content">
-          <h3>Quick Tips & Shortcuts</h3>
-          <p>Access comprehensive keyboard shortcuts and mouse gestures for efficient navigation. Rotate with left-click drag, zoom with scroll wheel or middle-click drag, and pan with right-click or two-finger drag. Jump to standard views (Top/Bottom/Left/Right/Front/Back) with Cmd/Ctrl + 1-6, and toggle section planes with Cmd/Ctrl + X/Y/Z. The quick tips panel provides an always-accessible reference for mastering the interface.</p>
+          <h3 data-i18n="features.feature1.title">Quick Tips & Shortcuts</h3>
+          <p data-i18n="features.feature1.description">Access comprehensive keyboard shortcuts and mouse gestures for efficient navigation. Rotate with left-click drag, zoom with scroll wheel or middle-click drag, and pan with right-click or two-finger drag. Jump to standard views (Top/Bottom/Left/Right/Front/Back) with Cmd/Ctrl + 1-6, and toggle section planes with Cmd/Ctrl + X/Y/Z. The quick tips panel provides an always-accessible reference for mastering the interface.</p>
         </div>
       </div>
 
@@ -716,8 +807,8 @@
           <img class="theme-image" data-image="two.png" src="img/carousel/dark/two.png" alt="Measurement and markup tools">
         </div>
         <div class="feature-content">
-          <h3>Measurement & Markup Tools</h3>
-          <p>Capture precise measurements with multiple specialized tools: point picking for XYZ coordinates (rounded to 0.001), point-to-point distance with draggable offset handles, edge length measurement in wireframe modes, and edge tape for chaining multiple connected edges. Add custom text markups anchored to surface points, all with optional vertex snapping enabled by default for maximum accuracy.</p>
+          <h3 data-i18n="features.feature2.title">Measurement & Markup Tools</h3>
+          <p data-i18n="features.feature2.description">Capture precise measurements with multiple specialized tools: point picking for XYZ coordinates (rounded to 0.001), point-to-point distance with draggable offset handles, edge length measurement in wireframe modes, and edge tape for chaining multiple connected edges. Add custom text markups anchored to surface points, all with optional vertex snapping enabled by default for maximum accuracy.</p>
         </div>
       </div>
 
@@ -726,8 +817,8 @@
           <img class="theme-image" data-image="three.png" src="img/carousel/dark/three.png" alt="Sectioning and cross-sections">
         </div>
         <div class="feature-content">
-          <h3>Sectioning & Cross-Sections</h3>
-          <p>Slice through your models with axis-aligned section planes (X/Y/Z) controlled by an intuitive slider (0-100%). Section caps and outlines regenerate automatically as you move the plane, with a flip switch to choose which side to keep. The active section footer provides real-time controls, and you can save the clipped mesh with baked-in cap triangles for further analysis.</p>
+          <h3 data-i18n="features.feature3.title">Sectioning & Cross-Sections</h3>
+          <p data-i18n="features.feature3.description">Slice through your models with axis-aligned section planes (X/Y/Z) controlled by an intuitive slider (0-100%). Section caps and outlines regenerate automatically as you move the plane, with a flip switch to choose which side to keep. The active section footer provides real-time controls, and you can save the clipped mesh with baked-in cap triangles for further analysis.</p>
         </div>
       </div>
 
@@ -736,8 +827,8 @@
           <img class="theme-image" data-image="four.png" src="img/carousel/dark/four.png" alt="Pinnable measurements and outlines">
         </div>
         <div class="feature-content">
-          <h3>Pinnable Measurements & Outlines</h3>
-          <p>Lock important measurements and section outlines in place as you explore different views and slices. Pin thickness readings, dimensional callouts, and cross-section profiles to maintain reference points throughout your inspection workflow. All pinned elements persist during navigation and can be managed individually or cleared as a group.</p>
+          <h3 data-i18n="features.feature4.title">Pinnable Measurements & Outlines</h3>
+          <p data-i18n="features.feature4.description">Lock important measurements and section outlines in place as you explore different views and slices. Pin thickness readings, dimensional callouts, and cross-section profiles to maintain reference points throughout your inspection workflow. All pinned elements persist during navigation and can be managed individually or cleared as a group.</p>
         </div>
       </div>
 
@@ -746,8 +837,8 @@
           <img class="theme-image" data-image="five.png" src="img/carousel/dark/five.png" alt="3D thickness analysis">
         </div>
         <div class="feature-content">
-          <h3>3D Thickness Computation</h3>
-          <p>Analyze wall thickness throughout your entire model by firing reverse normals from every triangle to detect the nearest opposing face. A background worker processes the computation with real-time progress tracking and instant cancel support. Results display as a false-color heatmap keyed to min/max thickness values, with live readouts on hover and clickable pins to mark critical measurements.</p>
+          <h3 data-i18n="features.feature5.title">3D Thickness Computation</h3>
+          <p data-i18n="features.feature5.description">Analyze wall thickness throughout your entire model by firing reverse normals from every triangle to detect the nearest opposing face. A background worker processes the computation with real-time progress tracking and instant cancel support. Results display as a false-color heatmap keyed to min/max thickness values, with live readouts on hover and clickable pins to mark critical measurements.</p>
         </div>
       </div>
 
@@ -756,8 +847,8 @@
           <img class="theme-image" data-image="six.png" src="img/carousel/dark/six.png" alt="2D section thickness analysis">
         </div>
         <div class="feature-content">
-          <h3>2D Section Thickness</h3>
-          <p>Measure in-plane thickness on any active section cap by remeshing the slice into a uniform grid. The worker computes the shortest line segment passing through each triangle centroid and terminating on the section outline, displaying results as a color-coded overlay that mirrors the 3D thickness palette. Hover for instant thickness readouts at any point on the sectioned surface.</p>
+          <h3 data-i18n="features.feature6.title">2D Section Thickness</h3>
+          <p data-i18n="features.feature6.description">Measure in-plane thickness on any active section cap by remeshing the slice into a uniform grid. The worker computes the shortest line segment passing through each triangle centroid and terminating on the section outline, displaying results as a color-coded overlay that mirrors the 3D thickness palette. Hover for instant thickness readouts at any point on the sectioned surface.</p>
         </div>
       </div>
 
@@ -766,38 +857,610 @@
           <img class="theme-image" data-image="seven.png" src="img/carousel/dark/seven.png" alt="Tight fitting bounding box">
         </div>
         <div class="feature-content">
-          <h3>Tight Fitting Bounding Box</h3>
-          <p>Compute the minimum-volume oriented bounding box by sampling approximately 200 different orientations in a background worker. The algorithm estimates the smallest box that fully contains your geometry, displaying width/height/depth dimension callouts. Track progress in a modal with instant cancel capability, and toggle visibility without recomputation once the solve completes.</p>
+          <h3 data-i18n="features.feature7.title">Tight Fitting Bounding Box</h3>
+          <p data-i18n="features.feature7.description">Compute the minimum-volume oriented bounding box by sampling approximately 200 different orientations in a background worker. The algorithm estimates the smallest box that fully contains your geometry, displaying width/height/depth dimension callouts. Track progress in a modal with instant cancel capability, and toggle visibility without recomputation once the solve completes.</p>
         </div>
       </div>
     </div>
   </section>
 
   <section class="download-section" id="download">
-    <h2>Download</h2>
-    <p>Choose the build that matches your platform. Each download includes native performance, high-resolution rendering, and automatic theme detection. <u>Note - This is alpha software and the binaries are not signed. Please follow platform specific instructions to bypass the security checks.</u></p>
+    <h2 data-i18n="download.title">Download</h2>
+    <p data-i18n="download.description">Choose the build that matches your platform. Each download includes native performance, high-resolution rendering, and automatic theme detection. <u>Note - This is alpha software and the binaries are not signed. Please follow platform specific instructions to bypass the security checks.</u></p>
     <div class="download-grid">
       <a class="download-card" data-os="windows" href="https://github.com/tatstl/stlgauge_site/releases/download/v0.2.3/STLGauge.Setup.0.2.3.exe">
-        <strong>Windows</strong>
-        <span>Installer package · 64-bit</span>
+        <strong data-i18n="download.windows">Windows</strong>
+        <span data-i18n="download.windowsDesc">Installer package · 64-bit</span>
       </a>
       <a class="download-card" data-os="macos" href="https://github.com/tatstl/stlgauge_site/releases/download/v0.2.3/STLGauge-0.2.3-arm64.dmg">
-        <strong>macOS</strong>
-        <span>Disk Image · Apple silicon</span>
+        <strong data-i18n="download.macos">macOS</strong>
+        <span data-i18n="download.macosDesc">Disk Image · Apple silicon</span>
       </a>
       <a class="download-card" data-os="linux" href="https://github.com/tatstl/stlgauge_site/releases/download/v0.2.3/stlgauge_0.2.3_amd64.deb">
-        <strong>Linux</strong>
-        <span>Deb · 64-bit Debian based distributions</span>
+        <strong data-i18n="download.linux">Linux</strong>
+        <span data-i18n="download.linuxDesc">Deb · 64-bit Debian based distributions</span>
       </a>
     </div>
   </section>
 
   <footer>
-    &middot; For help and support contact us at <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot; 
+    <span data-i18n="footer.text">&middot; For help and support contact us at <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;</span>
   </footer>
 
   <script>
     (() => {
+      // Internationalization (i18n) System
+      const translations = {
+        en: {
+          pageTitle: "STLGauge · Precision STL Viewer",
+          hero: {
+            subtitle: "High-fidelity STL inspection with measurement tools that stay out of the way. Explore your models and take precise dimensions in both dark and light themes.",
+            download: "Download"
+          },
+          comparison: {
+            ariaLabel: "Compare light and dark modes",
+            title: "Cross-platform, lightweight & modern",
+            description: "STLGauge is a desktop app built on Electron and runs on the platform of your choice. It has a modern user-interface with support for light and dark modes. Currently it supports point, point-to-point, edge and tape measurements with accurate snap to vertex support. It also supports sectioning along the standard axes and point measurement on the section. In addition to this you can compute the thickness of the model in 3D and across 2D sections. Approximate tight fitting bounding box of the model can also be computed.",
+            sliderAria: "Adjust light and dark preview balance"
+          },
+          carousel: {
+            ariaLabel: "Feature showcase",
+            title: "Features in Action",
+            description: "Explore STLGauge's capabilities through these screenshots showcasing the app's interface and tools.",
+            previous: "Previous",
+            next: "Next"
+          },
+          features: {
+            ariaLabel: "Detailed features",
+            title: "Features in Detail",
+            description: "Discover the powerful tools and capabilities that make STLGauge an essential application for STL inspection and measurement.",
+            feature1: {
+              title: "Quick Tips & Shortcuts",
+              description: "Access comprehensive keyboard shortcuts and mouse gestures for efficient navigation. Rotate with left-click drag, zoom with scroll wheel or middle-click drag, and pan with right-click or two-finger drag. Jump to standard views (Top/Bottom/Left/Right/Front/Back) with Cmd/Ctrl + 1-6, and toggle section planes with Cmd/Ctrl + X/Y/Z. The quick tips panel provides an always-accessible reference for mastering the interface."
+            },
+            feature2: {
+              title: "Measurement & Markup Tools",
+              description: "Capture precise measurements with multiple specialized tools: point picking for XYZ coordinates (rounded to 0.001), point-to-point distance with draggable offset handles, edge length measurement in wireframe modes, and edge tape for chaining multiple connected edges. Add custom text markups anchored to surface points, all with optional vertex snapping enabled by default for maximum accuracy."
+            },
+            feature3: {
+              title: "Sectioning & Cross-Sections",
+              description: "Slice through your models with axis-aligned section planes (X/Y/Z) controlled by an intuitive slider (0-100%). Section caps and outlines regenerate automatically as you move the plane, with a flip switch to choose which side to keep. The active section footer provides real-time controls, and you can save the clipped mesh with baked-in cap triangles for further analysis."
+            },
+            feature4: {
+              title: "Pinnable Measurements & Outlines",
+              description: "Lock important measurements and section outlines in place as you explore different views and slices. Pin thickness readings, dimensional callouts, and cross-section profiles to maintain reference points throughout your inspection workflow. All pinned elements persist during navigation and can be managed individually or cleared as a group."
+            },
+            feature5: {
+              title: "3D Thickness Computation",
+              description: "Analyze wall thickness throughout your entire model by firing reverse normals from every triangle to detect the nearest opposing face. A background worker processes the computation with real-time progress tracking and instant cancel support. Results display as a false-color heatmap keyed to min/max thickness values, with live readouts on hover and clickable pins to mark critical measurements."
+            },
+            feature6: {
+              title: "2D Section Thickness",
+              description: "Measure in-plane thickness on any active section cap by remeshing the slice into a uniform grid. The worker computes the shortest line segment passing through each triangle centroid and terminating on the section outline, displaying results as a color-coded overlay that mirrors the 3D thickness palette. Hover for instant thickness readouts at any point on the sectioned surface."
+            },
+            feature7: {
+              title: "Tight Fitting Bounding Box",
+              description: "Compute the minimum-volume oriented bounding box by sampling approximately 200 different orientations in a background worker. The algorithm estimates the smallest box that fully contains your geometry, displaying width/height/depth dimension callouts. Track progress in a modal with instant cancel capability, and toggle visibility without recomputation once the solve completes."
+            }
+          },
+          download: {
+            title: "Download",
+            description: "Choose the build that matches your platform. Each download includes native performance, high-resolution rendering, and automatic theme detection. <u>Note - This is alpha software and the binaries are not signed. Please follow platform specific instructions to bypass the security checks.</u>",
+            windows: "Windows",
+            windowsDesc: "Installer package · 64-bit",
+            macos: "macOS",
+            macosDesc: "Disk Image · Apple silicon",
+            linux: "Linux",
+            linuxDesc: "Deb · 64-bit Debian based distributions"
+          },
+          footer: {
+            text: "&middot; For help and support contact us at <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;"
+          }
+        },
+        es: {
+          pageTitle: "STLGauge · Visor de STL de Precisión",
+          hero: {
+            subtitle: "Inspección STL de alta fidelidad con herramientas de medición que no estorban. Explore sus modelos y tome dimensiones precisas en temas claros y oscuros.",
+            download: "Descargar"
+          },
+          comparison: {
+            ariaLabel: "Comparar modos claro y oscuro",
+            title: "Multiplataforma, ligero y moderno",
+            description: "STLGauge es una aplicación de escritorio construida con Electron y funciona en la plataforma de su elección. Tiene una interfaz de usuario moderna con soporte para modos claro y oscuro. Actualmente admite mediciones de punto, punto a punto, arista y cinta con soporte preciso de ajuste a vértice. También admite secciones a lo largo de los ejes estándar y medición de puntos en la sección. Además de esto, puede calcular el grosor del modelo en 3D y en secciones 2D. También se puede calcular la caja delimitadora ajustada aproximada del modelo.",
+            sliderAria: "Ajustar el equilibrio de vista previa clara y oscura"
+          },
+          carousel: {
+            ariaLabel: "Exhibición de características",
+            title: "Características en Acción",
+            description: "Explore las capacidades de STLGauge a través de estas capturas de pantalla que muestran la interfaz y las herramientas de la aplicación.",
+            previous: "Anterior",
+            next: "Siguiente"
+          },
+          features: {
+            ariaLabel: "Características detalladas",
+            title: "Características en Detalle",
+            description: "Descubra las poderosas herramientas y capacidades que hacen de STLGauge una aplicación esencial para la inspección y medición de STL.",
+            feature1: {
+              title: "Consejos Rápidos y Atajos",
+              description: "Acceda a atajos de teclado completos y gestos del mouse para una navegación eficiente. Gire con arrastre de clic izquierdo, haga zoom con la rueda de desplazamiento o arrastre de clic central, y desplace con clic derecho o arrastre de dos dedos. Salte a vistas estándar (Superior/Inferior/Izquierda/Derecha/Frontal/Trasera) con Cmd/Ctrl + 1-6, y alterne planos de sección con Cmd/Ctrl + X/Y/Z. El panel de consejos rápidos proporciona una referencia siempre accesible para dominar la interfaz."
+            },
+            feature2: {
+              title: "Herramientas de Medición y Marcado",
+              description: "Capture mediciones precisas con múltiples herramientas especializadas: selección de puntos para coordenadas XYZ (redondeadas a 0.001), distancia punto a punto con asas de desplazamiento arrastrables, medición de longitud de arista en modos de alambre, y cinta de arista para encadenar múltiples aristas conectadas. Agregue marcas de texto personalizadas ancladas a puntos de superficie, todo con ajuste de vértice opcional habilitado de forma predeterminada para máxima precisión."
+            },
+            feature3: {
+              title: "Secciones y Cortes Transversales",
+              description: "Corte a través de sus modelos con planos de sección alineados con ejes (X/Y/Z) controlados por un control deslizante intuitivo (0-100%). Las tapas y contornos de sección se regeneran automáticamente a medida que mueve el plano, con un interruptor de volteo para elegir qué lado mantener. El pie de página de sección activa proporciona controles en tiempo real, y puede guardar la malla recortada con triángulos de tapa incorporados para análisis adicional."
+            },
+            feature4: {
+              title: "Mediciones y Contornos Anclables",
+              description: "Bloquee mediciones importantes y contornos de sección en su lugar mientras explora diferentes vistas y cortes. Ancle lecturas de grosor, notas dimensionales y perfiles de sección transversal para mantener puntos de referencia durante su flujo de trabajo de inspección. Todos los elementos anclados persisten durante la navegación y se pueden administrar individualmente o borrar como grupo."
+            },
+            feature5: {
+              title: "Cálculo de Grosor 3D",
+              description: "Analice el grosor de pared en todo su modelo disparando normales inversas desde cada triángulo para detectar la cara opuesta más cercana. Un trabajador en segundo plano procesa el cálculo con seguimiento de progreso en tiempo real y soporte de cancelación instantánea. Los resultados se muestran como un mapa de calor de color falso ajustado a valores de grosor mín/máx, con lecturas en vivo al pasar el cursor y pines en los que se puede hacer clic para marcar mediciones críticas."
+            },
+            feature6: {
+              title: "Grosor de Sección 2D",
+              description: "Mida el grosor en el plano en cualquier tapa de sección activa remallando el corte en una cuadrícula uniforme. El trabajador calcula el segmento de línea más corto que pasa por cada centroide de triángulo y termina en el contorno de la sección, mostrando resultados como una superposición codificada por colores que refleja la paleta de grosor 3D. Pase el cursor para lecturas instantáneas de grosor en cualquier punto de la superficie seccionada."
+            },
+            feature7: {
+              title: "Caja Delimitadora Ajustada",
+              description: "Calcule la caja delimitadora orientada de volumen mínimo muestreando aproximadamente 200 orientaciones diferentes en un trabajador en segundo plano. El algoritmo estima la caja más pequeña que contiene completamente su geometría, mostrando notas de dimensión de ancho/alto/profundidad. Rastree el progreso en un modal con capacidad de cancelación instantánea, y alterne la visibilidad sin recalcular una vez que se complete la resolución."
+            }
+          },
+          download: {
+            title: "Descargar",
+            description: "Elija la compilación que coincida con su plataforma. Cada descarga incluye rendimiento nativo, renderizado de alta resolución y detección automática de temas. <u>Nota - Este es un software alfa y los binarios no están firmados. Siga las instrucciones específicas de la plataforma para omitir las comprobaciones de seguridad.</u>",
+            windows: "Windows",
+            windowsDesc: "Paquete instalador · 64 bits",
+            macos: "macOS",
+            macosDesc: "Imagen de disco · Apple silicon",
+            linux: "Linux",
+            linuxDesc: "Deb · Distribuciones basadas en Debian de 64 bits"
+          },
+          footer: {
+            text: "&middot; Para ayuda y soporte contáctenos en <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;"
+          }
+        },
+        de: {
+          pageTitle: "STLGauge · Präzisions-STL-Viewer",
+          hero: {
+            subtitle: "Hochauflösende STL-Inspektion mit Messwerkzeugen, die nicht im Weg stehen. Erkunden Sie Ihre Modelle und nehmen Sie präzise Maße sowohl in dunklen als auch hellen Themen.",
+            download: "Herunterladen"
+          },
+          comparison: {
+            ariaLabel: "Hellen und dunklen Modus vergleichen",
+            title: "Plattformübergreifend, leichtgewichtig & modern",
+            description: "STLGauge ist eine Desktop-App, die mit Electron entwickelt wurde und auf der Plattform Ihrer Wahl läuft. Es verfügt über eine moderne Benutzeroberfläche mit Unterstützung für helle und dunkle Modi. Derzeit unterstützt es Punkt-, Punkt-zu-Punkt-, Kanten- und Bandmessungen mit präziser Snap-to-Vertex-Unterstützung. Es unterstützt auch Schnitte entlang der Standardachsen und Punktmessungen am Schnitt. Darüber hinaus können Sie die Dicke des Modells in 3D und über 2D-Schnitte berechnen. Ein ungefährer eng anliegender Begrenzungsrahmen des Modells kann ebenfalls berechnet werden.",
+            sliderAria: "Helle und dunkle Vorschau anpassen"
+          },
+          carousel: {
+            ariaLabel: "Funktionspräsentation",
+            title: "Funktionen in Aktion",
+            description: "Erkunden Sie die Fähigkeiten von STLGauge anhand dieser Screenshots, die die Benutzeroberfläche und Werkzeuge der App zeigen.",
+            previous: "Zurück",
+            next: "Weiter"
+          },
+          features: {
+            ariaLabel: "Detaillierte Funktionen",
+            title: "Funktionen im Detail",
+            description: "Entdecken Sie die leistungsstarken Tools und Funktionen, die STLGauge zu einer unverzichtbaren Anwendung für STL-Inspektion und -Messung machen.",
+            feature1: {
+              title: "Schnelltipps & Tastenkombinationen",
+              description: "Greifen Sie auf umfassende Tastenkombinationen und Mausgesten für eine effiziente Navigation zu. Drehen mit Linksklick-Ziehen, Zoomen mit Scrollrad oder Mittelklick-Ziehen und Schwenken mit Rechtsklick oder Zwei-Finger-Ziehen. Springen Sie zu Standardansichten (Oben/Unten/Links/Rechts/Vorne/Hinten) mit Cmd/Strg + 1-6 und schalten Sie Schnittebenen mit Cmd/Strg + X/Y/Z um. Das Schnelltipps-Panel bietet eine stets zugängliche Referenz zum Beherrschen der Benutzeroberfläche."
+            },
+            feature2: {
+              title: "Mess- & Markierungswerkzeuge",
+              description: "Erfassen Sie präzise Messungen mit mehreren spezialisierten Werkzeugen: Punktauswahl für XYZ-Koordinaten (auf 0,001 gerundet), Punkt-zu-Punkt-Abstand mit ziehbaren Versatz-Griffen, Kantenlängenmessung in Drahtgittermodi und Kantenband zum Verketten mehrerer verbundener Kanten. Fügen Sie benutzerdefinierte Textmarkierungen hinzu, die an Oberflächenpunkten verankert sind, alle mit optionalem Vertex-Snapping, das standardmäßig für maximale Genauigkeit aktiviert ist."
+            },
+            feature3: {
+              title: "Schnitte & Querschnitte",
+              description: "Schneiden Sie durch Ihre Modelle mit achsenausgerichteten Schnittebenen (X/Y/Z), die durch einen intuitiven Schieberegler (0-100%) gesteuert werden. Schnittkappen und -konturen regenerieren sich automatisch, wenn Sie die Ebene bewegen, mit einem Umschalter, um zu wählen, welche Seite behalten werden soll. Die aktive Schnitt-Fußzeile bietet Echtzeitsteuerung, und Sie können das beschnittene Mesh mit eingebrannten Kappen-Dreiecken für weitere Analysen speichern."
+            },
+            feature4: {
+              title: "Anheftbare Messungen & Konturen",
+              description: "Sperren Sie wichtige Messungen und Schnittkonturen an Ort und Stelle, während Sie verschiedene Ansichten und Schnitte erkunden. Heften Sie Dickenmessungen, Bemaßungsanmerkungen und Querschnittsprofile an, um Referenzpunkte während Ihres Inspektions-Workflows beizubehalten. Alle angehefteten Elemente bleiben während der Navigation bestehen und können einzeln verwaltet oder als Gruppe gelöscht werden."
+            },
+            feature5: {
+              title: "3D-Dickenberechnung",
+              description: "Analysieren Sie die Wanddicke in Ihrem gesamten Modell, indem Sie umgekehrte Normalen von jedem Dreieck abfeuern, um die nächste gegenüberliegende Fläche zu erkennen. Ein Hintergrund-Worker verarbeitet die Berechnung mit Echtzeit-Fortschrittsverfolgung und sofortigem Abbruch-Support. Die Ergebnisse werden als Falschfarben-Heatmap angezeigt, die auf Min/Max-Dickenwerte abgestimmt ist, mit Live-Anzeigen beim Überfahren und anklickbaren Pins zum Markieren kritischer Messungen."
+            },
+            feature6: {
+              title: "2D-Schnittdicke",
+              description: "Messen Sie die In-Plane-Dicke an jeder aktiven Schnittkappe, indem Sie den Schnitt in ein gleichmäßiges Gitter neu vermaschen. Der Worker berechnet das kürzeste Liniensegment, das durch jeden Dreiecksschwerpunkt verläuft und an der Schnittkontur endet, und zeigt Ergebnisse als farbcodiertes Overlay an, das die 3D-Dickenpalette widerspiegelt. Fahren Sie mit der Maus über jeden Punkt der geschnittenen Oberfläche für sofortige Dickenanzeigen."
+            },
+            feature7: {
+              title: "Eng anliegender Begrenzungsrahmen",
+              description: "Berechnen Sie den volumenminimalen orientierten Begrenzungsrahmen, indem Sie ungefähr 200 verschiedene Orientierungen in einem Hintergrund-Worker abtasten. Der Algorithmus schätzt den kleinsten Rahmen, der Ihre Geometrie vollständig enthält, und zeigt Breiten-/Höhen-/Tiefenbemaßungen an. Verfolgen Sie den Fortschritt in einem Modal mit sofortiger Abbruchmöglichkeit und schalten Sie die Sichtbarkeit ohne Neuberechnung um, sobald die Lösung abgeschlossen ist."
+            }
+          },
+          download: {
+            title: "Herunterladen",
+            description: "Wählen Sie den Build, der zu Ihrer Plattform passt. Jeder Download enthält native Leistung, hochauflösendes Rendering und automatische Themenerkennung. <u>Hinweis - Dies ist Alpha-Software und die Binärdateien sind nicht signiert. Bitte befolgen Sie plattformspezifische Anweisungen, um die Sicherheitsüberprüfungen zu umgehen.</u>",
+            windows: "Windows",
+            windowsDesc: "Installationspaket · 64-Bit",
+            macos: "macOS",
+            macosDesc: "Disk-Image · Apple silicon",
+            linux: "Linux",
+            linuxDesc: "Deb · 64-Bit Debian-basierte Distributionen"
+          },
+          footer: {
+            text: "&middot; Für Hilfe und Support kontaktieren Sie uns unter <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;"
+          }
+        },
+        fr: {
+          pageTitle: "STLGauge · Visualiseur STL de Précision",
+          hero: {
+            subtitle: "Inspection STL haute fidélité avec des outils de mesure qui ne gênent pas. Explorez vos modèles et prenez des dimensions précises dans les thèmes clairs et sombres.",
+            download: "Télécharger"
+          },
+          comparison: {
+            ariaLabel: "Comparer les modes clair et sombre",
+            title: "Multiplateforme, léger et moderne",
+            description: "STLGauge est une application de bureau construite avec Electron et fonctionne sur la plateforme de votre choix. Elle dispose d'une interface utilisateur moderne avec prise en charge des modes clair et sombre. Actuellement, elle prend en charge les mesures de point, point à point, arête et ruban avec une prise en charge précise de l'alignement sur les sommets. Elle prend également en charge le sectionnement le long des axes standard et la mesure de points sur la section. En plus de cela, vous pouvez calculer l'épaisseur du modèle en 3D et sur des sections 2D. Une boîte englobante ajustée approximative du modèle peut également être calculée.",
+            sliderAria: "Ajuster l'équilibre de l'aperçu clair et sombre"
+          },
+          carousel: {
+            ariaLabel: "Présentation des fonctionnalités",
+            title: "Fonctionnalités en Action",
+            description: "Explorez les capacités de STLGauge à travers ces captures d'écran présentant l'interface et les outils de l'application.",
+            previous: "Précédent",
+            next: "Suivant"
+          },
+          features: {
+            ariaLabel: "Fonctionnalités détaillées",
+            title: "Fonctionnalités en Détail",
+            description: "Découvrez les outils et capacités puissants qui font de STLGauge une application essentielle pour l'inspection et la mesure STL.",
+            feature1: {
+              title: "Astuces Rapides & Raccourcis",
+              description: "Accédez à des raccourcis clavier complets et à des gestes de souris pour une navigation efficace. Faites pivoter avec un glissement de clic gauche, zoomez avec la molette de défilement ou un glissement de clic central, et effectuez un panoramique avec un clic droit ou un glissement à deux doigts. Passez aux vues standard (Haut/Bas/Gauche/Droite/Avant/Arrière) avec Cmd/Ctrl + 1-6, et basculez les plans de coupe avec Cmd/Ctrl + X/Y/Z. Le panneau d'astuces rapides fournit une référence toujours accessible pour maîtriser l'interface."
+            },
+            feature2: {
+              title: "Outils de Mesure & Annotation",
+              description: "Capturez des mesures précises avec plusieurs outils spécialisés : sélection de points pour les coordonnées XYZ (arrondies à 0,001), distance point à point avec poignées de décalage déplaçables, mesure de longueur d'arête en modes filaire, et ruban d'arête pour enchaîner plusieurs arêtes connectées. Ajoutez des annotations de texte personnalisées ancrées aux points de surface, le tout avec un alignement de sommet optionnel activé par défaut pour une précision maximale."
+            },
+            feature3: {
+              title: "Sectionnement & Coupes Transversales",
+              description: "Découpez vos modèles avec des plans de coupe alignés sur les axes (X/Y/Z) contrôlés par un curseur intuitif (0-100%). Les bouchons et contours de section se régénèrent automatiquement lorsque vous déplacez le plan, avec un interrupteur pour choisir quel côté conserver. Le pied de page de section active fournit des contrôles en temps réel, et vous pouvez enregistrer le maillage découpé avec des triangles de bouchon intégrés pour une analyse ultérieure."
+            },
+            feature4: {
+              title: "Mesures & Contours Épinglables",
+              description: "Verrouillez les mesures importantes et les contours de section en place pendant que vous explorez différentes vues et coupes. Épinglez les lectures d'épaisseur, les cotes dimensionnelles et les profils de section transversale pour maintenir des points de référence tout au long de votre flux de travail d'inspection. Tous les éléments épinglés persistent pendant la navigation et peuvent être gérés individuellement ou effacés en groupe."
+            },
+            feature5: {
+              title: "Calcul d'Épaisseur 3D",
+              description: "Analysez l'épaisseur de paroi dans tout votre modèle en tirant des normales inversées depuis chaque triangle pour détecter la face opposée la plus proche. Un processus en arrière-plan traite le calcul avec suivi de progression en temps réel et prise en charge de l'annulation instantanée. Les résultats s'affichent sous forme de carte thermique en fausses couleurs calée sur les valeurs d'épaisseur min/max, avec des lectures en direct au survol et des épingles cliquables pour marquer les mesures critiques."
+            },
+            feature6: {
+              title: "Épaisseur de Section 2D",
+              description: "Mesurez l'épaisseur dans le plan sur n'importe quel bouchon de section actif en remaillant la tranche en une grille uniforme. Le processus calcule le segment de ligne le plus court passant par chaque centroïde de triangle et se terminant sur le contour de la section, affichant les résultats sous forme de superposition codée par couleur qui reflète la palette d'épaisseur 3D. Survolez pour des lectures d'épaisseur instantanées à n'importe quel point de la surface sectionnée."
+            },
+            feature7: {
+              title: "Boîte Englobante Ajustée",
+              description: "Calculez la boîte englobante orientée à volume minimal en échantillonnant environ 200 orientations différentes dans un processus en arrière-plan. L'algorithme estime la plus petite boîte qui contient entièrement votre géométrie, affichant des cotes de largeur/hauteur/profondeur. Suivez la progression dans une fenêtre modale avec capacité d'annulation instantanée, et basculez la visibilité sans recalcul une fois la résolution terminée."
+            }
+          },
+          download: {
+            title: "Télécharger",
+            description: "Choisissez la version qui correspond à votre plateforme. Chaque téléchargement inclut des performances natives, un rendu haute résolution et une détection automatique du thème. <u>Note - Il s'agit d'un logiciel alpha et les binaires ne sont pas signés. Veuillez suivre les instructions spécifiques à la plateforme pour contourner les vérifications de sécurité.</u>",
+            windows: "Windows",
+            windowsDesc: "Package d'installation · 64 bits",
+            macos: "macOS",
+            macosDesc: "Image disque · Apple silicon",
+            linux: "Linux",
+            linuxDesc: "Deb · Distributions basées sur Debian 64 bits"
+          },
+          footer: {
+            text: "&middot; Pour l'aide et le support, contactez-nous à <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;"
+          }
+        },
+        ja: {
+          pageTitle: "STLGauge · 精密STLビューア",
+          hero: {
+            subtitle: "邪魔にならない測定ツールを備えた高精度STL検査。ダークテーマとライトテーマの両方でモデルを探索し、正確な寸法を測定できます。",
+            download: "ダウンロード"
+          },
+          comparison: {
+            ariaLabel: "ライトモードとダークモードを比較",
+            title: "クロスプラットフォーム、軽量でモダン",
+            description: "STLGaugeはElectronで構築されたデスクトップアプリで、お好みのプラットフォームで動作します。ライトモードとダークモードに対応したモダンなユーザーインターフェースを備えています。現在、正確な頂点スナップをサポートするポイント、ポイント間、エッジ、テープ測定をサポートしています。また、標準軸に沿った断面と断面上のポイント測定もサポートしています。さらに、3Dおよび2D断面でモデルの厚さを計算できます。モデルの近似的な密着境界ボックスも計算できます。",
+            sliderAria: "ライトとダークのプレビューバランスを調整"
+          },
+          carousel: {
+            ariaLabel: "機能紹介",
+            title: "機能の実演",
+            description: "アプリのインターフェースとツールを紹介するこれらのスクリーンショットを通じて、STLGaugeの機能を探索してください。",
+            previous: "前へ",
+            next: "次へ"
+          },
+          features: {
+            ariaLabel: "詳細な機能",
+            title: "機能の詳細",
+            description: "STLGaugeをSTL検査と測定に不可欠なアプリケーションにする強力なツールと機能をご覧ください。",
+            feature1: {
+              title: "クイックヒントとショートカット",
+              description: "効率的なナビゲーションのための包括的なキーボードショートカットとマウスジェスチャーにアクセスできます。左クリックドラッグで回転、スクロールホイールまたは中クリックドラッグでズーム、右クリックまたは2本指ドラッグでパン。Cmd/Ctrl + 1-6で標準ビュー（上/下/左/右/前/後）にジャンプし、Cmd/Ctrl + X/Y/Zで断面平面を切り替えます。クイックヒントパネルは、インターフェースをマスターするための常にアクセス可能なリファレンスを提供します。"
+            },
+            feature2: {
+              title: "測定とマークアップツール",
+              description: "複数の専門ツールで正確な測定を行えます：XYZ座標のポイント選択（0.001に丸め）、ドラッグ可能なオフセットハンドルを備えたポイント間距離、ワイヤーフレームモードでのエッジ長測定、複数の接続されたエッジをチェーンするエッジテープ。表面ポイントに固定されたカスタムテキストマークアップを追加でき、すべて最大精度のためにデフォルトで有効になっているオプションの頂点スナップ付きです。"
+            },
+            feature3: {
+              title: "断面と横断面",
+              description: "直感的なスライダー（0-100%）で制御される軸整列断面平面（X/Y/Z）でモデルをスライスします。平面を移動すると断面キャップとアウトラインが自動的に再生成され、保持する側を選択するフリップスイッチがあります。アクティブな断面フッターはリアルタイム制御を提供し、焼き付けられたキャップ三角形を含むクリップされたメッシュを保存してさらに分析できます。"
+            },
+            feature4: {
+              title: "ピン留め可能な測定とアウトライン",
+              description: "さまざまなビューとスライスを探索する際に、重要な測定値と断面アウトラインをその場に固定します。厚さの読み取り値、寸法の注釈、横断面プロファイルをピン留めして、検査ワークフロー全体で参照ポイントを維持します。すべてのピン留めされた要素はナビゲーション中も持続し、個別に管理するか、グループとしてクリアできます。"
+            },
+            feature5: {
+              title: "3D厚さ計算",
+              description: "すべての三角形から逆法線を発射して最も近い対向面を検出することにより、モデル全体の壁の厚さを分析します。バックグラウンドワーカーがリアルタイムの進行状況追跡と即座のキャンセルサポートで計算を処理します。結果は最小/最大厚さ値に合わせた偽色ヒートマップとして表示され、ホバー時のライブ読み取り値と重要な測定値をマークするためのクリック可能なピンがあります。"
+            },
+            feature6: {
+              title: "2D断面厚さ",
+              description: "スライスを均一なグリッドに再メッシュ化することにより、任意のアクティブな断面キャップで面内厚さを測定します。ワーカーは各三角形の重心を通過し、断面アウトラインで終了する最短の線分を計算し、3D厚さパレットを反映するカラーコードされたオーバーレイとして結果を表示します。断面化された表面の任意のポイントで即座の厚さ読み取り値を得るためにホバーします。"
+            },
+            feature7: {
+              title: "密着境界ボックス",
+              description: "バックグラウンドワーカーで約200の異なる方向をサンプリングすることにより、最小体積の向き境界ボックスを計算します。アルゴリズムはジオメトリを完全に含む最小のボックスを推定し、幅/高さ/深さの寸法注釈を表示します。即座のキャンセル機能を備えたモーダルで進行状況を追跡し、解決が完了したら再計算なしで可視性を切り替えます。"
+            }
+          },
+          download: {
+            title: "ダウンロード",
+            description: "プラットフォームに合ったビルドを選択してください。各ダウンロードには、ネイティブパフォーマンス、高解像度レンダリング、自動テーマ検出が含まれています。<u>注意 - これはアルファソフトウェアであり、バイナリは署名されていません。セキュリティチェックをバイパスするために、プラットフォーム固有の指示に従ってください。</u>",
+            windows: "Windows",
+            windowsDesc: "インストーラーパッケージ · 64ビット",
+            macos: "macOS",
+            macosDesc: "ディスクイメージ · Apple silicon",
+            linux: "Linux",
+            linuxDesc: "Deb · 64ビットDebianベースのディストリビューション"
+          },
+          footer: {
+            text: "&middot; ヘルプとサポートについては <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> までお問い合わせください &middot;"
+          }
+        },
+        ko: {
+          pageTitle: "STLGauge · 정밀 STL 뷰어",
+          hero: {
+            subtitle: "방해가 되지 않는 측정 도구를 갖춘 고품질 STL 검사. 어두운 테마와 밝은 테마 모두에서 모델을 탐색하고 정확한 치수를 측정하세요.",
+            download: "다운로드"
+          },
+          comparison: {
+            ariaLabel: "밝은 모드와 어두운 모드 비교",
+            title: "크로스 플랫폼, 경량 및 현대적",
+            description: "STLGauge는 Electron으로 구축된 데스크톱 앱으로 선택한 플랫폼에서 실행됩니다. 밝은 모드와 어두운 모드를 지원하는 현대적인 사용자 인터페이스를 갖추고 있습니다. 현재 정확한 정점 스냅을 지원하는 포인트, 포인트 간, 에지 및 테이프 측정을 지원합니다. 또한 표준 축을 따라 단면화와 단면의 포인트 측정을 지원합니다. 이 외에도 3D 및 2D 단면에서 모델의 두께를 계산할 수 있습니다. 모델의 근사 밀착 경계 상자도 계산할 수 있습니다.",
+            sliderAria: "밝고 어두운 미리보기 균형 조정"
+          },
+          carousel: {
+            ariaLabel: "기능 쇼케이스",
+            title: "작동 중인 기능",
+            description: "앱의 인터페이스와 도구를 보여주는 이러한 스크린샷을 통해 STLGauge의 기능을 탐색하세요.",
+            previous: "이전",
+            next: "다음"
+          },
+          features: {
+            ariaLabel: "자세한 기능",
+            title: "기능 상세 정보",
+            description: "STLGauge를 STL 검사 및 측정에 필수적인 애플리케이션으로 만드는 강력한 도구와 기능을 알아보세요.",
+            feature1: {
+              title: "빠른 팁 및 단축키",
+              description: "효율적인 탐색을 위한 포괄적인 키보드 단축키와 마우스 제스처에 액세스하세요. 왼쪽 클릭 드래그로 회전, 스크롤 휠 또는 가운데 클릭 드래그로 확대/축소, 오른쪽 클릭 또는 두 손가락 드래그로 이동합니다. Cmd/Ctrl + 1-6으로 표준 뷰(위/아래/왼쪽/오른쪽/앞/뒤)로 이동하고 Cmd/Ctrl + X/Y/Z로 단면 평면을 전환합니다. 빠른 팁 패널은 인터페이스를 마스터하기 위한 항상 액세스 가능한 참조를 제공합니다."
+            },
+            feature2: {
+              title: "측정 및 마크업 도구",
+              description: "여러 전문 도구로 정확한 측정을 캡처하세요: XYZ 좌표용 포인트 선택(0.001로 반올림), 드래그 가능한 오프셋 핸들이 있는 포인트 간 거리, 와이어프레임 모드의 에지 길이 측정, 여러 연결된 에지를 체인하는 에지 테이프. 표면 포인트에 고정된 사용자 정의 텍스트 마크업을 추가할 수 있으며, 최대 정확도를 위해 기본적으로 활성화된 선택적 정점 스냅이 모두 포함되어 있습니다."
+            },
+            feature3: {
+              title: "단면 및 횡단면",
+              description: "직관적인 슬라이더(0-100%)로 제어되는 축 정렬 단면 평면(X/Y/Z)으로 모델을 슬라이스합니다. 평면을 이동할 때 단면 캡과 윤곽선이 자동으로 재생성되며, 유지할 면을 선택하는 플립 스위치가 있습니다. 활성 단면 바닥글은 실시간 제어를 제공하며, 구운 캡 삼각형이 포함된 클리핑된 메시를 저장하여 추가 분석을 수행할 수 있습니다."
+            },
+            feature4: {
+              title: "고정 가능한 측정 및 윤곽선",
+              description: "다양한 뷰와 슬라이스를 탐색하는 동안 중요한 측정값과 단면 윤곽선을 제자리에 고정합니다. 두께 판독값, 치수 표기 및 횡단면 프로파일을 고정하여 검사 워크플로 전체에서 참조 포인트를 유지합니다. 모든 고정된 요소는 탐색 중에도 지속되며 개별적으로 관리하거나 그룹으로 지울 수 있습니다."
+            },
+            feature5: {
+              title: "3D 두께 계산",
+              description: "모든 삼각형에서 역방향 법선을 발사하여 가장 가까운 대향면을 감지함으로써 전체 모델의 벽 두께를 분석합니다. 백그라운드 워커가 실시간 진행 상황 추적 및 즉각적인 취소 지원으로 계산을 처리합니다. 결과는 최소/최대 두께 값에 맞춘 거짓 색상 히트맵으로 표시되며, 마우스를 올릴 때 라이브 판독값과 중요한 측정값을 표시하기 위한 클릭 가능한 핀이 있습니다."
+            },
+            feature6: {
+              title: "2D 단면 두께",
+              description: "슬라이스를 균일한 그리드로 재메싱하여 활성 단면 캡의 평면 내 두께를 측정합니다. 워커는 각 삼각형 중심을 통과하고 단면 윤곽선에서 종료되는 가장 짧은 선분을 계산하여 3D 두께 팔레트를 반영하는 색상 코드 오버레이로 결과를 표시합니다. 단면화된 표면의 모든 지점에서 즉각적인 두께 판독값을 보려면 마우스를 올리세요."
+            },
+            feature7: {
+              title: "밀착 경계 상자",
+              description: "백그라운드 워커에서 약 200개의 다른 방향을 샘플링하여 최소 부피 방향 경계 상자를 계산합니다. 알고리즘은 기하학을 완전히 포함하는 가장 작은 상자를 추정하고 너비/높이/깊이 치수 표기를 표시합니다. 즉각적인 취소 기능이 있는 모달에서 진행 상황을 추적하고 해결이 완료되면 재계산 없이 가시성을 전환합니다."
+            }
+          },
+          download: {
+            title: "다운로드",
+            description: "플랫폼에 맞는 빌드를 선택하세요. 각 다운로드에는 네이티브 성능, 고해상도 렌더링 및 자동 테마 감지가 포함되어 있습니다. <u>참고 - 이것은 알파 소프트웨어이며 바이너리가 서명되지 않았습니다. 보안 검사를 우회하려면 플랫폼별 지침을 따르세요.</u>",
+            windows: "Windows",
+            windowsDesc: "설치 프로그램 패키지 · 64비트",
+            macos: "macOS",
+            macosDesc: "디스크 이미지 · Apple silicon",
+            linux: "Linux",
+            linuxDesc: "Deb · 64비트 데비안 기반 배포판"
+          },
+          footer: {
+            text: "&middot; 도움말 및 지원은 <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a>으로 문의하세요 &middot;"
+          }
+        },
+        zh: {
+          pageTitle: "STLGauge · 精密STL查看器",
+          hero: {
+            subtitle: "配备不碍事的测量工具的高保真STL检查。在深色和浅色主题中探索您的模型并进行精确测量。",
+            download: "下载"
+          },
+          comparison: {
+            ariaLabel: "比较浅色和深色模式",
+            title: "跨平台、轻量级且现代",
+            description: "STLGauge是用Electron构建的桌面应用程序，可在您选择的平台上运行。它具有现代化的用户界面，支持浅色和深色模式。目前支持点、点对点、边缘和胶带测量，并具有精确的顶点吸附支持。它还支持沿标准轴的切面和切面上的点测量。除此之外，您可以计算3D模型和2D切面的厚度。还可以计算模型的近似紧密拟合边界框。",
+            sliderAria: "调整浅色和深色预览平衡"
+          },
+          carousel: {
+            ariaLabel: "功能展示",
+            title: "功能演示",
+            description: "通过这些展示应用程序界面和工具的屏幕截图探索STLGauge的功能。",
+            previous: "上一个",
+            next: "下一个"
+          },
+          features: {
+            ariaLabel: "详细功能",
+            title: "功能详情",
+            description: "了解使STLGauge成为STL检查和测量必备应用程序的强大工具和功能。",
+            feature1: {
+              title: "快速提示和快捷键",
+              description: "访问全面的键盘快捷键和鼠标手势以实现高效导航。左键拖动旋转，滚轮或中键拖动缩放，右键或双指拖动平移。使用Cmd/Ctrl + 1-6跳转到标准视图（顶部/底部/左侧/右侧/前面/后面），使用Cmd/Ctrl + X/Y/Z切换切面平面。快速提示面板提供了始终可访问的界面掌握参考。"
+            },
+            feature2: {
+              title: "测量和标记工具",
+              description: "使用多种专业工具捕获精确测量：用于XYZ坐标的点选择（四舍五入到0.001），带可拖动偏移手柄的点对点距离，线框模式下的边缘长度测量，以及用于链接多个连接边缘的边缘胶带。添加锚定到表面点的自定义文本标记，所有这些都默认启用可选的顶点吸附以实现最大精度。"
+            },
+            feature3: {
+              title: "切面和横截面",
+              description: "使用由直观滑块（0-100%）控制的轴对齐切面平面（X/Y/Z）切片您的模型。当您移动平面时，切面盖和轮廓会自动重新生成，并带有翻转开关来选择要保留的一侧。活动切面页脚提供实时控制，您可以保存带有烘焙盖三角形的裁剪网格以进行进一步分析。"
+            },
+            feature4: {
+              title: "可固定的测量和轮廓",
+              description: "在探索不同视图和切片时，将重要的测量值和切面轮廓锁定到位。固定厚度读数、尺寸标注和横截面轮廓，以在整个检查工作流程中维护参考点。所有固定的元素在导航期间保持不变，可以单独管理或作为组清除。"
+            },
+            feature5: {
+              title: "3D厚度计算",
+              description: "通过从每个三角形发射反向法线来检测最近的对面，分析整个模型的壁厚。后台工作进程通过实时进度跟踪和即时取消支持处理计算。结果显示为适应最小/最大厚度值的伪彩色热图，具有悬停时的实时读数和可点击的图钉以标记关键测量。"
+            },
+            feature6: {
+              title: "2D切面厚度",
+              description: "通过将切片重新网格化为均匀网格来测量任何活动切面盖上的平面内厚度。工作进程计算通过每个三角形质心并在切面轮廓处终止的最短线段，将结果显示为反映3D厚度调色板的彩色编码覆盖。悬停以获取切面表面上任意点的即时厚度读数。"
+            },
+            feature7: {
+              title: "紧密拟合边界框",
+              description: "通过在后台工作进程中采样约200个不同的方向来计算最小体积的定向边界框。该算法估计完全包含您的几何图形的最小框，显示宽度/高度/深度尺寸标注。在具有即时取消功能的模态中跟踪进度，并在求解完成后切换可见性而无需重新计算。"
+            }
+          },
+          download: {
+            title: "下载",
+            description: "选择与您的平台匹配的构建。每个下载都包括本机性能、高分辨率渲染和自动主题检测。<u>注意 - 这是alpha软件，二进制文件未签名。请遵循特定平台的说明以绕过安全检查。</u>",
+            windows: "Windows",
+            windowsDesc: "安装程序包 · 64位",
+            macos: "macOS",
+            macosDesc: "磁盘映像 · Apple silicon",
+            linux: "Linux",
+            linuxDesc: "Deb · 64位基于Debian的发行版"
+          },
+          footer: {
+            text: "&middot; 如需帮助和支持，请通过 <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> 联系我们 &middot;"
+          }
+        }
+      };
+
+      // Function to detect browser language and map to supported languages
+      const detectBrowserLanguage = () => {
+        // Get browser language (e.g., "en-US", "ja", "zh-CN")
+        const browserLang = navigator.language || navigator.userLanguage || 'en';
+        const langCode = browserLang.toLowerCase();
+
+        // Map browser language codes to our supported languages
+        const languageMap = {
+          'en': 'en',
+          'es': 'es',
+          'de': 'de',
+          'fr': 'fr',
+          'ja': 'ja',
+          'ko': 'ko',
+          'zh': 'zh',
+          'zh-cn': 'zh',
+          'zh-hans': 'zh',
+          'zh-tw': 'zh',
+          'zh-hk': 'zh',
+          'zh-hant': 'zh'
+        };
+
+        // Check exact match first
+        if (languageMap[langCode]) {
+          return languageMap[langCode];
+        }
+
+        // Check language prefix (e.g., "en" from "en-US")
+        const langPrefix = langCode.split('-')[0];
+        if (languageMap[langPrefix]) {
+          return languageMap[langPrefix];
+        }
+
+        // Default to English if no match
+        return 'en';
+      };
+
+      // Initialize language: use saved preference or detect browser language
+      let currentLang = localStorage.getItem('language') || detectBrowserLanguage();
+
+      // Function to get nested translation value
+      const getTranslation = (lang, key) => {
+        const keys = key.split('.');
+        let value = translations[lang];
+        for (const k of keys) {
+          value = value[k];
+          if (value === undefined) return null;
+        }
+        return value;
+      };
+
+      // Function to update all translations on the page
+      const updateTranslations = (lang) => {
+        currentLang = lang;
+        localStorage.setItem('language', lang);
+        document.documentElement.setAttribute('lang', lang);
+        document.title = translations[lang].pageTitle;
+
+        // Update font-family based on language
+        const fontMap = {
+          'ja': '"Noto Sans JP", "Fira Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+          'ko': '"Noto Sans KR", "Fira Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+          'zh': '"Noto Sans SC", "Fira Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
+        };
+
+        const defaultFont = '"Fira Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+        document.body.style.fontFamily = fontMap[lang] || defaultFont;
+
+        // Update all elements with data-i18n attribute
+        document.querySelectorAll('[data-i18n]').forEach((element) => {
+          const key = element.getAttribute('data-i18n');
+          const translation = getTranslation(lang, key);
+          if (translation) {
+            element.innerHTML = translation;
+          }
+        });
+
+        // Update all elements with data-i18n-aria attribute
+        document.querySelectorAll('[data-i18n-aria]').forEach((element) => {
+          const key = element.getAttribute('data-i18n-aria');
+          const translation = getTranslation(lang, key);
+          if (translation) {
+            element.setAttribute('aria-label', translation);
+          }
+        });
+
+        // Update language selector dropdown
+        const langSelect = document.querySelector('.lang-select');
+        if (langSelect) {
+          langSelect.value = lang;
+        }
+      };
+
+      // Set up language switcher event listener
+      const langSelect = document.querySelector('.lang-select');
+      if (langSelect) {
+        langSelect.addEventListener('change', (event) => {
+          const lang = event.target.value;
+          updateTranslations(lang);
+        });
+      }
+
+      // Initialize with saved or default language
+      updateTranslations(currentLang);
+
+      // Existing slider code
       const slider = document.querySelector("[data-slider]");
       if (slider) {
         const overlay = slider.querySelector("[data-overlay]");
