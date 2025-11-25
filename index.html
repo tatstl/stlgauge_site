@@ -51,6 +51,14 @@
     }
 
     @font-face {
+      font-family: "Noto Sans Arabic";
+      src: url("fonts/NotoSansArabic-VariableFont_wdth,wght.ttf") format("truetype");
+      font-weight: 400 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
       font-family: "Noto Sans JP";
       src: url("fonts/NotoSansJP-VariableFont_wght.ttf") format("truetype");
       font-weight: 100 900;
@@ -700,6 +708,8 @@
       <option value="es">Español</option>
       <option value="de">Deutsch</option>
       <option value="fr">Français</option>
+      <option value="ar">العربية</option>
+      <option value="ru">Русский</option>
       <option value="ja">日本語</option>
       <option value="ko">한국어</option>
       <option value="zh">中文</option>
@@ -966,7 +976,7 @@
           comparison: {
             ariaLabel: "Comparar modos claro y oscuro",
             title: "Multiplataforma, ligero y moderno",
-            description: "STLGauge es una aplicación de escritorio construida con Electron y funciona en la plataforma de su elección. Tiene una interfaz de usuario moderna con soporte para modos claro y oscuro. Actualmente admite mediciones de punto, punto a punto, arista y cinta con soporte preciso de ajuste a vértice. También admite secciones a lo largo de los ejes estándar y medición de puntos en la sección. Además de esto, puede calcular el grosor del modelo en 3D y en secciones 2D. También se puede calcular la caja delimitadora ajustada aproximada del modelo.",
+            description: "STLGauge es una aplicación de escritorio construida con Electron y funciona en la plataforma de su elección. Tiene una interfaz de usuario moderna con soporte para modos claro y oscuro. Actualmente admite mediciones de punto, punto a punto, arista y cinta de arista con soporte preciso de ajuste a vértice. También admite secciones a lo largo de los ejes estándar y medición de puntos en la sección. Además de esto, puede calcular el grosor del modelo en 3D y en secciones 2D. También se puede calcular la caja delimitadora ajustada aproximada del modelo.",
             sliderAria: "Ajustar el equilibrio de vista previa clara y oscura"
           },
           carousel: {
@@ -986,7 +996,7 @@
             },
             feature2: {
               title: "Herramientas de Medición y Marcado",
-              description: "Capture mediciones precisas con múltiples herramientas especializadas: selección de puntos para coordenadas XYZ (redondeadas a 0.001), distancia punto a punto con asas de desplazamiento arrastrables, medición de longitud de arista en modos de alambre, y cinta de arista para encadenar múltiples aristas conectadas. Agregue marcas de texto personalizadas ancladas a puntos de superficie, todo con ajuste de vértice opcional habilitado de forma predeterminada para máxima precisión."
+              description: "Capture mediciones precisas con múltiples herramientas especializadas: selección de puntos para coordenadas XYZ (redondeadas a 0.001), distancia punto a punto con asas de desplazamiento arrastrables, medición de longitud de arista en modos de malla alámbrica, y cinta de arista para encadenar múltiples aristas conectadas. Agregue marcas de texto personalizadas ancladas a puntos de superficie, todo con ajuste de vértice opcional habilitado de forma predeterminada para máxima precisión."
             },
             feature3: {
               title: "Secciones y Cortes Transversales",
@@ -1026,13 +1036,13 @@
         de: {
           pageTitle: "STLGauge · Präzisions-STL-Viewer",
           hero: {
-            subtitle: "Hochauflösende STL-Inspektion mit Messwerkzeugen, die nicht im Weg stehen. Erkunden Sie Ihre Modelle und nehmen Sie präzise Maße sowohl in dunklen als auch hellen Themen.",
+            subtitle: "Hochauflösende STL-Inspektion mit Messwerkzeugen, die nicht im Weg stehen. Erkunden Sie Ihre Modelle und nehmen Sie präzise Maße sowohl im dunklen als auch im hellen Modus.",
             download: "Herunterladen"
           },
           comparison: {
             ariaLabel: "Hellen und dunklen Modus vergleichen",
             title: "Plattformübergreifend, leichtgewichtig & modern",
-            description: "STLGauge ist eine Desktop-App, die mit Electron entwickelt wurde und auf der Plattform Ihrer Wahl läuft. Es verfügt über eine moderne Benutzeroberfläche mit Unterstützung für helle und dunkle Modi. Derzeit unterstützt es Punkt-, Punkt-zu-Punkt-, Kanten- und Bandmessungen mit präziser Snap-to-Vertex-Unterstützung. Es unterstützt auch Schnitte entlang der Standardachsen und Punktmessungen am Schnitt. Darüber hinaus können Sie die Dicke des Modells in 3D und über 2D-Schnitte berechnen. Ein ungefährer eng anliegender Begrenzungsrahmen des Modells kann ebenfalls berechnet werden.",
+            description: "STLGauge ist eine Desktop-App, die mit Electron entwickelt wurde und auf der Plattform Ihrer Wahl läuft. Es verfügt über eine moderne Benutzeroberfläche mit Unterstützung für helle und dunkle Modi. Derzeit unterstützt es Punkt-, Punkt-zu-Punkt-, Kanten- und Tape-Messungen mit präziser Snap-to-Vertex-Unterstützung. Es unterstützt auch Schnitte entlang der Standardachsen und Punktmessungen am Schnitt. Darüber hinaus können Sie die Dicke des Modells in 3D und über 2D-Schnitte berechnen. Ein ungefährer eng anliegender Begrenzungsrahmen des Modells kann ebenfalls berechnet werden.",
             sliderAria: "Helle und dunkle Vorschau anpassen"
           },
           carousel: {
@@ -1052,7 +1062,7 @@
             },
             feature2: {
               title: "Mess- & Markierungswerkzeuge",
-              description: "Erfassen Sie präzise Messungen mit mehreren spezialisierten Werkzeugen: Punktauswahl für XYZ-Koordinaten (auf 0,001 gerundet), Punkt-zu-Punkt-Abstand mit ziehbaren Versatz-Griffen, Kantenlängenmessung in Drahtgittermodi und Kantenband zum Verketten mehrerer verbundener Kanten. Fügen Sie benutzerdefinierte Textmarkierungen hinzu, die an Oberflächenpunkten verankert sind, alle mit optionalem Vertex-Snapping, das standardmäßig für maximale Genauigkeit aktiviert ist."
+              description: "Erfassen Sie präzise Messungen mit mehreren spezialisierten Werkzeugen: Punktauswahl für XYZ-Koordinaten (auf 0,001 gerundet), Punkt-zu-Punkt-Abstand mit ziehbaren Versatz-Griffen, Kantenlängenmessung in Drahtgittermodi und Kanten-Tape zum Verketten mehrerer verbundener Kanten. Fügen Sie benutzerdefinierte Textmarkierungen hinzu, die an Oberflächenpunkten verankert sind, alle mit optionalem Vertex-Snapping, das standardmäßig für maximale Genauigkeit aktiviert ist."
             },
             feature3: {
               title: "Schnitte & Querschnitte",
@@ -1296,7 +1306,7 @@
           comparison: {
             ariaLabel: "比较浅色和深色模式",
             title: "跨平台、轻量级且现代",
-            description: "STLGauge是用Electron构建的桌面应用程序，可在您选择的平台上运行。它具有现代化的用户界面，支持浅色和深色模式。目前支持点、点对点、边缘和胶带测量，并具有精确的顶点吸附支持。它还支持沿标准轴的切面和切面上的点测量。除此之外，您可以计算3D模型和2D切面的厚度。还可以计算模型的近似紧密拟合边界框。",
+            description: "STLGauge是用Electron构建的桌面应用程序，可在您选择的平台上运行。它具有现代化的用户界面，支持浅色和深色模式。目前支持点、点对点、边缘和链式边缘测量，并具有精确的顶点吸附支持。它还支持沿标准轴的切面和切面上的点测量。除此之外，您可以计算3D模型和2D切面的厚度。还可以计算模型的近似紧密拟合边界框。",
             sliderAria: "调整浅色和深色预览平衡"
           },
           carousel: {
@@ -1316,7 +1326,7 @@
             },
             feature2: {
               title: "测量和标记工具",
-              description: "使用多种专业工具捕获精确测量：用于XYZ坐标的点选择（四舍五入到0.001），带可拖动偏移手柄的点对点距离，线框模式下的边缘长度测量，以及用于链接多个连接边缘的边缘胶带。添加锚定到表面点的自定义文本标记，所有这些都默认启用可选的顶点吸附以实现最大精度。"
+              description: "使用多种专业工具捕获精确测量：用于XYZ坐标的点选择（四舍五入到0.001），带可拖动偏移手柄的点对点距离，线框模式下的边缘长度测量，以及用于链接多个连接边缘的边缘链式测量。添加锚定到表面点的自定义文本标记，所有这些都默认启用可选的顶点吸附以实现最大精度。"
             },
             feature3: {
               title: "切面和横截面",
@@ -1328,15 +1338,15 @@
             },
             feature5: {
               title: "3D厚度计算",
-              description: "通过从每个三角形发射反向法线来检测最近的对面，分析整个模型的壁厚。后台工作进程通过实时进度跟踪和即时取消支持处理计算。结果显示为适应最小/最大厚度值的伪彩色热图，具有悬停时的实时读数和可点击的图钉以标记关键测量。"
+              description: "通过从每个三角形发射反向法线来检测最近的对面，分析整个模型的壁厚。后台工作线程在实时进度跟踪和即时取消支持下处理计算。结果显示为适应最小/最大厚度值的伪彩色热图，具有悬停时的实时读数和可点击的图钉以标记关键测量。"
             },
             feature6: {
               title: "2D切面厚度",
-              description: "通过将切片重新网格化为均匀网格来测量任何活动切面盖上的平面内厚度。工作进程计算通过每个三角形质心并在切面轮廓处终止的最短线段，将结果显示为反映3D厚度调色板的彩色编码覆盖。悬停以获取切面表面上任意点的即时厚度读数。"
+              description: "通过将切片重新网格化为均匀网格来测量任何活动切面盖上的平面内厚度。后台工作线程计算通过每个三角形质心并在切面轮廓处终止的最短线段，并将结果显示为反映3D厚度调色板的彩色编码覆盖。悬停以获取切面表面上任意点的即时厚度读数。"
             },
             feature7: {
               title: "紧密拟合边界框",
-              description: "通过在后台工作进程中采样约200个不同的方向来计算最小体积的定向边界框。该算法估计完全包含您的几何图形的最小框，显示宽度/高度/深度尺寸标注。在具有即时取消功能的模态中跟踪进度，并在求解完成后切换可见性而无需重新计算。"
+              description: "通过在后台工作线程中采样约200个不同的方向来计算最小体积的定向边界框。该算法估计完全包含您的几何图形的最小框，显示宽度/高度/深度尺寸标注。在具有即时取消功能的模态中跟踪进度，并在求解完成后切换可见性而无需重新计算。"
             }
           },
           download: {
@@ -1351,6 +1361,138 @@
           },
           footer: {
             text: "&middot; 如需帮助和支持，请通过 <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> 联系我们 &middot;"
+          }
+        },
+        ar: {
+          pageTitle: "STLGauge · عارض STL دقيق",
+          hero: {
+            subtitle: "فحص STL عالي الدقة مع أدوات قياس لا تعيق العمل. استكشف نماذجك وأخذ أبعاد دقيقة في كلا المظهرين الداكن والفاتح.",
+            download: "تحميل"
+          },
+          comparison: {
+            ariaLabel: "مقارنة الوضع الفاتح والداكن",
+            title: "متعدد المنصات وخفيف الوزن وعصري",
+            description: "STLGauge هو تطبيق سطح مكتب مبني على Electron ويعمل على المنصة التي تختارها. يتميز بواجهة مستخدم عصرية مع دعم للوضعين الفاتح والداكن. يدعم حاليًا قياسات النقطة والنقطة إلى النقطة والحافة وشريط الحافة مع دعم دقيق للالتقاط إلى الرؤوس. كما يدعم التقسيم على طول المحاور القياسية وقياس النقطة على المقطع. بالإضافة إلى ذلك، يمكنك حساب سمك النموذج في 3D وعبر المقاطع 2D. يمكن أيضًا حساب صندوق الإحاطة الضيق التقريبي للنموذج.",
+            sliderAria: "ضبط توازن المعاينة الفاتحة والداكنة"
+          },
+          carousel: {
+            ariaLabel: "عرض الميزات",
+            title: "الميزات في العمل",
+            description: "استكشف قدرات STLGauge من خلال لقطات الشاشة هذه التي تعرض واجهة التطبيق وأدواته.",
+            previous: "السابق",
+            next: "التالي"
+          },
+          features: {
+            ariaLabel: "ميزات مفصلة",
+            title: "الميزات بالتفصيل",
+            description: "اكتشف الأدوات والقدرات القوية التي تجعل STLGauge تطبيقًا أساسيًا لفحص وقياس STL.",
+            feature1: {
+              title: "نصائح سريعة واختصارات",
+              description: "الوصول إلى اختصارات لوحة المفاتيح الشاملة وإيماءات الماوس للتنقل الفعال. قم بالتدوير بسحب النقر الأيسر، والتكبير بعجلة التمرير أو سحب النقر الأوسط، والتحريك بالنقر الأيمن أو السحب بإصبعين. انتقل إلى العروض القياسية (أعلى/أسفل/يسار/يمين/أمام/خلف) باستخدام Cmd/Ctrl + 1-6، وبدّل مستويات المقطع باستخدام Cmd/Ctrl + X/Y/Z. توفر لوحة النصائح السريعة مرجعًا يمكن الوصول إليه دائمًا لإتقان الواجهة."
+            },
+            feature2: {
+              title: "أدوات القياس والتعليق التوضيحي",
+              description: "التقط قياسات دقيقة باستخدام أدوات متخصصة متعددة: انتقاء النقاط لإحداثيات XYZ (مقرّبة إلى 0.001)، المسافة من نقطة إلى نقطة مع مقابض إزاحة قابلة للسحب، قياس طول الحافة في أوضاع الإطار السلكي، وشريط الحافة لربط عدة حواف متصلة. أضف تعليقات نصية مخصصة مثبتة على نقاط السطح، مع تفعيل التقاط الرؤوس الاختياري افتراضيًا لأقصى دقة."
+            },
+            feature3: {
+              title: "التقسيم والمقاطع العرضية",
+              description: "قم بتقطيع نماذجك باستخدام مستويات مقطع محاذاة للمحور (X/Y/Z) يتم التحكم فيها بواسطة شريط تمرير بديهي (0-100%). تتجدد أغطية وخطوط المقطع تلقائيًا أثناء تحريك المستوى، مع مفتاح قلب لاختيار الجانب المراد الاحتفاظ به. يوفر تذييل المقطع النشط عناصر تحكم في الوقت الفعلي، ويمكنك حفظ الشبكة المقصوصة مع مثلثات الغطاء المخبوزة لمزيد من التحليل."
+            },
+            feature4: {
+              title: "قياسات وخطوط قابلة للتثبيت",
+              description: "قم بإغلاق القياسات المهمة وخطوط المقطع في مكانها أثناء استكشاف عروض وشرائح مختلفة. ثبّت قراءات السمك والتعليقات البعدية وملفات المقطع العرضي للحفاظ على نقاط مرجعية طوال سير عمل الفحص الخاص بك. تستمر جميع العناصر المثبتة أثناء التنقل ويمكن إدارتها بشكل فردي أو مسحها كمجموعة."
+            },
+            feature5: {
+              title: "حساب السمك ثلاثي الأبعاد",
+              description: "قم بتحليل سمك الجدار في جميع أنحاء نموذجك بالكامل عن طريق إطلاق متجهات عمودية معكوسة من كل مثلث للكشف عن أقرب وجه معاكس. يعالج عامل الخلفية الحساب مع تتبع التقدم في الوقت الفعلي ودعم الإلغاء الفوري. تُعرض النتائج كخريطة حرارية بألوان زائفة مضبوطة على قيم السمك الأدنى/الأقصى، مع قراءات مباشرة عند التمرير ودبابيس قابلة للنقر لتحديد القياسات الحرجة."
+            },
+            feature6: {
+              title: "سمك المقطع ثنائي الأبعاد",
+              description: "قم بقياس السمك في المستوى على أي غطاء مقطع نشط عن طريق إعادة تشبيك الشريحة في شبكة موحدة. يحسب العامل أقصر قطعة خط تمر عبر كل مركز كتلة مثلث وتنتهي عند خط المقطع، ويعرض النتائج كتراكب مشفر بالألوان يعكس لوحة السمك ثلاثي الأبعاد. مرر الماوس للحصول على قراءات سمك فورية في أي نقطة على السطح المقطعي."
+            },
+            feature7: {
+              title: "صندوق إحاطة ضيق",
+              description: "احسب صندوق الإحاطة الموجه بأدنى حجم عن طريق أخذ عينات من حوالي 200 اتجاه مختلف في عامل خلفية. تُقدِّر الخوارزمية أصغر صندوق يحتوي بالكامل على هندستك، وتعرض تعليقات توضيحية للأبعاد العرض/الارتفاع/العمق. تتبع التقدم في نافذة مشروطة مع إمكانية الإلغاء الفوري، وبدّل الرؤية دون إعادة الحساب بمجرد اكتمال الحل."
+            }
+          },
+          download: {
+            title: "تحميل",
+            description: "اختر الإصدار الذي يطابق منصتك. يتضمن كل تنزيل أداءً أصليًا وعرضًا عالي الدقة واكتشافًا تلقائيًا للمظهر. <u>ملاحظة - هذا برنامج تجريبي والملفات الثنائية غير موقعة. يرجى اتباع التعليمات الخاصة بالمنصة لتجاوز فحوصات الأمان.</u>",
+            windows: "Windows",
+            windowsDesc: "حزمة المثبت · 64 بت",
+            macos: "macOS",
+            macosDesc: "صورة القرص · Apple silicon",
+            linux: "Linux",
+            linuxDesc: "Deb · التوزيعات المستندة إلى Debian 64 بت"
+          },
+          footer: {
+            text: "&middot; للمساعدة والدعم اتصل بنا على <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;"
+          }
+        },
+        ru: {
+          pageTitle: "STLGauge · Точный просмотрщик STL",
+          hero: {
+            subtitle: "Высококачественная проверка STL с инструментами измерения, которые не мешают работе. Исследуйте свои модели и делайте точные измерения в светлой и темной теме.",
+            download: "Скачать"
+          },
+          comparison: {
+            ariaLabel: "Сравнить светлый и темный режимы",
+            title: "Кроссплатформенный, легкий и современный",
+            description: "STLGauge — это настольное приложение, созданное на Electron и работающее на платформе по вашему выбору. Оно имеет современный пользовательский интерфейс с поддержкой светлой и темной темы. В настоящее время поддерживает измерения точки, точки к точке, ребра и ленточное измерение цепочки ребер с точной привязкой к вершинам. Также поддерживает сечения вдоль стандартных осей и измерение точек на сечении. Кроме того, вы можете рассчитать толщину модели в 3D и по 2D-сечениям. Также может быть рассчитан приблизительный плотно прилегающий ограничивающий прямоугольник модели.",
+            sliderAria: "Настроить баланс светлого и темного предварительного просмотра"
+          },
+          carousel: {
+            ariaLabel: "Демонстрация функций",
+            title: "Функции в действии",
+            description: "Изучите возможности STLGauge через эти скриншоты, демонстрирующие интерфейс и инструменты приложения.",
+            previous: "Назад",
+            next: "Далее"
+          },
+          features: {
+            ariaLabel: "Подробные функции",
+            title: "Функции в деталях",
+            description: "Откройте для себя мощные инструменты и возможности, которые делают STLGauge незаменимым приложением для проверки и измерения STL.",
+            feature1: {
+              title: "Быстрые подсказки и сочетания клавиш",
+              description: "Доступ к полным сочетаниям клавиш и жестам мыши для эффективной навигации. Поворот перетаскиванием левой кнопкой мыши, масштабирование колесом прокрутки или перетаскиванием средней кнопкой мыши, панорамирование правой кнопкой мыши или перетаскиванием двумя пальцами. Переход к стандартным видам (Сверху/Снизу/Слева/Справа/Спереди/Сзади) с помощью Cmd/Ctrl + 1-6, переключение плоскостей сечения с помощью Cmd/Ctrl + X/Y/Z. Панель быстрых подсказок предоставляет всегда доступную справку для освоения интерфейса."
+            },
+            feature2: {
+              title: "Инструменты измерения и разметки",
+              description: "Делайте точные измерения с помощью нескольких специализированных инструментов: выбор точек для координат XYZ (округленных до 0,001), расстояние от точки до точки с перетаскиваемыми смещенными ручками, измерение длины ребра в режимах каркаса и лента ребер для объединения нескольких соединенных ребер в одну цепочку. Добавляйте пользовательские текстовые метки, привязанные к точкам поверхности, все с необязательной привязкой к вершинам, включенной по умолчанию для максимальной точности."
+            },
+            feature3: {
+              title: "Сечения и поперечные разрезы",
+              description: "Разрезайте свои модели с помощью плоскостей сечения, выровненных по осям (X/Y/Z), управляемых интуитивным ползунком (0-100%). Крышки и контуры сечения автоматически обновляются при перемещении плоскости, с переключателем для выбора стороны, которую нужно сохранить. Нижний колонтитул активного сечения предоставляет элементы управления в реальном времени, и вы можете сохранить обрезанную сетку со встроенными треугольниками крышки для дальнейшего анализа."
+            },
+            feature4: {
+              title: "Закрепляемые измерения и контуры",
+              description: "Зафиксируйте важные измерения и контуры сечений на месте при изучении различных видов и срезов. Закрепите показания толщины, размерные выноски и профили поперечных сечений для сохранения опорных точек на протяжении всего рабочего процесса проверки. Все закрепленные элементы сохраняются во время навигации и могут управляться индивидуально или очищаться группой."
+            },
+            feature5: {
+              title: "Расчет 3D-толщины",
+              description: "Анализируйте толщину стенок по всей модели, запуская обратные нормали из каждого треугольника для обнаружения ближайшей противоположной грани. Фоновый обработчик обрабатывает вычисление с отслеживанием прогресса в реальном времени и поддержкой мгновенной отмены. Результаты отображаются в виде тепловой карты с ложными цветами, настроенной на минимальные/максимальные значения толщины, с интерактивными показаниями при наведении и кликабельными булавками для отметки критических измерений."
+            },
+            feature6: {
+              title: "Толщина 2D-сечения",
+              description: "Измеряйте толщину в плоскости на любой активной крышке сечения, переразбивая срез на равномерную сетку. Обработчик вычисляет кратчайший отрезок линии, проходящий через каждый центроид треугольника и заканчивающийся на контуре сечения, отображая результаты в виде цветового наложения, отражающего палитру 3D-толщины. Наведите курсор для мгновенных показаний толщины в любой точке на поверхности сечения."
+            },
+            feature7: {
+              title: "Плотно прилегающий ограничивающий прямоугольник",
+              description: "Вычислите ориентированный ограничивающий прямоугольник минимального объема, выборкой примерно 200 различных ориентаций в фоновом обработчике. Алгоритм оценивает наименьший прямоугольник, полностью содержащий вашу геометрию, отображая выноски размеров ширины/высоты/глубины. Отслеживайте прогресс в модальном окне с возможностью мгновенной отмены и переключайте видимость без повторного вычисления после завершения решения."
+            }
+          },
+          download: {
+            title: "Скачать",
+            description: "Выберите сборку, соответствующую вашей платформе. Каждая загрузка включает нативную производительность, высококачественный рендеринг и автоматическое определение темы. <u>Примечание — Это альфа-версия программного обеспечения, и двоичные файлы не подписаны. Пожалуйста, следуйте инструкциям для конкретной платформы, чтобы обойти проверки безопасности.</u>",
+            windows: "Windows",
+            windowsDesc: "Пакет установки · 64-бит",
+            macos: "macOS",
+            macosDesc: "Образ диска · Apple silicon",
+            linux: "Linux",
+            linuxDesc: "Deb · Дистрибутивы на основе Debian 64-бит"
+          },
+          footer: {
+            text: "&middot; Для помощи и поддержки свяжитесь с нами по адресу <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;"
           }
         }
       };
@@ -1367,6 +1509,8 @@
           'es': 'es',
           'de': 'de',
           'fr': 'fr',
+          'ar': 'ar',
+          'ru': 'ru',
           'ja': 'ja',
           'ko': 'ko',
           'zh': 'zh',
@@ -1415,6 +1559,7 @@
 
         // Update font-family based on language
         const fontMap = {
+          'ar': '"Noto Sans Arabic", "Fira Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
           'ja': '"Noto Sans JP", "Fira Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
           'ko': '"Noto Sans KR", "Fira Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
           'zh': '"Noto Sans SC", "Fira Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
