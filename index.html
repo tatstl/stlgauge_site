@@ -698,6 +698,151 @@
         scroll-behavior: auto !important;
       }
     }
+
+    /* Disclaimer Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.75);
+      z-index: 9999;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.is-visible {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+    }
+
+    .modal-content {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      max-width: 700px;
+      width: 90%;
+      max-height: 85vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+    }
+
+    .modal-overlay.is-visible .modal-content {
+      transform: scale(1);
+    }
+
+    .modal-header {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--heading-color);
+      margin: 0;
+    }
+
+    .modal-close {
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-color);
+      cursor: pointer;
+      padding: 0.25rem 0.5rem;
+      line-height: 1;
+      border-radius: 4px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .modal-close:hover,
+    .modal-close:focus {
+      background-color: var(--border-color);
+      color: var(--heading-color);
+      outline: none;
+    }
+
+    .modal-body {
+      padding: 2rem;
+      overflow-y: auto;
+      color: var(--text-color);
+      line-height: 1.7;
+    }
+
+    .modal-body h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--heading-color);
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .modal-body h2:first-child {
+      margin-top: 0;
+    }
+
+    .modal-body p {
+      margin-bottom: 1rem;
+    }
+
+    .modal-body ul {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    .modal-body li {
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-body strong {
+      color: var(--heading-color);
+      font-weight: 600;
+    }
+
+    .disclaimer-link {
+      color: var(--footer-text);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .disclaimer-link:hover,
+    .disclaimer-link:focus {
+      color: var(--heading-color);
+      border-color: var(--footer-text);
+    }
+
+    @media (max-width: 768px) {
+      .modal-content {
+        max-width: 95%;
+        width: 95%;
+        max-height: 90vh;
+      }
+
+      .modal-header {
+        padding: 1.25rem 1.5rem;
+      }
+
+      .modal-title {
+        font-size: 1.25rem;
+      }
+
+      .modal-body {
+        padding: 1.5rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -894,7 +1039,63 @@
 
   <footer>
     <span data-i18n="footer.text">&middot; For help and support contact us at <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;</span>
+    <a href="#" class="disclaimer-link" id="disclaimerLink" data-i18n="footer.disclaimer">Disclaimer</a> &middot;
   </footer>
+
+  <!-- Disclaimer Modal -->
+  <div id="disclaimerModal" class="modal-overlay" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+    <div class="modal-content" role="document">
+      <div class="modal-header">
+        <h2 id="modalTitle" class="modal-title" data-i18n="disclaimer.title">Disclaimer</h2>
+        <button class="modal-close" id="modalClose" aria-label="Close disclaimer">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong data-i18n="disclaimer.alphaWarning">ALPHA SOFTWARE NOTICE:</strong> <span data-i18n="disclaimer.alphaText">STLGauge is currently in alpha development status. This software is expected to contain a significant number of bugs, errors, and incomplete features. Use at your own risk.</span></p>
+
+        <h2 data-i18n="disclaimer.noWarrantyTitle">No Warranty</h2>
+        <p data-i18n="disclaimer.noWarrantyText">STLGauge is provided "as is" without warranty of any kind, either express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, or non-infringement. The developers and distributors of STLGauge make no representations or warranties regarding the accuracy, reliability, completeness, or timeliness of the software or any measurements, calculations, or analyses it produces.</p>
+
+        <h2 data-i18n="disclaimer.liabilityTitle">Limitation of Liability</h2>
+        <p data-i18n="disclaimer.liabilityText">In no event shall the developers, contributors, or distributors of STLGauge be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including but not limited to procurement of substitute goods or services, loss of use, data or profits, business interruption, manufacturing defects, or product failures) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.</p>
+
+        <h2 data-i18n="disclaimer.verificationTitle">Verification Required</h2>
+        <p data-i18n="disclaimer.verificationText">Users must independently verify and double-check all measurements, calculations, and analyses produced by STLGauge before relying on them for any purpose. This verification must be performed manually or using alternate, validated measurement mechanisms. Never rely solely on STLGauge for:</p>
+        <ul>
+          <li data-i18n="disclaimer.verification1">Critical design decisions or engineering specifications</li>
+          <li data-i18n="disclaimer.verification2">Manufacturing, production, or quality control processes</li>
+          <li data-i18n="disclaimer.verification3">Safety-critical applications or assessments</li>
+          <li data-i18n="disclaimer.verification4">Medical, aerospace, automotive, or other regulated industry applications</li>
+          <li data-i18n="disclaimer.verification5">Any application where measurement accuracy is essential to safety or functionality</li>
+        </ul>
+
+        <h2 data-i18n="disclaimer.userResponsibilityTitle">User Responsibility</h2>
+        <p data-i18n="disclaimer.userResponsibilityText">By using STLGauge, you acknowledge and agree that:</p>
+        <ul>
+          <li data-i18n="disclaimer.responsibility1">You are solely responsible for validating all measurements and calculations</li>
+          <li data-i18n="disclaimer.responsibility2">You will not use STLGauge as the sole basis for any design, manufacturing, or engineering decision</li>
+          <li data-i18n="disclaimer.responsibility3">You understand that bugs and errors may produce incorrect results without warning</li>
+          <li data-i18n="disclaimer.responsibility4">You accept all risks associated with using alpha-stage software</li>
+          <li data-i18n="disclaimer.responsibility5">You will implement appropriate verification and validation procedures for your specific use case</li>
+        </ul>
+
+        <h2 data-i18n="disclaimer.technicalLimitationsTitle">Technical Limitations</h2>
+        <p data-i18n="disclaimer.technicalLimitationsText">STLGauge may contain errors, inaccuracies, or limitations including but not limited to:</p>
+        <ul>
+          <li data-i18n="disclaimer.limitation1">Numerical precision and floating-point calculation errors</li>
+          <li data-i18n="disclaimer.limitation2">Mesh processing and geometric algorithm inaccuracies</li>
+          <li data-i18n="disclaimer.limitation3">Rendering and visualization discrepancies</li>
+          <li data-i18n="disclaimer.limitation4">File import/export data loss or corruption</li>
+          <li data-i18n="disclaimer.limitation5">Performance issues with large or complex models</li>
+          <li data-i18n="disclaimer.limitation6">Incomplete or incorrect implementation of measurement algorithms</li>
+        </ul>
+
+        <h2 data-i18n="disclaimer.governingLawTitle">Governing Law</h2>
+        <p data-i18n="disclaimer.governingLawText">This disclaimer shall be governed by and construed in accordance with applicable laws. If any provision of this disclaimer is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary so that this disclaimer shall otherwise remain in full force and effect.</p>
+
+        <p><strong data-i18n="disclaimer.acknowledgment">By using STLGauge, you acknowledge that you have read this disclaimer, understand it, and agree to be bound by its terms.</strong></p>
+      </div>
+    </div>
+  </div>
 
   <script>
     (() => {
@@ -963,7 +1164,42 @@
             linuxDesc: "Deb · 64-bit Debian based distributions"
           },
           footer: {
-            text: "&middot; For help and support contact us at <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;"
+            text: "&middot; For help and support contact us at <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;",
+            disclaimer: "Disclaimer"
+          },
+          disclaimer: {
+            title: "Disclaimer",
+            alphaWarning: "ALPHA SOFTWARE NOTICE:",
+            alphaText: "STLGauge is currently in alpha development status. This software is expected to contain a significant number of bugs, errors, and incomplete features. Use at your own risk.",
+            noWarrantyTitle: "No Warranty",
+            noWarrantyText: "STLGauge is provided \"as is\" without warranty of any kind, either express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, or non-infringement. The developers and distributors of STLGauge make no representations or warranties regarding the accuracy, reliability, completeness, or timeliness of the software or any measurements, calculations, or analyses it produces.",
+            liabilityTitle: "Limitation of Liability",
+            liabilityText: "In no event shall the developers, contributors, or distributors of STLGauge be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including but not limited to procurement of substitute goods or services, loss of use, data or profits, business interruption, manufacturing defects, or product failures) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.",
+            verificationTitle: "Verification Required",
+            verificationText: "Users must independently verify and double-check all measurements, calculations, and analyses produced by STLGauge before relying on them for any purpose. This verification must be performed manually or using alternate, validated measurement mechanisms. Never rely solely on STLGauge for:",
+            verification1: "Critical design decisions or engineering specifications",
+            verification2: "Manufacturing, production, or quality control processes",
+            verification3: "Safety-critical applications or assessments",
+            verification4: "Medical, aerospace, automotive, or other regulated industry applications",
+            verification5: "Any application where measurement accuracy is essential to safety or functionality",
+            userResponsibilityTitle: "User Responsibility",
+            userResponsibilityText: "By using STLGauge, you acknowledge and agree that:",
+            responsibility1: "You are solely responsible for validating all measurements and calculations",
+            responsibility2: "You will not use STLGauge as the sole basis for any design, manufacturing, or engineering decision",
+            responsibility3: "You understand that bugs and errors may produce incorrect results without warning",
+            responsibility4: "You accept all risks associated with using alpha-stage software",
+            responsibility5: "You will implement appropriate verification and validation procedures for your specific use case",
+            technicalLimitationsTitle: "Technical Limitations",
+            technicalLimitationsText: "STLGauge may contain errors, inaccuracies, or limitations including but not limited to:",
+            limitation1: "Numerical precision and floating-point calculation errors",
+            limitation2: "Mesh processing and geometric algorithm inaccuracies",
+            limitation3: "Rendering and visualization discrepancies",
+            limitation4: "File import/export data loss or corruption",
+            limitation5: "Performance issues with large or complex models",
+            limitation6: "Incomplete or incorrect implementation of measurement algorithms",
+            governingLawTitle: "Governing Law",
+            governingLawText: "This disclaimer shall be governed by and construed in accordance with applicable laws. If any provision of this disclaimer is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary so that this disclaimer shall otherwise remain in full force and effect.",
+            acknowledgment: "By using STLGauge, you acknowledge that you have read this disclaimer, understand it, and agree to be bound by its terms."
           }
         },
         es: {
@@ -1029,7 +1265,42 @@
             linuxDesc: "Deb · Distribuciones basadas en Debian de 64 bits"
           },
           footer: {
-            text: "&middot; Para ayuda y soporte contáctenos en <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;"
+            text: "&middot; Para ayuda y soporte contáctenos en <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;",
+            disclaimer: "Descargo de Responsabilidad"
+          },
+          disclaimer: {
+            title: "Descargo de Responsabilidad",
+            alphaWarning: "AVISO DE SOFTWARE ALFA:",
+            alphaText: "STLGauge se encuentra actualmente en estado de desarrollo alfa. Se espera que este software contenga un número significativo de errores, fallos y características incompletas. Úselo bajo su propio riesgo.",
+            noWarrantyTitle: "Sin Garantía",
+            noWarrantyText: "STLGauge se proporciona \"tal cual\" sin garantía de ningún tipo, ya sea expresa o implícita, incluidas, entre otras, las garantías implícitas de comerciabilidad, idoneidad para un propósito particular o no infracción. Los desarrolladores y distribuidores de STLGauge no ofrecen declaraciones ni garantías con respecto a la precisión, confiabilidad, integridad o puntualidad del software o cualquier medición, cálculo o análisis que produzca.",
+            liabilityTitle: "Limitación de Responsabilidad",
+            liabilityText: "En ningún caso los desarrolladores, colaboradores o distribuidores de STLGauge serán responsables de ningún daño directo, indirecto, incidental, especial, ejemplar o consecuente (incluidos, entre otros, la adquisición de bienes o servicios sustitutos, la pérdida de uso, datos o ganancias, interrupción del negocio, defectos de fabricación o fallas del producto) causados de cualquier manera y bajo cualquier teoría de responsabilidad, ya sea por contrato, responsabilidad estricta o agravio (incluida negligencia u otro) que surja de alguna manera del uso de este software, incluso si se le advirtió sobre la posibilidad de tal daño.",
+            verificationTitle: "Verificación Requerida",
+            verificationText: "Los usuarios deben verificar y comprobar de forma independiente todas las mediciones, cálculos y análisis producidos por STLGauge antes de confiar en ellos para cualquier propósito. Esta verificación debe realizarse manualmente o utilizando mecanismos de medición alternativos validados. Nunca confíe únicamente en STLGauge para:",
+            verification1: "Decisiones de diseño críticas o especificaciones de ingeniería",
+            verification2: "Procesos de fabricación, producción o control de calidad",
+            verification3: "Aplicaciones o evaluaciones críticas para la seguridad",
+            verification4: "Aplicaciones de industrias médicas, aeroespaciales, automotrices u otras reguladas",
+            verification5: "Cualquier aplicación donde la precisión de medición sea esencial para la seguridad o funcionalidad",
+            userResponsibilityTitle: "Responsabilidad del Usuario",
+            userResponsibilityText: "Al usar STLGauge, usted reconoce y acepta que:",
+            responsibility1: "Usted es el único responsable de validar todas las mediciones y cálculos",
+            responsibility2: "No utilizará STLGauge como única base para ninguna decisión de diseño, fabricación o ingeniería",
+            responsibility3: "Comprende que los errores y fallos pueden producir resultados incorrectos sin advertencia",
+            responsibility4: "Acepta todos los riesgos asociados con el uso de software en etapa alfa",
+            responsibility5: "Implementará procedimientos apropiados de verificación y validación para su caso de uso específico",
+            technicalLimitationsTitle: "Limitaciones Técnicas",
+            technicalLimitationsText: "STLGauge puede contener errores, inexactitudes o limitaciones que incluyen, entre otros:",
+            limitation1: "Errores de precisión numérica y cálculo de punto flotante",
+            limitation2: "Inexactitudes en el procesamiento de mallas y algoritmos geométricos",
+            limitation3: "Discrepancias de renderizado y visualización",
+            limitation4: "Pérdida o corrupción de datos en importación/exportación de archivos",
+            limitation5: "Problemas de rendimiento con modelos grandes o complejos",
+            limitation6: "Implementación incompleta o incorrecta de algoritmos de medición",
+            governingLawTitle: "Ley Aplicable",
+            governingLawText: "Este descargo de responsabilidad se regirá e interpretará de acuerdo con las leyes aplicables. Si alguna disposición de este descargo se considera inaplicable o inválida, dicha disposición se limitará o eliminará en la medida mínima necesaria para que este descargo siga en pleno vigor y efecto.",
+            acknowledgment: "Al usar STLGauge, usted reconoce que ha leído este descargo de responsabilidad, lo comprende y acepta estar sujeto a sus términos."
           }
         },
         de: {
@@ -1095,7 +1366,42 @@
             linuxDesc: "Deb · 64-Bit Debian-basierte Distributionen"
           },
           footer: {
-            text: "&middot; Für Hilfe und Support kontaktieren Sie uns unter <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;"
+            text: "&middot; Für Hilfe und Support kontaktieren Sie uns unter <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;",
+            disclaimer: "Haftungsausschluss"
+          },
+          disclaimer: {
+            title: "Haftungsausschluss",
+            alphaWarning: "ALPHA-SOFTWARE-HINWEIS:",
+            alphaText: "STLGauge befindet sich derzeit im Alpha-Entwicklungsstadium. Es wird erwartet, dass diese Software eine erhebliche Anzahl von Fehlern, Irrtümern und unvollständigen Funktionen enthält. Nutzung auf eigene Gefahr.",
+            noWarrantyTitle: "Keine Gewährleistung",
+            noWarrantyText: "STLGauge wird \"wie besehen\" ohne jegliche Gewährleistung bereitgestellt, weder ausdrücklich noch stillschweigend, einschließlich, aber nicht beschränkt auf stillschweigende Gewährleistungen der Marktgängigkeit, Eignung für einen bestimmten Zweck oder Nichtverletzung. Die Entwickler und Vertreiber von STLGauge geben keine Zusicherungen oder Gewährleistungen bezüglich der Genauigkeit, Zuverlässigkeit, Vollständigkeit oder Aktualität der Software oder von Messungen, Berechnungen oder Analysen, die sie produziert.",
+            liabilityTitle: "Haftungsbeschränkung",
+            liabilityText: "In keinem Fall haften die Entwickler, Mitwirkenden oder Vertreiber von STLGauge für direkte, indirekte, zufällige, besondere, exemplarische oder Folgeschäden (einschließlich, aber nicht beschränkt auf Beschaffung von Ersatzwaren oder -dienstleistungen, Nutzungsausfall, Datenverlust oder entgangenen Gewinn, Geschäftsunterbrechung, Fertigungsfehler oder Produktausfälle), wie auch immer verursacht und unter jeder Haftungstheorie, sei es aus Vertrag, verschuldensunabhängiger Haftung oder unerlaubter Handlung (einschließlich Fahrlässigkeit oder anderweitig), die sich in irgendeiner Weise aus der Nutzung dieser Software ergeben, auch wenn auf die Möglichkeit solcher Schäden hingewiesen wurde.",
+            verificationTitle: "Überprüfung Erforderlich",
+            verificationText: "Benutzer müssen alle von STLGauge erstellten Messungen, Berechnungen und Analysen unabhängig überprüfen und doppelt kontrollieren, bevor sie sich für irgendeinen Zweck darauf verlassen. Diese Überprüfung muss manuell oder mit alternativen, validierten Messmechanismen durchgeführt werden. Verlassen Sie sich niemals ausschließlich auf STLGauge für:",
+            verification1: "Kritische Konstruktionsentscheidungen oder technische Spezifikationen",
+            verification2: "Fertigungs-, Produktions- oder Qualitätskontrollprozesse",
+            verification3: "Sicherheitskritische Anwendungen oder Bewertungen",
+            verification4: "Medizinische, Luft- und Raumfahrt-, Automobil- oder andere regulierte Industrieanwendungen",
+            verification5: "Jede Anwendung, bei der die Messgenauigkeit für die Sicherheit oder Funktionalität wesentlich ist",
+            userResponsibilityTitle: "Benutzerverantwortung",
+            userResponsibilityText: "Durch die Nutzung von STLGauge erkennen Sie an und stimmen zu, dass:",
+            responsibility1: "Sie allein für die Validierung aller Messungen und Berechnungen verantwortlich sind",
+            responsibility2: "Sie STLGauge nicht als alleinige Grundlage für Konstruktions-, Fertigungs- oder technische Entscheidungen verwenden",
+            responsibility3: "Sie verstehen, dass Fehler und Irrtümer ohne Warnung falsche Ergebnisse erzeugen können",
+            responsibility4: "Sie alle Risiken akzeptieren, die mit der Verwendung von Alpha-Software verbunden sind",
+            responsibility5: "Sie geeignete Überprüfungs- und Validierungsverfahren für Ihren spezifischen Anwendungsfall implementieren",
+            technicalLimitationsTitle: "Technische Einschränkungen",
+            technicalLimitationsText: "STLGauge kann Fehler, Ungenauigkeiten oder Einschränkungen enthalten, einschließlich, aber nicht beschränkt auf:",
+            limitation1: "Numerische Präzisions- und Gleitkomma-Berechnungsfehler",
+            limitation2: "Ungenauigkeiten bei der Mesh-Verarbeitung und geometrischen Algorithmen",
+            limitation3: "Rendering- und Visualisierungsdiskrepanzen",
+            limitation4: "Datenverlust oder -beschädigung beim Importieren/Exportieren von Dateien",
+            limitation5: "Leistungsprobleme bei großen oder komplexen Modellen",
+            limitation6: "Unvollständige oder fehlerhafte Implementierung von Messalgorithmen",
+            governingLawTitle: "Anwendbares Recht",
+            governingLawText: "Dieser Haftungsausschluss unterliegt den geltenden Gesetzen und ist nach diesen auszulegen. Sollte eine Bestimmung dieses Haftungsausschlusses als nicht durchsetzbar oder ungültig befunden werden, wird diese Bestimmung in dem minimal erforderlichen Umfang eingeschränkt oder beseitigt, sodass dieser Haftungsausschluss ansonsten in vollem Umfang in Kraft und wirksam bleibt.",
+            acknowledgment: "Durch die Nutzung von STLGauge bestätigen Sie, dass Sie diesen Haftungsausschluss gelesen haben, ihn verstehen und sich an seine Bedingungen gebunden erklären."
           }
         },
         fr: {
@@ -1161,7 +1467,42 @@
             linuxDesc: "Deb · Distributions basées sur Debian 64 bits"
           },
           footer: {
-            text: "&middot; Pour l'aide et le support, contactez-nous à <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;"
+            text: "&middot; Pour l'aide et le support, contactez-nous à <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;",
+            disclaimer: "Avertissement"
+          },
+          disclaimer: {
+            title: "Avertissement",
+            alphaWarning: "AVIS DE LOGICIEL ALPHA :",
+            alphaText: "STLGauge est actuellement en phase de développement alpha. Ce logiciel devrait contenir un nombre important de bogues, d'erreurs et de fonctionnalités incomplètes. Utilisation à vos propres risques.",
+            noWarrantyTitle: "Aucune Garantie",
+            noWarrantyText: "STLGauge est fourni \"tel quel\" sans garantie d'aucune sorte, expresse ou implicite, y compris, mais sans s'y limiter, les garanties implicites de qualité marchande, d'adéquation à un usage particulier ou de non-contrefaçon. Les développeurs et distributeurs de STLGauge ne font aucune déclaration ou garantie concernant l'exactitude, la fiabilité, l'exhaustivité ou l'actualité du logiciel ou de toute mesure, calcul ou analyse qu'il produit.",
+            liabilityTitle: "Limitation de Responsabilité",
+            liabilityText: "En aucun cas les développeurs, contributeurs ou distributeurs de STLGauge ne seront tenus responsables de tout dommage direct, indirect, accessoire, spécial, exemplaire ou consécutif (y compris, mais sans s'y limiter, l'acquisition de biens ou services de remplacement, la perte d'utilisation, de données ou de bénéfices, l'interruption d'activité, les défauts de fabrication ou les défaillances de produits) de quelque manière que ce soit et sous quelque théorie de responsabilité que ce soit, qu'il s'agisse d'un contrat, d'une responsabilité stricte ou d'un délit (y compris la négligence ou autre) découlant de quelque manière que ce soit de l'utilisation de ce logiciel, même s'il a été informé de la possibilité de tels dommages.",
+            verificationTitle: "Vérification Requise",
+            verificationText: "Les utilisateurs doivent vérifier et revérifier de manière indépendante toutes les mesures, calculs et analyses produits par STLGauge avant de s'y fier à quelque fin que ce soit. Cette vérification doit être effectuée manuellement ou à l'aide de mécanismes de mesure alternatifs validés. Ne vous fiez jamais uniquement à STLGauge pour :",
+            verification1: "Les décisions de conception critiques ou les spécifications d'ingénierie",
+            verification2: "Les processus de fabrication, de production ou de contrôle qualité",
+            verification3: "Les applications ou évaluations critiques pour la sécurité",
+            verification4: "Les applications dans les industries médicales, aérospatiales, automobiles ou autres secteurs réglementés",
+            verification5: "Toute application où la précision des mesures est essentielle à la sécurité ou à la fonctionnalité",
+            userResponsibilityTitle: "Responsabilité de l'Utilisateur",
+            userResponsibilityText: "En utilisant STLGauge, vous reconnaissez et acceptez que :",
+            responsibility1: "Vous êtes seul responsable de la validation de toutes les mesures et calculs",
+            responsibility2: "Vous n'utiliserez pas STLGauge comme seule base pour toute décision de conception, de fabrication ou d'ingénierie",
+            responsibility3: "Vous comprenez que les bogues et erreurs peuvent produire des résultats incorrects sans avertissement",
+            responsibility4: "Vous acceptez tous les risques associés à l'utilisation de logiciels en phase alpha",
+            responsibility5: "Vous mettrez en œuvre des procédures de vérification et de validation appropriées pour votre cas d'utilisation spécifique",
+            technicalLimitationsTitle: "Limitations Techniques",
+            technicalLimitationsText: "STLGauge peut contenir des erreurs, des inexactitudes ou des limitations, y compris, mais sans s'y limiter :",
+            limitation1: "Erreurs de précision numérique et de calcul en virgule flottante",
+            limitation2: "Inexactitudes dans le traitement des maillages et les algorithmes géométriques",
+            limitation3: "Divergences de rendu et de visualisation",
+            limitation4: "Perte ou corruption de données lors de l'importation/exportation de fichiers",
+            limitation5: "Problèmes de performance avec des modèles volumineux ou complexes",
+            limitation6: "Implémentation incomplète ou incorrecte des algorithmes de mesure",
+            governingLawTitle: "Loi Applicable",
+            governingLawText: "Cet avertissement sera régi et interprété conformément aux lois applicables. Si une disposition de cet avertissement est jugée inapplicable ou invalide, cette disposition sera limitée ou éliminée dans la mesure minimale nécessaire pour que cet avertissement reste par ailleurs pleinement en vigueur.",
+            acknowledgment: "En utilisant STLGauge, vous reconnaissez avoir lu cet avertissement, le comprendre et accepter d'être lié par ses conditions."
           }
         },
         ja: {
@@ -1227,7 +1568,42 @@
             linuxDesc: "Deb · 64ビットDebianベースのディストリビューション"
           },
           footer: {
-            text: "&middot; ヘルプとサポートについては <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> までお問い合わせください &middot;"
+            text: "&middot; ヘルプとサポートについては <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> までお問い合わせください &middot;",
+            disclaimer: "免責事項"
+          },
+          disclaimer: {
+            title: "免責事項",
+            alphaWarning: "アルファソフトウェアに関する注意：",
+            alphaText: "STLGaugeは現在アルファ開発段階にあります。このソフトウェアには多数のバグ、エラー、未完成の機能が含まれることが予想されます。ご自身の責任でご使用ください。",
+            noWarrantyTitle: "無保証",
+            noWarrantyText: "STLGaugeは「現状のまま」提供され、明示または黙示を問わず、商品性、特定目的への適合性、非侵害性の黙示の保証を含むがこれらに限定されない、いかなる種類の保証もありません。STLGaugeの開発者および配布者は、ソフトウェアまたはそれが生成する測定、計算、または分析の正確性、信頼性、完全性、または適時性に関して、いかなる表明または保証も行いません。",
+            liabilityTitle: "責任の制限",
+            liabilityText: "契約、厳格責任、または不法行為（過失またはその他を含む）のいかなる責任理論に基づいても、STLGaugeの開発者、貢献者、または配布者は、このソフトウェアの使用から何らかの形で生じた直接的、間接的、偶発的、特別、懲罰的、または結果的損害（代替品またはサービスの調達、使用、データまたは利益の喪失、事業の中断、製造上の欠陥、または製品の故障を含むがこれらに限定されない）について、たとえそのような損害の可能性について知らされていたとしても、いかなる場合においても責任を負いません。",
+            verificationTitle: "検証が必要",
+            verificationText: "ユーザーは、STLGaugeによって生成されたすべての測定、計算、および分析を、いかなる目的で使用する前にも、独立して検証し、再確認する必要があります。この検証は、手動で、または検証済みの代替測定メカニズムを使用して実行する必要があります。次の用途でSTLGaugeのみに依存しないでください：",
+            verification1: "重要な設計決定またはエンジニアリング仕様",
+            verification2: "製造、生産、または品質管理プロセス",
+            verification3: "安全性が重要なアプリケーションまたは評価",
+            verification4: "医療、航空宇宙、自動車、またはその他の規制産業のアプリケーション",
+            verification5: "測定精度が安全性または機能性に不可欠なあらゆるアプリケーション",
+            userResponsibilityTitle: "ユーザーの責任",
+            userResponsibilityText: "STLGaugeを使用することにより、以下を認識し、同意したものとみなされます：",
+            responsibility1: "すべての測定と計算の検証に対する全責任を負うこと",
+            responsibility2: "設計、製造、またはエンジニアリングの決定の唯一の根拠としてSTLGaugeを使用しないこと",
+            responsibility3: "バグやエラーが警告なしに誤った結果を生成する可能性があることを理解すること",
+            responsibility4: "アルファ段階のソフトウェアの使用に関連するすべてのリスクを受け入れること",
+            responsibility5: "特定のユースケースに適した検証および妥当性確認手順を実装すること",
+            technicalLimitationsTitle: "技術的制限",
+            technicalLimitationsText: "STLGaugeには、以下を含むがこれらに限定されないエラー、不正確さ、または制限が含まれる可能性があります：",
+            limitation1: "数値精度および浮動小数点計算エラー",
+            limitation2: "メッシュ処理および幾何学的アルゴリズムの不正確さ",
+            limitation3: "レンダリングおよび可視化の不一致",
+            limitation4: "ファイルのインポート/エクスポート時のデータ損失または破損",
+            limitation5: "大規模または複雑なモデルでのパフォーマンスの問題",
+            limitation6: "測定アルゴリズムの不完全または不正確な実装",
+            governingLawTitle: "準拠法",
+            governingLawText: "この免責事項は、適用法に従って管理され、解釈されるものとします。この免責事項のいずれかの条項が執行不能または無効と判断された場合、その条項は、この免責事項がその他の点で完全に有効であり続けるために必要な最小限の範囲で制限または削除されるものとします。",
+            acknowledgment: "STLGaugeを使用することにより、この免責事項を読み、理解し、その条項に拘束されることに同意したことを認めたものとします。"
           }
         },
         ko: {
@@ -1293,7 +1669,42 @@
             linuxDesc: "Deb · 64비트 데비안 기반 배포판"
           },
           footer: {
-            text: "&middot; 도움말 및 지원은 <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a>으로 문의하세요 &middot;"
+            text: "&middot; 도움말 및 지원은 <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a>으로 문의하세요 &middot;",
+            disclaimer: "면책 조항"
+          },
+          disclaimer: {
+            title: "면책 조항",
+            alphaWarning: "알파 소프트웨어 공지:",
+            alphaText: "STLGauge는 현재 알파 개발 단계에 있습니다. 이 소프트웨어에는 상당수의 버그, 오류 및 불완전한 기능이 포함될 것으로 예상됩니다. 자신의 책임 하에 사용하십시오.",
+            noWarrantyTitle: "무보증",
+            noWarrantyText: "STLGauge는 상품성, 특정 목적에의 적합성 또는 비침해에 대한 묵시적 보증을 포함하되 이에 국한되지 않는 명시적 또는 묵시적 어떠한 종류의 보증도 없이 \"있는 그대로\" 제공됩니다. STLGauge의 개발자 및 배포자는 소프트웨어 또는 이것이 생성하는 측정, 계산 또는 분석의 정확성, 신뢰성, 완전성 또는 적시성에 관해 어떠한 진술이나 보증도 하지 않습니다.",
+            liabilityTitle: "책임의 제한",
+            liabilityText: "계약, 엄격 책임 또는 불법 행위(과실 또는 기타 포함)의 어떠한 책임 이론에 근거하든, STLGauge의 개발자, 기여자 또는 배포자는 이 소프트웨어의 사용으로 인해 어떤 방식으로든 발생하는 직접적, 간접적, 우발적, 특수적, 징벌적 또는 결과적 손해(대체 상품 또는 서비스 조달, 사용, 데이터 또는 이익의 손실, 사업 중단, 제조 결함 또는 제품 고장 포함하되 이에 국한되지 않음)에 대해 그러한 손해의 가능성에 대해 알고 있었다 하더라도 어떠한 경우에도 책임을 지지 않습니다.",
+            verificationTitle: "검증 필수",
+            verificationText: "사용자는 STLGauge에서 생성된 모든 측정, 계산 및 분석을 어떤 목적으로든 의존하기 전에 독립적으로 검증하고 재확인해야 합니다. 이 검증은 수동으로 또는 검증된 대체 측정 메커니즘을 사용하여 수행되어야 합니다. 다음의 경우 STLGauge만을 의존하지 마십시오:",
+            verification1: "중요한 설계 결정 또는 엔지니어링 사양",
+            verification2: "제조, 생산 또는 품질 관리 프로세스",
+            verification3: "안전에 중요한 애플리케이션 또는 평가",
+            verification4: "의료, 항공우주, 자동차 또는 기타 규제 산업 애플리케이션",
+            verification5: "측정 정확도가 안전 또는 기능에 필수적인 모든 애플리케이션",
+            userResponsibilityTitle: "사용자 책임",
+            userResponsibilityText: "STLGauge를 사용함으로써 다음을 인정하고 동의합니다:",
+            responsibility1: "모든 측정 및 계산의 검증에 대한 전적인 책임을 집니다",
+            responsibility2: "설계, 제조 또는 엔지니어링 결정의 유일한 근거로 STLGauge를 사용하지 않을 것입니다",
+            responsibility3: "버그와 오류가 경고 없이 잘못된 결과를 생성할 수 있음을 이해합니다",
+            responsibility4: "알파 단계 소프트웨어 사용과 관련된 모든 위험을 수용합니다",
+            responsibility5: "특정 사용 사례에 적절한 검증 및 확인 절차를 구현할 것입니다",
+            technicalLimitationsTitle: "기술적 제한",
+            technicalLimitationsText: "STLGauge에는 다음을 포함하되 이에 국한되지 않는 오류, 부정확성 또는 제한이 포함될 수 있습니다:",
+            limitation1: "수치 정밀도 및 부동 소수점 계산 오류",
+            limitation2: "메시 처리 및 기하학적 알고리즘 부정확성",
+            limitation3: "렌더링 및 시각화 불일치",
+            limitation4: "파일 가져오기/내보내기 데이터 손실 또는 손상",
+            limitation5: "대형 또는 복잡한 모델의 성능 문제",
+            limitation6: "측정 알고리즘의 불완전하거나 잘못된 구현",
+            governingLawTitle: "준거법",
+            governingLawText: "본 면책 조항은 해당 법률에 따라 관리되고 해석됩니다. 본 면책 조항의 어느 조항이 시행 불가능하거나 무효로 판명되는 경우, 해당 조항은 본 면책 조항이 달리 완전히 유효하게 유지되도록 필요한 최소 범위로 제한되거나 제거됩니다.",
+            acknowledgment: "STLGauge를 사용함으로써 귀하는 본 면책 조항을 읽고 이해했으며 그 조건에 구속되는 데 동의함을 인정합니다."
           }
         },
         zh: {
@@ -1359,7 +1770,42 @@
             linuxDesc: "Deb · 64位基于Debian的发行版"
           },
           footer: {
-            text: "&middot; 如需帮助和支持，请通过 <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> 联系我们 &middot;"
+            text: "&middot; 如需帮助和支持，请通过 <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> 联系我们 &middot;",
+            disclaimer: "免责声明"
+          },
+          disclaimer: {
+            title: "免责声明",
+            alphaWarning: "ALPHA软件通知：",
+            alphaText: "STLGauge目前处于alpha开发阶段。该软件预计包含大量错误、缺陷和未完成的功能。使用风险自负。",
+            noWarrantyTitle: "无保证",
+            noWarrantyText: "STLGauge按\"原样\"提供，不提供任何明示或暗示的保证，包括但不限于对适销性、特定用途的适用性或不侵权的暗示保证。STLGauge的开发者和分发者对软件或其产生的任何测量、计算或分析的准确性、可靠性、完整性或及时性不作任何陈述或保证。",
+            liabilityTitle: "责任限制",
+            liabilityText: "在任何情况下，STLGauge的开发者、贡献者或分发者均不对任何直接、间接、附带、特殊、惩罚性或后果性损害（包括但不限于替代商品或服务的采购、使用、数据或利润的损失、业务中断、制造缺陷或产品故障）承担责任，无论是基于合同、严格责任还是侵权（包括疏忽或其他）的任何责任理论，即使已被告知此类损害的可能性。",
+            verificationTitle: "需要验证",
+            verificationText: "用户必须在依赖STLGauge产生的任何测量、计算和分析用于任何目的之前，独立验证和仔细检查。此验证必须手动执行或使用经过验证的替代测量机制。切勿仅依赖STLGauge进行：",
+            verification1: "关键设计决策或工程规范",
+            verification2: "制造、生产或质量控制流程",
+            verification3: "安全关键型应用或评估",
+            verification4: "医疗、航空航天、汽车或其他受监管行业的应用",
+            verification5: "测量精度对安全或功能至关重要的任何应用",
+            userResponsibilityTitle: "用户责任",
+            userResponsibilityText: "使用STLGauge即表示您承认并同意：",
+            responsibility1: "您对验证所有测量和计算负有全部责任",
+            responsibility2: "您不会将STLGauge作为任何设计、制造或工程决策的唯一依据",
+            responsibility3: "您理解错误和缺陷可能在没有警告的情况下产生不正确的结果",
+            responsibility4: "您接受与使用alpha阶段软件相关的所有风险",
+            responsibility5: "您将为您的特定用例实施适当的验证和确认程序",
+            technicalLimitationsTitle: "技术限制",
+            technicalLimitationsText: "STLGauge可能包含错误、不准确或限制，包括但不限于：",
+            limitation1: "数值精度和浮点计算错误",
+            limitation2: "网格处理和几何算法不准确",
+            limitation3: "渲染和可视化差异",
+            limitation4: "文件导入/导出数据丢失或损坏",
+            limitation5: "大型或复杂模型的性能问题",
+            limitation6: "测量算法的不完整或不正确实现",
+            governingLawTitle: "适用法律",
+            governingLawText: "本免责声明应根据适用法律进行管辖和解释。如果本免责声明的任何条款被认定为不可执行或无效，则该条款应在必要的最小范围内受到限制或删除，以使本免责声明在其他方面保持完全有效。",
+            acknowledgment: "使用STLGauge即表示您承认已阅读本免责声明、理解它并同意受其条款约束。"
           }
         },
         ar: {
@@ -1425,7 +1871,42 @@
             linuxDesc: "Deb · التوزيعات المستندة إلى Debian 64 بت"
           },
           footer: {
-            text: "&middot; للمساعدة والدعم اتصل بنا على <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;"
+            text: "&middot; للمساعدة والدعم اتصل بنا على <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;",
+            disclaimer: "إخلاء المسؤولية"
+          },
+          disclaimer: {
+            title: "إخلاء المسؤولية",
+            alphaWarning: "إشعار برنامج ألفا:",
+            alphaText: "STLGauge حاليًا في مرحلة التطوير ألفا. من المتوقع أن يحتوي هذا البرنامج على عدد كبير من الأخطاء والعيوب والميزات غير المكتملة. استخدم على مسؤوليتك الخاصة.",
+            noWarrantyTitle: "بدون ضمان",
+            noWarrantyText: "يتم توفير STLGauge \"كما هو\" بدون ضمان من أي نوع، صريحًا كان أم ضمنيًا، بما في ذلك على سبيل المثال لا الحصر الضمانات الضمنية لقابلية التسويق أو الملاءمة لغرض معين أو عدم الانتهاك. لا يقدم مطورو وموزعو STLGauge أي تعهدات أو ضمانات فيما يتعلق بدقة البرنامج أو موثوقيته أو اكتماله أو توقيته أو أي قياسات أو حسابات أو تحليلات ينتجها.",
+            liabilityTitle: "تحديد المسؤولية",
+            liabilityText: "في أي حال من الأحوال، لن يكون مطورو أو المساهمون أو موزعو STLGauge مسؤولين عن أي أضرار مباشرة أو غير مباشرة أو عرضية أو خاصة أو نموذجية أو تبعية (بما في ذلك على سبيل المثال لا الحصر شراء سلع أو خدمات بديلة، أو فقدان الاستخدام أو البيانات أو الأرباح، أو انقطاع الأعمال، أو عيوب التصنيع، أو فشل المنتجات) مهما كان السبب وبموجب أي نظرية مسؤولية، سواء كانت في العقد أو المسؤولية الصارمة أو الضرر (بما في ذلك الإهمال أو غير ذلك) الناشئة بأي شكل من الأشكال عن استخدام هذا البرنامج، حتى لو تم إبلاغهم بإمكانية حدوث مثل هذا الضرر.",
+            verificationTitle: "التحقق مطلوب",
+            verificationText: "يجب على المستخدمين التحقق والتحقق مرة أخرى بشكل مستقل من جميع القياسات والحسابات والتحليلات التي ينتجها STLGauge قبل الاعتماد عليها لأي غرض. يجب إجراء هذا التحقق يدويًا أو باستخدام آليات قياس بديلة معتمدة. لا تعتمد على STLGauge فقط من أجل:",
+            verification1: "قرارات التصميم الحرجة أو المواصفات الهندسية",
+            verification2: "عمليات التصنيع أو الإنتاج أو مراقبة الجودة",
+            verification3: "التطبيقات أو التقييمات الحرجة للسلامة",
+            verification4: "تطبيقات الصناعات الطبية أو الفضائية أو السيارات أو غيرها من الصناعات المنظمة",
+            verification5: "أي تطبيق حيث تكون دقة القياس ضرورية للسلامة أو الوظائف",
+            userResponsibilityTitle: "مسؤولية المستخدم",
+            userResponsibilityText: "باستخدام STLGauge، فإنك تقر وتوافق على أن:",
+            responsibility1: "أنت وحدك المسؤول عن التحقق من جميع القياسات والحسابات",
+            responsibility2: "لن تستخدم STLGauge كأساس وحيد لأي قرار تصميم أو تصنيع أو هندسة",
+            responsibility3: "تفهم أن الأخطاء والعيوب قد تنتج نتائج غير صحيحة دون تحذير",
+            responsibility4: "تقبل جميع المخاطر المرتبطة باستخدام برامج المرحلة ألفا",
+            responsibility5: "ستقوم بتنفيذ إجراءات التحقق والمصادقة المناسبة لحالة الاستخدام الخاصة بك",
+            technicalLimitationsTitle: "القيود التقنية",
+            technicalLimitationsText: "قد يحتوي STLGauge على أخطاء أو عدم دقة أو قيود بما في ذلك على سبيل المثال لا الحصر:",
+            limitation1: "أخطاء الدقة العددية وحساب الفاصلة العائمة",
+            limitation2: "عدم دقة معالجة الشبكة والخوارزميات الهندسية",
+            limitation3: "تناقضات العرض والتصور",
+            limitation4: "فقدان البيانات أو تلفها عند استيراد/تصدير الملفات",
+            limitation5: "مشاكل الأداء مع النماذج الكبيرة أو المعقدة",
+            limitation6: "التنفيذ غير الكامل أو غير الصحيح لخوارزميات القياس",
+            governingLawTitle: "القانون الحاكم",
+            governingLawText: "يخضع إخلاء المسؤولية هذا للقوانين المعمول بها ويفسر وفقًا لها. إذا تبين أن أي حكم من أحكام إخلاء المسؤولية هذا غير قابل للتنفيذ أو باطل، فسيتم تقييد هذا الحكم أو إلغاؤه بالحد الأدنى الضروري بحيث يظل إخلاء المسؤولية هذا ساريًا بالكامل.",
+            acknowledgment: "باستخدام STLGauge، فإنك تقر بأنك قرأت إخلاء المسؤولية هذا وفهمته وتوافق على الالتزام بشروطه."
           }
         },
         ru: {
@@ -1491,7 +1972,42 @@
             linuxDesc: "Deb · Дистрибутивы на основе Debian 64-бит"
           },
           footer: {
-            text: "&middot; Для помощи и поддержки свяжитесь с нами по адресу <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;"
+            text: "&middot; Для помощи и поддержки свяжитесь с нами по адресу <a href='mailto:support@stlgauge.com'>support@stlgauge.com</a> &middot;",
+            disclaimer: "Отказ от ответственности"
+          },
+          disclaimer: {
+            title: "Отказ от ответственности",
+            alphaWarning: "УВЕДОМЛЕНИЕ ОБ АЛЬФА-ПРОГРАММЕ:",
+            alphaText: "STLGauge в настоящее время находится в стадии альфа-разработки. Ожидается, что это программное обеспечение содержит значительное количество ошибок, сбоев и незавершенных функций. Используйте на свой риск.",
+            noWarrantyTitle: "Без Гарантий",
+            noWarrantyText: "STLGauge предоставляется \"как есть\" без каких-либо гарантий, явных или подразумеваемых, включая, но не ограничиваясь, подразумеваемыми гарантиями товарной пригодности, пригодности для конкретной цели или ненарушения прав. Разработчики и распространители STLGauge не делают никаких заявлений или гарантий относительно точности, надежности, полноты или своевременности программного обеспечения или любых измерений, вычислений или анализов, которые оно производит.",
+            liabilityTitle: "Ограничение Ответственности",
+            liabilityText: "Ни при каких обстоятельствах разработчики, участники или распространители STLGauge не несут ответственности за любые прямые, косвенные, случайные, специальные, штрафные или косвенные убытки (включая, но не ограничиваясь приобретением замещающих товаров или услуг, потерей использования, данных или прибыли, перерывом в работе, производственными дефектами или отказами продукции), как бы они ни возникли и по любой теории ответственности, будь то по контракту, строгой ответственности или деликту (включая халатность или иное), возникающие каким-либо образом в результате использования этого программного обеспечения, даже если они были уведомлены о возможности такого ущерба.",
+            verificationTitle: "Требуется Проверка",
+            verificationText: "Пользователи должны независимо проверять и перепроверять все измерения, вычисления и анализы, произведенные STLGauge, прежде чем полагаться на них в каких-либо целях. Эта проверка должна выполняться вручную или с использованием альтернативных проверенных механизмов измерения. Никогда не полагайтесь исключительно на STLGauge для:",
+            verification1: "Критически важных конструкторских решений или инженерных спецификаций",
+            verification2: "Процессов производства, изготовления или контроля качества",
+            verification3: "Критически важных для безопасности приложений или оценок",
+            verification4: "Медицинских, аэрокосмических, автомобильных или других регулируемых отраслевых приложений",
+            verification5: "Любого приложения, где точность измерений важна для безопасности или функциональности",
+            userResponsibilityTitle: "Ответственность Пользователя",
+            userResponsibilityText: "Используя STLGauge, вы признаете и соглашаетесь с тем, что:",
+            responsibility1: "Вы несете полную ответственность за проверку всех измерений и вычислений",
+            responsibility2: "Вы не будете использовать STLGauge в качестве единственной основы для любого проектного, производственного или инженерного решения",
+            responsibility3: "Вы понимаете, что ошибки и сбои могут привести к неправильным результатам без предупреждения",
+            responsibility4: "Вы принимаете все риски, связанные с использованием программного обеспечения на альфа-стадии",
+            responsibility5: "Вы будете внедрять соответствующие процедуры проверки и валидации для вашего конкретного случая использования",
+            technicalLimitationsTitle: "Технические Ограничения",
+            technicalLimitationsText: "STLGauge может содержать ошибки, неточности или ограничения, включая, но не ограничиваясь:",
+            limitation1: "Ошибки числовой точности и вычислений с плавающей точкой",
+            limitation2: "Неточности обработки сетки и геометрических алгоритмов",
+            limitation3: "Расхождения рендеринга и визуализации",
+            limitation4: "Потеря или повреждение данных при импорте/экспорте файлов",
+            limitation5: "Проблемы с производительностью на больших или сложных моделях",
+            limitation6: "Неполная или неправильная реализация алгоритмов измерения",
+            governingLawTitle: "Применимое Право",
+            governingLawText: "Этот отказ от ответственности регулируется и толкуется в соответствии с применимым законодательством. Если какое-либо положение этого отказа от ответственности будет признано не имеющим исковой силы или недействительным, это положение будет ограничено или исключено в минимально необходимой степени, чтобы этот отказ от ответственности в остальном оставался в полной силе.",
+            acknowledgment: "Используя STLGauge, вы подтверждаете, что прочитали этот отказ от ответственности, поняли его и соглашаетесь соблюдать его условия."
           }
         }
       };
@@ -1676,6 +2192,41 @@
       // Listen for theme changes
       prefersDark.addEventListener("change", (e) => {
         updateCarouselImages(e.matches);
+      });
+
+      // Disclaimer Modal functionality
+      const disclaimerModal = document.getElementById('disclaimerModal');
+      const disclaimerLink = document.getElementById('disclaimerLink');
+      const modalClose = document.getElementById('modalClose');
+
+      const openModal = () => {
+        disclaimerModal.classList.add('is-visible');
+        document.body.style.overflow = 'hidden';
+        modalClose.focus();
+      };
+
+      const closeModal = () => {
+        disclaimerModal.classList.remove('is-visible');
+        document.body.style.overflow = '';
+      };
+
+      disclaimerLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+      });
+
+      modalClose.addEventListener('click', closeModal);
+
+      disclaimerModal.addEventListener('click', (e) => {
+        if (e.target === disclaimerModal) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && disclaimerModal.classList.contains('is-visible')) {
+          closeModal();
+        }
       });
     })();
   </script>
