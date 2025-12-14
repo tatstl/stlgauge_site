@@ -86,7 +86,6 @@
       color-scheme: light dark;
       --section-gap: clamp(4rem, 8vw, 7rem);
       --content-max: 1400px;
-      --slider-position: 50%;
       --nav-height: 72px;
     }
 
@@ -105,11 +104,6 @@
         --bg-secondary: #111111;
         --bg-tertiary: #181818;
         --cta-text: #0b1120;
-        --slider-border: rgba(226, 232, 240, 0.5);
-        --slider-divider: rgba(226, 232, 240, 0.45);
-        --grip-bg: rgba(15, 23, 42, 0.55);
-        --grip-border: rgba(226, 232, 240, 0.55);
-        --grip-text: rgba(226, 232, 240, 0.9);
         --carousel-indicator: rgba(226, 232, 240, 0.5);
         --footer-text: rgba(148, 163, 184, 0.6);
         --nav-bg: rgba(10, 10, 10, 0.85);
@@ -131,11 +125,6 @@
         --bg-secondary: #f8fafc;
         --bg-tertiary: #f1f5f9;
         --cta-text: #ffffff;
-        --slider-border: rgba(51, 65, 85, 0.3);
-        --slider-divider: rgba(51, 65, 85, 0.4);
-        --grip-bg: rgba(255, 255, 255, 0.9);
-        --grip-border: rgba(100, 116, 139, 0.4);
-        --grip-text: rgba(15, 23, 42, 0.9);
         --carousel-indicator: rgba(100, 116, 139, 0.4);
         --footer-text: rgba(100, 116, 139, 0.7);
         --nav-bg: rgba(255, 255, 255, 0.85);
@@ -156,11 +145,6 @@
       --bg-secondary: #111111;
       --bg-tertiary: #181818;
       --cta-text: #0b1120;
-      --slider-border: rgba(226, 232, 240, 0.5);
-      --slider-divider: rgba(226, 232, 240, 0.45);
-      --grip-bg: rgba(15, 23, 42, 0.55);
-      --grip-border: rgba(226, 232, 240, 0.55);
-      --grip-text: rgba(226, 232, 240, 0.9);
       --carousel-indicator: rgba(226, 232, 240, 0.5);
       --footer-text: rgba(148, 163, 184, 0.6);
       --nav-bg: rgba(10, 10, 10, 0.85);
@@ -179,11 +163,6 @@
       --bg-secondary: #f8fafc;
       --bg-tertiary: #f1f5f9;
       --cta-text: #ffffff;
-      --slider-border: rgba(51, 65, 85, 0.3);
-      --slider-divider: rgba(51, 65, 85, 0.4);
-      --grip-bg: rgba(255, 255, 255, 0.9);
-      --grip-border: rgba(100, 116, 139, 0.4);
-      --grip-text: rgba(15, 23, 42, 0.9);
       --carousel-indicator: rgba(100, 116, 139, 0.4);
       --footer-text: rgba(100, 116, 139, 0.7);
       --nav-bg: rgba(255, 255, 255, 0.85);
@@ -479,101 +458,17 @@
       line-height: 1.7;
     }
 
-    /* Comparison Section */
-    .comparison-container {
-      position: relative;
-      max-width: 1200px;
-      margin: 0 auto;
+    .section-header-left {
+      text-align: left;
+      margin-bottom: 0;
     }
 
-    .comparison-slider {
-      position: relative;
-      width: 100%;
-      overflow: visible;
-      isolation: isolate;
-    }
-
-    .comparison-slider figure {
+    .section-header-left .section-description {
       margin: 0;
-      line-height: 0;
     }
 
-    .comparison-slider img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .slider-image-overlay {
-      position: absolute;
-      inset: 0;
-      width: var(--slider-position);
-      max-width: 100%;
-      overflow: hidden;
-      border-right: 2px solid var(--accent);
-      transition: width 0.1s ease-out;
-    }
-
-    .slider-divider {
-      position: absolute;
-      inset: 0;
-      left: var(--slider-position);
-      transform: translateX(-50%);
-      pointer-events: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .slider-divider::before {
-      content: "";
-      display: block;
-      height: 100%;
-      width: 2px;
-      background: var(--accent);
-    }
-
-    .slider-grip {
-      position: absolute;
-      width: 48px;
-      height: 48px;
-      backdrop-filter: blur(8px);
-      border: 2px solid var(--accent);
-      background: var(--grip-bg);
-      display: grid;
-      place-items: center;
-      color: var(--grip-text);
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-    }
-
-    .slider-range {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      appearance: none;
-      background: transparent;
-      cursor: ew-resize;
-    }
-
-    .slider-range:focus-visible {
-      outline: none;
-    }
-
-    .slider-range::-webkit-slider-thumb {
-      appearance: none;
-      width: 0;
-      height: 100%;
-    }
-
-    .slider-range::-moz-range-thumb {
-      width: 0;
-      height: 100%;
-      border: none;
+    .section-compact {
+      padding-bottom: clamp(1rem, 2vw, 2rem);
     }
 
     /* Features Section */
@@ -918,12 +813,6 @@
         width: 16px;
         height: 16px;
       }
-
-      .slider-grip {
-        width: 40px;
-        height: 40px;
-        font-size: 0.9rem;
-      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1120,25 +1009,11 @@
     </section>
 
     <!-- Comparison Section -->
-    <section class="section section-alt" data-i18n-aria="comparison.ariaLabel" aria-label="Compare light and dark modes">
+    <section class="section section-alt section-compact" data-i18n-aria="comparison.ariaLabel" aria-label="Cross-platform features">
       <div class="section-inner">
-        <div class="section-header">
+        <div class="section-header section-header-left">
           <h2 class="section-title" data-i18n="comparison.title">Cross-platform, lightweight &amp; modern</h2>
           <p class="section-description" data-i18n="comparison.description">STLGauge is a cross-platform desktop app with a modern interface supporting light and dark modes. Measure with precision using point, point-to-point, edge, and tape tools with vertex snapping. Section models along standard axes and compute 3D/2D thickness with color-coded heatmaps. Sketch 2D profiles with lines, arcs, circles, and Bezier curves, then build parametric solids using extrude, revolve, and sweep operations. Combine shapes with boolean operations powered by the Manifold 3D engine.</p>
-        </div>
-        <div class="comparison-container">
-          <div class="comparison-slider" data-slider>
-            <figure class="slider-image-base">
-              <img src="img/dark.png" alt="STLGauge in dark mode">
-            </figure>
-            <figure class="slider-image-overlay" data-overlay>
-              <img src="img/light.png" alt="STLGauge in light mode">
-            </figure>
-            <input type="range" class="slider-range" min="0" max="100" value="50" data-i18n-aria="comparison.sliderAria" aria-label="Adjust light and dark preview balance">
-            <div class="slider-divider" data-divider>
-              <span class="slider-grip" aria-hidden="true">⇆</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -1445,10 +1320,9 @@
             download: "Download"
           },
           comparison: {
-            ariaLabel: "Compare light and dark modes",
+            ariaLabel: "Cross-platform features",
             title: "Cross-platform, lightweight & modern",
-            description: "STLGauge is a cross-platform desktop app with a modern interface supporting light and dark modes. Measure with precision using point, point-to-point, edge, and tape tools with vertex snapping. Section models along standard axes and compute 3D/2D thickness with color-coded heatmaps. Sketch 2D profiles with lines, arcs, circles, and Bezier curves, then build parametric solids using extrude, revolve, and sweep operations. Combine shapes with boolean operations powered by the Manifold 3D engine.",
-            sliderAria: "Adjust light and dark preview balance"
+            description: "STLGauge is a cross-platform desktop app with a modern interface supporting light and dark modes. Measure with precision using point, point-to-point, edge, and tape tools with vertex snapping. Section models along standard axes and compute 3D/2D thickness with color-coded heatmaps. Sketch 2D profiles with lines, arcs, circles, and Bezier curves, then build parametric solids using extrude, revolve, and sweep operations. Combine shapes with boolean operations powered by the Manifold 3D engine."
           },
           carousel: {
             ariaLabel: "Feature showcase",
@@ -1555,10 +1429,9 @@
             download: "Descargar"
           },
           comparison: {
-            ariaLabel: "Comparar modos claro y oscuro",
+            ariaLabel: "Características multiplataforma",
             title: "Multiplataforma, ligero y moderno",
-            description: "STLGauge es una aplicación de escritorio multiplataforma con una interfaz moderna que admite modos claro y oscuro. Mida con precisión usando herramientas de punto, punto a punto, arista y cinta con ajuste a vértice. Seccione modelos a lo largo de ejes estándar y calcule grosor 3D/2D con mapas de calor codificados por colores. Dibuje perfiles 2D con líneas, arcos, círculos y curvas Bezier, luego construya sólidos paramétricos usando operaciones de extrusión, revolución y barrido. Combine formas con operaciones booleanas impulsadas por el motor Manifold 3D.",
-            sliderAria: "Ajustar el equilibrio de vista previa clara y oscura"
+            description: "STLGauge es una aplicación de escritorio multiplataforma con una interfaz moderna que admite modos claro y oscuro. Mida con precisión usando herramientas de punto, punto a punto, arista y cinta con ajuste a vértice. Seccione modelos a lo largo de ejes estándar y calcule grosor 3D/2D con mapas de calor codificados por colores. Dibuje perfiles 2D con líneas, arcos, círculos y curvas Bezier, luego construya sólidos paramétricos usando operaciones de extrusión, revolución y barrido. Combine formas con operaciones booleanas impulsadas por el motor Manifold 3D."
           },
           carousel: {
             ariaLabel: "Exhibición de características",
@@ -1665,10 +1538,9 @@
             download: "Herunterladen"
           },
           comparison: {
-            ariaLabel: "Hellen und dunklen Modus vergleichen",
+            ariaLabel: "Plattformübergreifende Funktionen",
             title: "Plattformübergreifend, leichtgewichtig & modern",
-            description: "STLGauge ist eine plattformübergreifende Desktop-App mit moderner Oberfläche für helle und dunkle Modi. Messen Sie präzise mit Punkt-, Punkt-zu-Punkt-, Kanten- und Tape-Werkzeugen mit Vertex-Snap. Schneiden Sie Modelle entlang der Standardachsen und berechnen Sie 3D/2D-Dicke mit farbkodierten Heatmaps. Skizzieren Sie 2D-Profile mit Linien, Bögen, Kreisen und Bezier-Kurven, erstellen Sie dann parametrische Volumenkörper mit Extrusions-, Rotations- und Sweep-Operationen. Kombinieren Sie Formen mit Booleschen Operationen auf Basis der Manifold 3D-Engine.",
-            sliderAria: "Helle und dunkle Vorschau anpassen"
+            description: "STLGauge ist eine plattformübergreifende Desktop-App mit moderner Oberfläche für helle und dunkle Modi. Messen Sie präzise mit Punkt-, Punkt-zu-Punkt-, Kanten- und Tape-Werkzeugen mit Vertex-Snap. Schneiden Sie Modelle entlang der Standardachsen und berechnen Sie 3D/2D-Dicke mit farbkodierten Heatmaps. Skizzieren Sie 2D-Profile mit Linien, Bögen, Kreisen und Bezier-Kurven, erstellen Sie dann parametrische Volumenkörper mit Extrusions-, Rotations- und Sweep-Operationen. Kombinieren Sie Formen mit Booleschen Operationen auf Basis der Manifold 3D-Engine."
           },
           carousel: {
             ariaLabel: "Funktionspräsentation",
@@ -1775,10 +1647,9 @@
             download: "Télécharger"
           },
           comparison: {
-            ariaLabel: "Comparer les modes clair et sombre",
+            ariaLabel: "Fonctionnalités multiplateformes",
             title: "Multiplateforme, léger et moderne",
-            description: "STLGauge est une application de bureau multiplateforme avec une interface moderne prenant en charge les modes clair et sombre. Mesurez avec précision à l'aide d'outils point, point à point, arête et ruban avec alignement sur les sommets. Sectionnez les modèles le long des axes standard et calculez l'épaisseur 3D/2D avec des cartes thermiques colorées. Dessinez des profils 2D avec des lignes, arcs, cercles et courbes de Bézier, puis créez des solides paramétriques avec des opérations d'extrusion, révolution et balayage. Combinez des formes avec des opérations booléennes propulsées par le moteur Manifold 3D.",
-            sliderAria: "Ajuster l'équilibre de l'aperçu clair et sombre"
+            description: "STLGauge est une application de bureau multiplateforme avec une interface moderne prenant en charge les modes clair et sombre. Mesurez avec précision à l'aide d'outils point, point à point, arête et ruban avec alignement sur les sommets. Sectionnez les modèles le long des axes standard et calculez l'épaisseur 3D/2D avec des cartes thermiques colorées. Dessinez des profils 2D avec des lignes, arcs, cercles et courbes de Bézier, puis créez des solides paramétriques avec des opérations d'extrusion, révolution et balayage. Combinez des formes avec des opérations booléennes propulsées par le moteur Manifold 3D."
           },
           carousel: {
             ariaLabel: "Présentation des fonctionnalités",
@@ -1885,10 +1756,9 @@
             download: "ダウンロード"
           },
           comparison: {
-            ariaLabel: "ライトモードとダークモードを比較",
+            ariaLabel: "クロスプラットフォーム機能",
             title: "クロスプラットフォーム、軽量でモダン",
-            description: "STLGaugeはライトモードとダークモードに対応したモダンなインターフェースを持つクロスプラットフォームのデスクトップアプリです。頂点スナップ付きのポイント、ポイント間、エッジ、テープツールで精密に測定できます。標準軸に沿ってモデルを断面化し、カラーコード化されたヒートマップで3D/2D厚さを計算します。ライン、アーク、円、ベジエ曲線で2Dプロファイルをスケッチし、押し出し、回転、スイープ操作でパラメトリックソリッドを構築します。Manifold 3Dエンジンによるブーリアン演算で形状を組み合わせます。",
-            sliderAria: "ライトとダークのプレビューバランスを調整"
+            description: "STLGaugeはライトモードとダークモードに対応したモダンなインターフェースを持つクロスプラットフォームのデスクトップアプリです。頂点スナップ付きのポイント、ポイント間、エッジ、テープツールで精密に測定できます。標準軸に沿ってモデルを断面化し、カラーコード化されたヒートマップで3D/2D厚さを計算します。ライン、アーク、円、ベジエ曲線で2Dプロファイルをスケッチし、押し出し、回転、スイープ操作でパラメトリックソリッドを構築します。Manifold 3Dエンジンによるブーリアン演算で形状を組み合わせます。"
           },
           carousel: {
             ariaLabel: "機能紹介",
@@ -1995,10 +1865,9 @@
             download: "다운로드"
           },
           comparison: {
-            ariaLabel: "밝은 모드와 어두운 모드 비교",
+            ariaLabel: "크로스 플랫폼 기능",
             title: "크로스 플랫폼, 경량 및 현대적",
-            description: "STLGauge는 밝은 모드와 어두운 모드를 지원하는 현대적인 인터페이스를 갖춘 크로스 플랫폼 데스크톱 앱입니다. 정점 스냅이 있는 포인트, 포인트 간, 에지 및 테이프 도구로 정밀하게 측정합니다. 표준 축을 따라 모델을 단면화하고 색상 코드 히트맵으로 3D/2D 두께를 계산합니다. 선, 호, 원 및 베지어 곡선으로 2D 프로파일을 스케치한 다음 돌출, 회전 및 스윕 작업으로 파라메트릭 솔리드를 구축합니다. Manifold 3D 엔진으로 구동되는 부울 연산으로 도형을 결합합니다.",
-            sliderAria: "밝고 어두운 미리보기 균형 조정"
+            description: "STLGauge는 밝은 모드와 어두운 모드를 지원하는 현대적인 인터페이스를 갖춘 크로스 플랫폼 데스크톱 앱입니다. 정점 스냅이 있는 포인트, 포인트 간, 에지 및 테이프 도구로 정밀하게 측정합니다. 표준 축을 따라 모델을 단면화하고 색상 코드 히트맵으로 3D/2D 두께를 계산합니다. 선, 호, 원 및 베지어 곡선으로 2D 프로파일을 스케치한 다음 돌출, 회전 및 스윕 작업으로 파라메트릭 솔리드를 구축합니다. Manifold 3D 엔진으로 구동되는 부울 연산으로 도형을 결합합니다."
           },
           carousel: {
             ariaLabel: "기능 쇼케이스",
@@ -2105,10 +1974,9 @@
             download: "下载"
           },
           comparison: {
-            ariaLabel: "比较浅色和深色模式",
+            ariaLabel: "跨平台功能",
             title: "跨平台、轻量级且现代",
-            description: "STLGauge是一款支持浅色和深色模式的现代界面跨平台桌面应用。使用带顶点吸附的点、点对点、边缘和链式测量工具进行精确测量。沿标准轴对模型进行切面并使用彩色热图计算3D/2D厚度。使用直线、圆弧、圆和贝塞尔曲线绘制2D轮廓，然后通过挤出、旋转和扫掠操作构建参数化实体。使用Manifold 3D引擎驱动的布尔运算组合形状。",
-            sliderAria: "调整浅色和深色预览平衡"
+            description: "STLGauge是一款支持浅色和深色模式的现代界面跨平台桌面应用。使用带顶点吸附的点、点对点、边缘和链式测量工具进行精确测量。沿标准轴对模型进行切面并使用彩色热图计算3D/2D厚度。使用直线、圆弧、圆和贝塞尔曲线绘制2D轮廓，然后通过挤出、旋转和扫掠操作构建参数化实体。使用Manifold 3D引擎驱动的布尔运算组合形状。"
           },
           carousel: {
             ariaLabel: "功能展示",
@@ -2215,10 +2083,9 @@
             download: "تحميل"
           },
           comparison: {
-            ariaLabel: "مقارنة الوضع الفاتح والداكن",
+            ariaLabel: "ميزات متعددة المنصات",
             title: "متعدد المنصات وخفيف الوزن وعصري",
-            description: "STLGauge هو تطبيق سطح مكتب متعدد المنصات بواجهة عصرية تدعم الوضعين الفاتح والداكن. قم بالقياس بدقة باستخدام أدوات النقطة والنقطة إلى النقطة والحافة والشريط مع التقاط الرؤوس. قسّم النماذج على طول المحاور القياسية واحسب السمك ثلاثي/ثنائي الأبعاد بخرائط حرارية ملونة. ارسم ملفات تعريف ثنائية الأبعاد بالخطوط والأقواس والدوائر ومنحنيات Bezier، ثم ابنِ مجسمات بارامترية باستخدام عمليات البثق والدوران والمسار. اجمع الأشكال بعمليات بوليانية مدعومة بمحرك Manifold 3D.",
-            sliderAria: "ضبط توازن المعاينة الفاتحة والداكنة"
+            description: "STLGauge هو تطبيق سطح مكتب متعدد المنصات بواجهة عصرية تدعم الوضعين الفاتح والداكن. قم بالقياس بدقة باستخدام أدوات النقطة والنقطة إلى النقطة والحافة والشريط مع التقاط الرؤوس. قسّم النماذج على طول المحاور القياسية واحسب السمك ثلاثي/ثنائي الأبعاد بخرائط حرارية ملونة. ارسم ملفات تعريف ثنائية الأبعاد بالخطوط والأقواس والدوائر ومنحنيات Bezier، ثم ابنِ مجسمات بارامترية باستخدام عمليات البثق والدوران والمسار. اجمع الأشكال بعمليات بوليانية مدعومة بمحرك Manifold 3D."
           },
           carousel: {
             ariaLabel: "عرض الميزات",
@@ -2325,10 +2192,9 @@
             download: "Скачать"
           },
           comparison: {
-            ariaLabel: "Сравнить светлый и темный режимы",
+            ariaLabel: "Кроссплатформенные функции",
             title: "Кроссплатформенный, легкий и современный",
-            description: "STLGauge — кроссплатформенное настольное приложение с современным интерфейсом, поддерживающим светлую и тёмную тему. Измеряйте точно с помощью инструментов точки, точки к точке, ребра и ленты с привязкой к вершинам. Делайте сечения моделей вдоль стандартных осей и вычисляйте 3D/2D-толщину с цветовыми тепловыми картами. Рисуйте 2D-профили линиями, дугами, окружностями и кривыми Безье, затем создавайте параметрические твёрдые тела с помощью операций выдавливания, вращения и протяжки. Объединяйте формы булевыми операциями на движке Manifold 3D.",
-            sliderAria: "Настроить баланс светлого и темного предварительного просмотра"
+            description: "STLGauge — кроссплатформенное настольное приложение с современным интерфейсом, поддерживающим светлую и тёмную тему. Измеряйте точно с помощью инструментов точки, точки к точке, ребра и ленты с привязкой к вершинам. Делайте сечения моделей вдоль стандартных осей и вычисляйте 3D/2D-толщину с цветовыми тепловыми картами. Рисуйте 2D-профили линиями, дугами, окружностями и кривыми Безье, затем создавайте параметрические твёрдые тела с помощью операций выдавливания, вращения и протяжки. Объединяйте формы булевыми операциями на движке Manifold 3D."
           },
           carousel: {
             ariaLabel: "Демонстрация функций",
@@ -2537,28 +2403,6 @@
 
       // Initialize with saved or default language
       updateTranslations(currentLang);
-
-      // Existing slider code
-      const slider = document.querySelector("[data-slider]");
-      if (slider) {
-        const overlay = slider.querySelector("[data-overlay]");
-        const divider = slider.querySelector("[data-divider]");
-        const range = slider.querySelector(".slider-range");
-
-        const setPosition = (value) => {
-          const position = Math.min(Math.max(value, 0), 100);
-          const percentage = `${position}%`;
-          slider.style.setProperty("--slider-position", percentage);
-          overlay.style.width = percentage;
-          divider.style.left = percentage;
-        };
-
-        range.addEventListener("input", (event) => {
-          setPosition(event.target.value);
-        });
-
-        setPosition(range.value || 50);
-      }
 
       const cards = document.querySelectorAll(".download-card");
       if (!cards.length) return;
