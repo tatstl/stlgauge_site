@@ -601,11 +601,11 @@
     }
 
     .feature-item:nth-child(odd) {
-      background: var(--bg-secondary);
+      background: var(--bg-tertiary);
     }
 
     .feature-item:nth-child(even) {
-      background: var(--bg-tertiary);
+      background: var(--bg-secondary);
     }
 
     .feature-image {
@@ -619,17 +619,17 @@
     /* Odd items: image overflows left */
     .feature-item:nth-child(odd) .feature-image {
       justify-content: flex-start;
-      margin-left: -20%;
+      margin-left: -30%;
     }
 
     /* Even items: image overflows right */
     .feature-item:nth-child(even) .feature-image {
       justify-content: flex-end;
-      margin-right: -20%;
+      margin-right: -30%;
     }
 
     .feature-image img {
-      width: 120%;
+      width: 140%;
       max-width: none;
       height: auto;
       display: block;
@@ -1088,12 +1088,6 @@
 
   <!-- Features Section -->
   <section class="section section-alt" data-i18n-aria="features.ariaLabel" aria-label="Detailed features">
-    <div class="section-inner">
-      <div class="section-header">
-        <h2 class="section-title" data-i18n="features.title">Features in Detail</h2>
-        <p class="section-description" data-i18n="features.description">Discover the powerful tools and capabilities that make STLGauge an essential application for STL inspection and measurement.</p>
-      </div>
-    </div>
     <div class="features-grid">
       <div class="feature-item">
         <div class="feature-image">
