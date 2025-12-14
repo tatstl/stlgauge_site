@@ -1053,6 +1053,8 @@
         <button type="button" data-bs-target="#featureCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
         <button type="button" data-bs-target="#featureCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
         <button type="button" data-bs-target="#featureCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        <button type="button" data-bs-target="#featureCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+        <button type="button" data-bs-target="#featureCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -1075,6 +1077,12 @@
         </div>
         <div class="carousel-item">
           <img class="theme-image" data-image="seven.png" src="img/carousel/dark/seven.png" alt="STLGauge feature showcase 7">
+        </div>
+        <div class="carousel-item">
+          <img class="theme-image" data-image="eight.png" src="img/carousel/dark/eight.png" alt="STLGauge feature showcase 8">
+        </div>
+        <div class="carousel-item">
+          <img class="theme-image" data-image="nine.png" src="img/carousel/dark/nine.png" alt="STLGauge feature showcase 9">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#featureCarousel" data-bs-slide="prev">
@@ -1160,6 +1168,26 @@
         <div class="feature-content">
           <h3 data-i18n="features.feature7.title">Tight Fitting Bounding Box</h3>
           <p data-i18n="features.feature7.description">Compute the minimum-volume oriented bounding box by sampling approximately 200 different orientations in a background worker. The algorithm estimates the smallest box that fully contains your geometry, displaying width/height/depth dimension callouts. Track progress in a modal with instant cancel capability, and toggle visibility without recomputation once the solve completes.</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-image">
+          <img class="theme-image" data-image="eight.png" src="img/carousel/dark/eight.png" alt="2D sketching workspace">
+        </div>
+        <div class="feature-content">
+          <h3 data-i18n="features.feature8.title">2D Sketching Workspace</h3>
+          <p data-i18n="features.feature8.description">Sketch precise profiles on XY/YZ/ZX planes with snap-aware line, polyline, rectangle, circle, arc, Bezier, and fillet tools. Sketch mode locks the camera to the active plane, enforces adaptive grid snapping, and keeps geometry ready for downstream CAD operations.</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-image">
+          <img class="theme-image" data-image="nine.png" src="img/carousel/dark/nine.png" alt="Parametric solid creation">
+        </div>
+        <div class="feature-content">
+          <h3 data-i18n="features.feature9.title">Parametric Solid Creation</h3>
+          <p data-i18n="features.feature9.description">Convert sketches into solids using extrude, revolve, and sweep operations with live previews, then combine them with union, difference, and intersection booleans powered by the Manifold 3D engine for reliable CSG workflows.</p>
         </div>
       </div>
     </div>
@@ -1394,6 +1422,14 @@
             feature7: {
               title: "Tight Fitting Bounding Box",
               description: "Compute the minimum-volume oriented bounding box by sampling approximately 200 different orientations in a background worker. The algorithm estimates the smallest box that fully contains your geometry, displaying width/height/depth dimension callouts. Track progress in a modal with instant cancel capability, and toggle visibility without recomputation once the solve completes."
+            },
+            feature8: {
+              title: "2D Sketching Workspace",
+              description: "Sketch precise profiles on XY/YZ/ZX planes with snap-aware line, polyline, rectangle, circle, arc, Bezier, and fillet tools. Sketch mode locks the camera to the active plane, enforces adaptive grid snapping, and keeps geometry ready for downstream CAD operations."
+            },
+            feature9: {
+              title: "Parametric Solid Creation",
+              description: "Convert sketches into solids using extrude, revolve, and sweep operations with live previews, then combine them with union, difference, and intersection booleans powered by the Manifold 3D engine for reliable CSG workflows."
             }
           },
           download: {
@@ -1496,6 +1532,14 @@
             feature7: {
               title: "Caja Delimitadora Ajustada",
               description: "Calcule la caja delimitadora orientada de volumen mínimo muestreando aproximadamente 200 orientaciones diferentes en un trabajador en segundo plano. El algoritmo estima la caja más pequeña que contiene completamente su geometría, mostrando notas de dimensión de ancho/alto/profundidad. Rastree el progreso en un modal con capacidad de cancelación instantánea, y alterne la visibilidad sin recalcular una vez que se complete la resolución."
+            },
+            feature8: {
+              title: "Espacio de Bocetos 2D",
+              description: "Trace perfiles precisos en los planos XY/YZ/ZX con herramientas de línea, polilínea, rectángulo, círculo, arco, Bezier y filete con soporte de ajuste. El modo boceto bloquea la cámara en el plano activo, aplica una cuadrícula adaptable y mantiene la geometría lista para operaciones CAD posteriores."
+            },
+            feature9: {
+              title: "Creación de Sólidos Paramétrica",
+              description: "Convierta bocetos en sólidos mediante extrusión, revolución y barrido con vistas previas en vivo, y combínelos con booleanas de unión, diferencia e intersección impulsadas por el motor Manifold 3D para flujos CSG confiables."
             }
           },
           download: {
@@ -1598,6 +1642,14 @@
             feature7: {
               title: "Eng anliegender Begrenzungsrahmen",
               description: "Berechnen Sie den volumenminimalen orientierten Begrenzungsrahmen, indem Sie ungefähr 200 verschiedene Orientierungen in einem Hintergrund-Worker abtasten. Der Algorithmus schätzt den kleinsten Rahmen, der Ihre Geometrie vollständig enthält, und zeigt Breiten-/Höhen-/Tiefenbemaßungen an. Verfolgen Sie den Fortschritt in einem Modal mit sofortiger Abbruchmöglichkeit und schalten Sie die Sichtbarkeit ohne Neuberechnung um, sobald die Lösung abgeschlossen ist."
+            },
+            feature8: {
+              title: "2D-Skizzenarbeitsplatz",
+              description: "Erstellen Sie präzise Profile auf den XY/YZ/ZX-Ebenen mit schnappbewussten Linien-, Polylinien-, Rechteck-, Kreis-, Bogen-, Bezier- und Fasenwerkzeugen. Der Skizziermodus fixiert die Kamera auf der aktiven Ebene, erzwingt ein adaptives Raster und hält die Geometrie für nachgelagerte CAD-Operationen bereit."
+            },
+            feature9: {
+              title: "Parametrische Volumenerstellung",
+              description: "Wandeln Sie Skizzen mithilfe von Extrusions-, Rotations- und Sweep-Operationen mit Live-Vorschauen in Volumenkörper um und kombinieren Sie sie anschließend mit Vereinigungs-, Differenz- und Schnitt-Boolschen auf Basis der Manifold-3D-Engine für robuste CSG-Workflows."
             }
           },
           download: {
@@ -1700,6 +1752,14 @@
             feature7: {
               title: "Boîte Englobante Ajustée",
               description: "Calculez la boîte englobante orientée à volume minimal en échantillonnant environ 200 orientations différentes dans un processus en arrière-plan. L'algorithme estime la plus petite boîte qui contient entièrement votre géométrie, affichant des cotes de largeur/hauteur/profondeur. Suivez la progression dans une fenêtre modale avec capacité d'annulation instantanée, et basculez la visibilité sans recalcul une fois la résolution terminée."
+            },
+            feature8: {
+              title: "Espace de Croquis 2D",
+              description: "Tracez des profils précis sur les plans XY/YZ/ZX avec des outils de ligne, polyligne, rectangle, cercle, arc, Bézier et congé dotés d'un système d'accrochage intelligent. Le mode croquis verrouille la caméra sur le plan actif, applique une grille adaptative et garde la géométrie prête pour les opérations CAO en aval."
+            },
+            feature9: {
+              title: "Création de Solides Paramétriques",
+              description: "Transformez les croquis en solides grâce aux opérations d'extrusion, de révolution et de balayage avec prévisualisation en direct, puis combinez-les à l'aide de booléens union/différence/intersection propulsés par le moteur Manifold 3D pour des flux CSG fiables."
             }
           },
           download: {
@@ -1802,6 +1862,14 @@
             feature7: {
               title: "密着境界ボックス",
               description: "バックグラウンドワーカーで約200の異なる方向をサンプリングすることにより、最小体積の向き境界ボックスを計算します。アルゴリズムはジオメトリを完全に含む最小のボックスを推定し、幅/高さ/深さの寸法注釈を表示します。即座のキャンセル機能を備えたモーダルで進行状況を追跡し、解決が完了したら再計算なしで可視性を切り替えます。"
+            },
+            feature8: {
+              title: "2Dスケッチワークスペース",
+              description: "XY/YZ/ZX平面上でスナップ対応のライン、ポリライン、長方形、円、円弧、ベジエ、フィレットツールを使って精密なプロファイルを作成します。スケッチモードはカメラをアクティブ平面に固定し、適応グリッドスナップを適用して後続のCAD操作に備えたジオメトリを保ちます。"
+            },
+            feature9: {
+              title: "パラメトリックソリッド作成",
+              description: "押し出し、回転、スイープ操作のライブプレビューでスケッチをソリッドに変換し、Manifold 3Dエンジンによる和/差/交差ブーリアンで信頼できるCSGワークフローを構築します。"
             }
           },
           download: {
@@ -1904,6 +1972,14 @@
             feature7: {
               title: "밀착 경계 상자",
               description: "백그라운드 워커에서 약 200개의 다른 방향을 샘플링하여 최소 부피 방향 경계 상자를 계산합니다. 알고리즘은 기하학을 완전히 포함하는 가장 작은 상자를 추정하고 너비/높이/깊이 치수 표기를 표시합니다. 즉각적인 취소 기능이 있는 모달에서 진행 상황을 추적하고 해결이 완료되면 재계산 없이 가시성을 전환합니다."
+            },
+            feature8: {
+              title: "2D 스케치 작업 영역",
+              description: "XY/YZ/ZX 평면에서 스냅 인지형 선, 폴리라인, 직사각형, 원, 호, 베지어, 필렛 도구로 정밀한 프로필을 그립니다. 스케치 모드는 카메라를 활성 평면에 고정하고 적응형 그리드 스냅을 적용해 이후 CAD 작업에 바로 쓸 수 있는 지오메트리를 유지합니다."
+            },
+            feature9: {
+              title: "파라메트릭 솔리드 생성",
+              description: "익스ทรู드, 리볼브, 스윕 작업의 실시간 미리보기로 스케치를 솔리드로 변환하고, Manifold 3D 엔진 기반의 합집합/차집합/교집합 부울로 안정적인 CSG 워크플로를 구성합니다."
             }
           },
           download: {
@@ -2006,6 +2082,14 @@
             feature7: {
               title: "紧密拟合边界框",
               description: "通过在后台工作线程中采样约200个不同的方向来计算最小体积的定向边界框。该算法估计完全包含您的几何图形的最小框，显示宽度/高度/深度尺寸标注。在具有即时取消功能的模态中跟踪进度，并在求解完成后切换可见性而无需重新计算。"
+            },
+            feature8: {
+              title: "2D草图工作区",
+              description: "在 XY/YZ/ZX 平面上使用支持捕捉的直线、多段线、矩形、圆、圆弧、Bezier 和倒角工具绘制精确轮廓。草图模式会将相机锁定到活动平面，启用自适应网格捕捉，并让几何体随时可用于后续 CAD 操作。"
+            },
+            feature9: {
+              title: "参数化实体创建",
+              description: "通过挤出、旋转和扫掠操作的实时预览将草图转换为实体，再借助 Manifold 3D 引擎驱动的并集/差集/交集布尔运算组合它们，构建可靠的 CSG 工作流。"
             }
           },
           download: {
@@ -2108,6 +2192,14 @@
             feature7: {
               title: "صندوق إحاطة ضيق",
               description: "احسب صندوق الإحاطة الموجه بأدنى حجم عن طريق أخذ عينات من حوالي 200 اتجاه مختلف في عامل خلفية. تُقدِّر الخوارزمية أصغر صندوق يحتوي بالكامل على هندستك، وتعرض تعليقات توضيحية للأبعاد العرض/الارتفاع/العمق. تتبع التقدم في نافذة مشروطة مع إمكانية الإلغاء الفوري، وبدّل الرؤية دون إعادة الحساب بمجرد اكتمال الحل."
+            },
+            feature8: {
+              title: "مساحة رسم ثنائية الأبعاد",
+              description: "ارسم ملفات دقيقة على مستويات XY/YZ/ZX باستخدام أدوات الخط ومتعدد الخطوط والمستطيل والدائرة والقوس وBezier وتدوير الزوايا مع دعم الالتقاط الذكي. يثبّت وضع الرسم الكاميرا على المستوى النشط، ويطبق شبكة تكيفية، ويحافظ على الهندسة جاهزة لعمليات CAD اللاحقة."
+            },
+            feature9: {
+              title: "إنشاء مجسمات بارامترية",
+              description: "حوّل الرسومات إلى مجسمات باستخدام عمليات البثق والدوران والمسار مع معاينات مباشرة، ثم اجمعها عبر عمليات بوليانية للاتحاد والفرق والتقاطع مدعومة بمحرك Manifold 3D للحصول على تدفقات CSG موثوقة."
             }
           },
           download: {
@@ -2210,6 +2302,14 @@
             feature7: {
               title: "Плотно прилегающий ограничивающий прямоугольник",
               description: "Вычислите ориентированный ограничивающий прямоугольник минимального объема, выборкой примерно 200 различных ориентаций в фоновом обработчике. Алгоритм оценивает наименьший прямоугольник, полностью содержащий вашу геометрию, отображая выноски размеров ширины/высоты/глубины. Отслеживайте прогресс в модальном окне с возможностью мгновенной отмены и переключайте видимость без повторного вычисления после завершения решения."
+            },
+            feature8: {
+              title: "Площадка 2D-эскизов",
+              description: "Создавайте точные профили на плоскостях XY/YZ/ZX с привязкой для линий, полилиний, прямоугольников, окружностей, дуг, кривых Безье и фасок. Режим эскиза фиксирует камеру в активной плоскости, включает адаптивную сетку и готовит геометрию для последующих CAD-операций."
+            },
+            feature9: {
+              title: "Параметрическое создание твёрдых тел",
+              description: "Преобразуйте эскизы в объёмные тела с помощью операций выдавливания, вращения и протяжки с живым предпросмотром, а затем объединяйте их булевыми операциями объединения, разности и пересечения на движке Manifold 3D для надёжных CSG-процессов."
             }
           },
           download: {
