@@ -405,9 +405,10 @@
     }
 
     .hero-title {
+      font-family: "Saira Stencil One", "Fira Sans", system-ui, sans-serif;
       font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
+      font-weight: 400;
+      letter-spacing: 0.06em;
       margin: 0 0 1.5rem 0;
       line-height: 1.1;
     }
@@ -575,53 +576,12 @@
       border: none;
     }
 
-    /* Carousel Section */
-    .carousel-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .carousel {
-      overflow: hidden;
-    }
-
-    .carousel-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .carousel-control-prev,
-    .carousel-control-next {
-      width: 10%;
-      opacity: 0.7;
-    }
-
-    .carousel-control-prev:hover,
-    .carousel-control-next:hover {
-      opacity: 1;
-    }
-
-    .carousel-indicators {
-      margin-bottom: 1rem;
-    }
-
-    .carousel-indicators [data-bs-target] {
-      background-color: var(--carousel-indicator);
-      border: none;
-      width: 32px;
-      height: 3px;
-    }
-
-    .carousel-indicators .active {
-      background-color: var(--accent);
-    }
-
     /* Features Section */
     .features-grid {
       display: flex;
       flex-direction: column;
       gap: 0;
+      overflow: hidden;
     }
 
     .feature-item {
@@ -649,17 +609,28 @@
     }
 
     .feature-image {
-      overflow: hidden;
+      overflow: visible;
       line-height: 0;
       display: flex;
       align-items: center;
-      justify-content: center;
       padding: clamp(2rem, 4vw, 4rem);
     }
 
+    /* Odd items: image overflows left */
+    .feature-item:nth-child(odd) .feature-image {
+      justify-content: flex-start;
+      margin-left: -20%;
+    }
+
+    /* Even items: image overflows right */
+    .feature-item:nth-child(even) .feature-image {
+      justify-content: flex-end;
+      margin-right: -20%;
+    }
+
     .feature-image img {
-      width: 100%;
-      max-width: 600px;
+      width: 120%;
+      max-width: none;
       height: auto;
       display: block;
     }
@@ -699,6 +670,18 @@
 
       .feature-image {
         padding: clamp(1.5rem, 4vw, 2rem);
+        overflow: hidden;
+      }
+
+      .feature-item:nth-child(odd) .feature-image,
+      .feature-item:nth-child(even) .feature-image {
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: center;
+      }
+
+      .feature-image img {
+        width: 100%;
       }
 
       .feature-content {
@@ -1098,68 +1081,6 @@
             <div class="slider-divider" data-divider>
               <span class="slider-grip" aria-hidden="true">⇆</span>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Carousel Section -->
-    <section class="section" data-i18n-aria="carousel.ariaLabel" aria-label="Feature showcase">
-      <div class="section-inner">
-        <div class="section-header">
-          <h2 class="section-title" data-i18n="carousel.title">Features in Action</h2>
-          <p class="section-description" data-i18n="carousel.description">Explore STLGauge's capabilities through these screenshots showcasing the app's interface and tools.</p>
-        </div>
-        <div class="carousel-container">
-          <div id="featureCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#featureCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#featureCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#featureCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              <button type="button" data-bs-target="#featureCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-              <button type="button" data-bs-target="#featureCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-              <button type="button" data-bs-target="#featureCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-              <button type="button" data-bs-target="#featureCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
-              <button type="button" data-bs-target="#featureCarousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
-              <button type="button" data-bs-target="#featureCarousel" data-bs-slide-to="8" aria-label="Slide 9"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="theme-image" data-image="one.png" src="img/carousel/dark/one.png" alt="STLGauge feature showcase 1">
-              </div>
-              <div class="carousel-item">
-                <img class="theme-image" data-image="two.png" src="img/carousel/dark/two.png" alt="STLGauge feature showcase 2">
-              </div>
-              <div class="carousel-item">
-                <img class="theme-image" data-image="three.png" src="img/carousel/dark/three.png" alt="STLGauge feature showcase 3">
-              </div>
-              <div class="carousel-item">
-                <img class="theme-image" data-image="four.png" src="img/carousel/dark/four.png" alt="STLGauge feature showcase 4">
-              </div>
-              <div class="carousel-item">
-                <img class="theme-image" data-image="five.png" src="img/carousel/dark/five.png" alt="STLGauge feature showcase 5">
-              </div>
-              <div class="carousel-item">
-                <img class="theme-image" data-image="six.png" src="img/carousel/dark/six.png" alt="STLGauge feature showcase 6">
-              </div>
-              <div class="carousel-item">
-                <img class="theme-image" data-image="seven.png" src="img/carousel/dark/seven.png" alt="STLGauge feature showcase 7">
-              </div>
-              <div class="carousel-item">
-                <img class="theme-image" data-image="eight.png" src="img/carousel/dark/eight.png" alt="STLGauge feature showcase 8">
-              </div>
-              <div class="carousel-item">
-                <img class="theme-image" data-image="nine.png" src="img/carousel/dark/nine.png" alt="STLGauge feature showcase 9">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#featureCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden" data-i18n="carousel.previous">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#featureCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden" data-i18n="carousel.next">Next</span>
-            </button>
           </div>
         </div>
       </div>
