@@ -355,6 +355,7 @@
 
     /* Hero Section */
     .hero-section {
+      position: relative;
       min-height: calc(100vh - var(--nav-height));
       display: flex;
       flex-direction: column;
@@ -363,9 +364,43 @@
       padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 4vw, 3rem);
       text-align: center;
       background: var(--bg-primary);
+      overflow: hidden;
+    }
+
+    .hero-background {
+      position: absolute;
+      inset: -50px;
+      background-size: cover;
+      background-position: center;
+      filter: blur(0);
+      opacity: 0.3;
+      transform: scale(1.0);
+      z-index: 0;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .hero-background {
+        background-image: url('img/dark.png');
+      }
+    }
+
+    @media (prefers-color-scheme: light) {
+      .hero-background {
+        background-image: url('img/light.png');
+      }
+    }
+
+    html[data-theme="dark"] .hero-background {
+      background-image: url('img/dark.png');
+    }
+
+    html[data-theme="light"] .hero-background {
+      background-image: url('img/light.png');
     }
 
     .hero-content {
+      position: relative;
+      z-index: 1;
       max-width: 900px;
     }
 
@@ -1034,6 +1069,7 @@
   <main>
     <!-- Hero Section -->
     <section class="hero-section">
+      <div class="hero-background" aria-hidden="true"></div>
       <div class="hero-content">
         <h1 class="hero-title">STLGauge</h1>
         <p class="hero-subtitle" data-i18n="hero.subtitle">
@@ -1338,6 +1374,15 @@
         });
       };
 
+      // Hero background image switching utility
+      const updateHeroBackground = (isDark) => {
+        const heroBackground = document.querySelector(".hero-background");
+        if (heroBackground) {
+          const imagePath = isDark ? "img/dark.png" : "img/light.png";
+          heroBackground.style.backgroundImage = `url('${imagePath}')`;
+        }
+      };
+
       // Theme Management System
       // Initialize theme as early as possible to prevent flash
       const THEME_KEY = 'stlgauge-theme';
@@ -1391,8 +1436,9 @@
         applyTheme(initialTheme);
       }
 
-      // Set initial carousel images
+      // Set initial carousel images and hero background
       updateCarouselImages(getCurrentTheme() === 'dark');
+      updateHeroBackground(getCurrentTheme() === 'dark');
 
       // Set up theme toggle button
       document.addEventListener('DOMContentLoaded', () => {
@@ -1411,8 +1457,9 @@
             localStorage.setItem(THEME_KEY, newTheme);
             applyTheme(newTheme);
 
-            // Update carousel images
+            // Update carousel images and hero background
             updateCarouselImages(newTheme === 'dark');
+            updateHeroBackground(newTheme === 'dark');
           });
         }
       });
@@ -2577,6 +2624,7 @@
         // Only auto-update if user hasn't set a manual preference
         if (!localStorage.getItem('stlgauge-theme')) {
           updateCarouselImages(e.matches);
+          updateHeroBackground(e.matches);
         }
       });
 
