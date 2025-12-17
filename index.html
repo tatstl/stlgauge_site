@@ -672,9 +672,10 @@
       z-index: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-end;
       gap: 1rem;
       padding: clamp(2rem, 4vw, 4rem);
+      transform: translateY(-1.5rem);
     }
 
     .feature-content h3 {
@@ -720,6 +721,8 @@
 
       .feature-content {
         padding: clamp(1.5rem, 4vw, 2rem);
+        justify-content: flex-start;
+        transform: none;
       }
     }
 
