@@ -477,7 +477,7 @@
     .feature-item {
       position: relative;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 65% 35%;
       gap: 0;
       align-items: stretch;
       min-height: 500px;
@@ -1109,7 +1109,7 @@
         </div>
         <div class="feature-content">
           <h3 data-i18n="features.feature2.title">Measurement & Markup Tools</h3>
-          <p data-i18n="features.feature2.description">Capture precise measurements with multiple specialized tools: point picking for XYZ coordinates (rounded to 0.001), point-to-point distance with draggable offset handles, edge length measurement in wireframe modes, and edge tape for chaining multiple connected edges. Add custom text markups anchored to surface points, all with optional vertex snapping enabled by default for maximum accuracy.</p>
+          <p data-i18n="features.feature2.description">Point, edge, and tape tools snap to vertices for precise distances, while anchored text markups capture quick context anywhere on the mesh.</p>
         </div>
       </div>
 
@@ -1119,7 +1119,7 @@
         </div>
         <div class="feature-content">
           <h3 data-i18n="features.feature3.title">Sectioning & Pinned Callouts</h3>
-          <p data-i18n="features.feature3.description">Slide axis-aligned section planes with an intuitive slider, then pin critical measurements and outlines so your callouts stay put while you explore different views.</p>
+          <p data-i18n="features.feature3.description">Adjust axis-aligned section planes with a slider and pin measurements or outlines so callouts stay put as you switch views.</p>
         </div>
       </div>
 
@@ -1129,7 +1129,7 @@
         </div>
         <div class="feature-content">
           <h3 data-i18n="features.feature5.title">3D Thickness Computation</h3>
-          <p data-i18n="features.feature5.description">Analyze wall thickness throughout your entire model by firing reverse normals from every triangle to detect the nearest opposing face. A background worker processes the computation with real-time progress tracking and instant cancel support. Results display as a false-color heatmap keyed to min/max thickness values, with live readouts on hover and clickable pins to mark critical measurements.</p>
+          <p data-i18n="features.feature5.description">Reverse normals map global wall thickness as a color heatmap with live readouts and pins for critical areas.</p>
         </div>
       </div>
 
@@ -1139,7 +1139,7 @@
         </div>
         <div class="feature-content">
           <h3 data-i18n="features.feature6.title">2D Section Thickness</h3>
-          <p data-i18n="features.feature6.description">Measure in-plane thickness on any active section cap by remeshing the slice into a uniform grid. The worker computes the shortest line segment passing through each triangle centroid and terminating on the section outline, displaying results as a color-coded overlay that mirrors the 3D thickness palette. Hover for instant thickness readouts at any point on the sectioned surface.</p>
+          <p data-i18n="features.feature6.description">Remesh any section cap into a uniform grid to show in-plane thickness as a color overlay with hover readouts.</p>
         </div>
       </div>
 
@@ -1149,7 +1149,7 @@
         </div>
         <div class="feature-content">
           <h3 data-i18n="features.feature7.title">Tight Fitting Bounding Box</h3>
-          <p data-i18n="features.feature7.description">Compute the minimum-volume oriented bounding box by sampling approximately 200 different orientations in a background worker. The algorithm estimates the smallest box that fully contains your geometry, displaying width/height/depth dimension callouts. Track progress in a modal with instant cancel capability, and toggle visibility without recomputation once the solve completes.</p>
+          <p data-i18n="features.feature7.description">A background worker samples ~200 orientations to deliver the tightest oriented box plus width/height/depth callouts.</p>
         </div>
       </div>
 
@@ -1159,7 +1159,7 @@
         </div>
         <div class="feature-content">
           <h3 data-i18n="features.feature8.title">2D Sketching Workspace</h3>
-          <p data-i18n="features.feature8.description">Sketch precise profiles on XY/YZ/ZX planes with snap-aware line, polyline, rectangle, circle, arc, Bezier, and fillet tools. Sketch mode locks the camera to the active plane, enforces adaptive grid snapping, and keeps geometry ready for downstream CAD operations.</p>
+          <p data-i18n="features.feature8.description">Snap-aware lines, arcs, polylines, and Beziers on XY/YZ/ZX planes stay ready for downstream CAD work.</p>
         </div>
       </div>
 
@@ -1169,7 +1169,7 @@
         </div>
         <div class="feature-content">
           <h3 data-i18n="features.feature9.title">Parametric Solid Creation</h3>
-          <p data-i18n="features.feature9.description">Convert sketches into solids using extrude, revolve, and sweep operations with live previews, then combine them with union, difference, and intersection booleans powered by the Manifold 3D engine for reliable CSG workflows.</p>
+          <p data-i18n="features.feature9.description">Extrude, revolve, and sweep sketches into solids, then combine them with manifold-powered boolean operations.</p>
         </div>
       </div>
     </div>
@@ -1399,31 +1399,31 @@
             description: "Discover the powerful tools and capabilities that make LiliCAD an essential application for STL inspection and measurement.",
             feature2: {
               title: "Measurement & Markup Tools",
-              description: "Capture precise measurements with multiple specialized tools: point picking for XYZ coordinates (rounded to 0.001), point-to-point distance with draggable offset handles, edge length measurement in wireframe modes, and edge tape for chaining multiple connected edges. Add custom text markups anchored to surface points, all with optional vertex snapping enabled by default for maximum accuracy."
+              description: "Point, edge, and tape tools snap to vertices for precise distances, while anchored text markups capture quick context anywhere on the mesh."
             },
             feature3: {
               title: "Sectioning & Pinned Callouts",
-              description: "Slide axis-aligned section planes with an intuitive slider, then pin measurements and outlines so callouts stay put while you explore different views and slices."
+              description: "Adjust axis-aligned section planes with a slider and pin measurements or outlines so callouts stay put as you switch views."
             },
             feature5: {
               title: "3D Thickness Computation",
-              description: "Analyze wall thickness throughout your entire model by firing reverse normals from every triangle to detect the nearest opposing face. A background worker processes the computation with real-time progress tracking and instant cancel support. Results display as a false-color heatmap keyed to min/max thickness values, with live readouts on hover and clickable pins to mark critical measurements."
+              description: "Reverse normals map global wall thickness as a color heatmap with live readouts and pins for critical areas."
             },
             feature6: {
               title: "2D Section Thickness",
-              description: "Measure in-plane thickness on any active section cap by remeshing the slice into a uniform grid. The worker computes the shortest line segment passing through each triangle centroid and terminating on the section outline, displaying results as a color-coded overlay that mirrors the 3D thickness palette. Hover for instant thickness readouts at any point on the sectioned surface."
+              description: "Remesh any section cap into a uniform grid to show in-plane thickness as a color overlay with hover readouts."
             },
             feature7: {
               title: "Tight Fitting Bounding Box",
-              description: "Compute the minimum-volume oriented bounding box by sampling approximately 200 different orientations in a background worker. The algorithm estimates the smallest box that fully contains your geometry, displaying width/height/depth dimension callouts. Track progress in a modal with instant cancel capability, and toggle visibility without recomputation once the solve completes."
+              description: "A background worker samples ~200 orientations to deliver the tightest oriented box plus width/height/depth callouts."
             },
             feature8: {
               title: "2D Sketching Workspace",
-              description: "Sketch precise profiles on XY/YZ/ZX planes with snap-aware line, polyline, rectangle, circle, arc, Bezier, and fillet tools. Sketch mode locks the camera to the active plane, enforces adaptive grid snapping, and keeps geometry ready for downstream CAD operations."
+              description: "Snap-aware lines, arcs, polylines, and Beziers on XY/YZ/ZX planes stay ready for downstream CAD work."
             },
             feature9: {
               title: "Parametric Solid Creation",
-              description: "Convert sketches into solids using extrude, revolve, and sweep operations with live previews, then combine them with union, difference, and intersection booleans powered by the Manifold 3D engine for reliable CSG workflows."
+              description: "Extrude, revolve, and sweep sketches into solids, then combine them with manifold-powered boolean operations."
             }
           },
           download: {
@@ -1500,7 +1500,7 @@
             description: "Descubra las poderosas herramientas y capacidades que hacen de LiliCAD una aplicación esencial para la inspección y medición de STL.",
             feature2: {
               title: "Herramientas de Medición y Marcado",
-              description: "Capture mediciones precisas con múltiples herramientas especializadas: selección de puntos para coordenadas XYZ (redondeadas a 0.001), distancia punto a punto con asas de desplazamiento arrastrables, medición de longitud de arista en modos de malla alámbrica, y cinta de arista para encadenar múltiples aristas conectadas. Agregue marcas de texto personalizadas ancladas a puntos de superficie, todo con ajuste de vértice opcional habilitado de forma predeterminada para máxima precisión."
+              description: "Las herramientas de punto, arista y cinta con ajuste a vértice ofrecen medidas precisas y las anotaciones de texto ancladas guardan contexto al instante."
             },
             feature3: {
               title: "Seccionado y anotaciones ancladas",
@@ -1508,23 +1508,23 @@
             },
             feature5: {
               title: "Cálculo de Grosor 3D",
-              description: "Analice el grosor de pared en todo su modelo disparando normales inversas desde cada triángulo para detectar la cara opuesta más cercana. Un trabajador en segundo plano procesa el cálculo con seguimiento de progreso en tiempo real y soporte de cancelación instantánea. Los resultados se muestran como un mapa de calor de color falso ajustado a valores de grosor mín/máx, con lecturas en vivo al pasar el cursor y pines en los que se puede hacer clic para marcar mediciones críticas."
+              description: "Las normales inversas mapean el grosor de pared en un mapa de calor con lecturas en vivo y pines para zonas críticas."
             },
             feature6: {
               title: "Grosor de Sección 2D",
-              description: "Mida el grosor en el plano en cualquier tapa de sección activa remallando el corte en una cuadrícula uniforme. El trabajador calcula el segmento de línea más corto que pasa por cada centroide de triángulo y termina en el contorno de la sección, mostrando resultados como una superposición codificada por colores que refleja la paleta de grosor 3D. Pase el cursor para lecturas instantáneas de grosor en cualquier punto de la superficie seccionada."
+              description: "Remalle cualquier tapa de sección en una cuadrícula uniforme para mostrar el grosor en plano como superposición codificada por color con lecturas al pasar."
             },
             feature7: {
               title: "Caja Delimitadora Ajustada",
-              description: "Calcule la caja delimitadora orientada de volumen mínimo muestreando aproximadamente 200 orientaciones diferentes en un trabajador en segundo plano. El algoritmo estima la caja más pequeña que contiene completamente su geometría, mostrando notas de dimensión de ancho/alto/profundidad. Rastree el progreso en un modal con capacidad de cancelación instantánea, y alterne la visibilidad sin recalcular una vez que se complete la resolución."
+              description: "Un proceso en segundo plano muestrea unas 200 orientaciones para obtener la caja delimitadora más ajustada con anotaciones de ancho, alto y profundidad."
             },
             feature8: {
               title: "Espacio de Bocetos 2D",
-              description: "Trace perfiles precisos en los planos XY/YZ/ZX con herramientas de línea, polilínea, rectángulo, círculo, arco, Bezier y filete con soporte de ajuste. El modo boceto bloquea la cámara en el plano activo, aplica una cuadrícula adaptable y mantiene la geometría lista para operaciones CAD posteriores."
+              description: "El espacio de bocetos 2D con ajuste en los planos XY/YZ/ZX mantiene líneas, arcos y Bezier listos para el CAD posterior."
             },
             feature9: {
               title: "Creación de Sólidos Paramétrica",
-              description: "Convierta bocetos en sólidos mediante extrusión, revolución y barrido con vistas previas en vivo, y combínelos con booleanas de unión, diferencia e intersección impulsadas por el motor Manifold 3D para flujos CSG confiables."
+              description: "Extrusión, revolución y barrido convierten bocetos en sólidos que luego se combinan con booleanas fiables de Manifold 3D."
             }
           },
           download: {
@@ -1601,7 +1601,7 @@
             description: "Entdecken Sie die leistungsstarken Tools und Funktionen, die LiliCAD zu einer unverzichtbaren Anwendung für STL-Inspektion und -Messung machen.",
             feature2: {
               title: "Mess- & Markierungswerkzeuge",
-              description: "Erfassen Sie präzise Messungen mit mehreren spezialisierten Werkzeugen: Punktauswahl für XYZ-Koordinaten (auf 0,001 gerundet), Punkt-zu-Punkt-Abstand mit ziehbaren Versatz-Griffen, Kantenlängenmessung in Drahtgittermodi und Kanten-Tape zum Verketten mehrerer verbundener Kanten. Fügen Sie benutzerdefinierte Textmarkierungen hinzu, die an Oberflächenpunkten verankert sind, alle mit optionalem Vertex-Snapping, das standardmäßig für maximale Genauigkeit aktiviert ist."
+              description: "Punkt-, Kanten- und Bandwerkzeuge mit Vertex-Snapping liefern präzise Maße, ergänzt durch verankerte Textnotizen."
             },
             feature3: {
               title: "Schnitte & angeheftete Markierungen",
@@ -1609,23 +1609,23 @@
             },
             feature5: {
               title: "3D-Dickenberechnung",
-              description: "Analysieren Sie die Wanddicke in Ihrem gesamten Modell, indem Sie umgekehrte Normalen von jedem Dreieck abfeuern, um die nächste gegenüberliegende Fläche zu erkennen. Ein Hintergrund-Worker verarbeitet die Berechnung mit Echtzeit-Fortschrittsverfolgung und sofortigem Abbruch-Support. Die Ergebnisse werden als Falschfarben-Heatmap angezeigt, die auf Min/Max-Dickenwerte abgestimmt ist, mit Live-Anzeigen beim Überfahren und anklickbaren Pins zum Markieren kritischer Messungen."
+              description: "Umgekehrte Normalen erfassen die Wandstärke als farbcodierte Heatmap mit Live-Werten und Pins für kritische Stellen."
             },
             feature6: {
               title: "2D-Schnittdicke",
-              description: "Messen Sie die In-Plane-Dicke an jeder aktiven Schnittkappe, indem Sie den Schnitt in ein gleichmäßiges Gitter neu vermaschen. Der Worker berechnet das kürzeste Liniensegment, das durch jeden Dreiecksschwerpunkt verläuft und an der Schnittkontur endet, und zeigt Ergebnisse als farbcodiertes Overlay an, das die 3D-Dickenpalette widerspiegelt. Fahren Sie mit der Maus über jeden Punkt der geschnittenen Oberfläche für sofortige Dickenanzeigen."
+              description: "Remeshen Sie aktive Schnittkappen zu einem Raster, um die Ebenendicke als Farbüberlagerung mit Hover-Werten zu sehen."
             },
             feature7: {
               title: "Eng anliegender Begrenzungsrahmen",
-              description: "Berechnen Sie den volumenminimalen orientierten Begrenzungsrahmen, indem Sie ungefähr 200 verschiedene Orientierungen in einem Hintergrund-Worker abtasten. Der Algorithmus schätzt den kleinsten Rahmen, der Ihre Geometrie vollständig enthält, und zeigt Breiten-/Höhen-/Tiefenbemaßungen an. Verfolgen Sie den Fortschritt in einem Modal mit sofortiger Abbruchmöglichkeit und schalten Sie die Sichtbarkeit ohne Neuberechnung um, sobald die Lösung abgeschlossen ist."
+              description: "Ein Hintergrund-Worker testet rund 200 Orientierungen für den engsten Bounding-Box-Fit samt Breite/Höhe/Tiefe."
             },
             feature8: {
               title: "2D-Skizzenarbeitsplatz",
-              description: "Erstellen Sie präzise Profile auf den XY/YZ/ZX-Ebenen mit schnappbewussten Linien-, Polylinien-, Rechteck-, Kreis-, Bogen-, Bezier- und Fasenwerkzeugen. Der Skizziermodus fixiert die Kamera auf der aktiven Ebene, erzwingt ein adaptives Raster und hält die Geometrie für nachgelagerte CAD-Operationen bereit."
+              description: "Der 2D-Skizzenarbeitsplatz auf XY/YZ/ZX bietet schnappfreundliche Linien, Bögen und Bezier für nachgelagerte CAD-Schritte."
             },
             feature9: {
               title: "Parametrische Volumenerstellung",
-              description: "Wandeln Sie Skizzen mithilfe von Extrusions-, Rotations- und Sweep-Operationen mit Live-Vorschauen in Volumenkörper um und kombinieren Sie sie anschließend mit Vereinigungs-, Differenz- und Schnitt-Boolschen auf Basis der Manifold-3D-Engine für robuste CSG-Workflows."
+              description: "Extrusion, Rotation und Sweep erzeugen Volumenkörper, die Sie mit Manifold-Booleanen zuverlässig kombinieren."
             }
           },
           download: {
@@ -1702,7 +1702,7 @@
             description: "Découvrez les outils et capacités puissants qui font de LiliCAD une application essentielle pour l'inspection et la mesure STL.",
             feature2: {
               title: "Outils de Mesure & Annotation",
-              description: "Capturez des mesures précises avec plusieurs outils spécialisés : sélection de points pour les coordonnées XYZ (arrondies à 0,001), distance point à point avec poignées de décalage déplaçables, mesure de longueur d'arête en modes filaire, et ruban d'arête pour enchaîner plusieurs arêtes connectées. Ajoutez des annotations de texte personnalisées ancrées aux points de surface, le tout avec un alignement de sommet optionnel activé par défaut pour une précision maximale."
+              description: "Les outils point/arête/ruban avec accrochage aux sommets livrent des mesures précises et des annotations textuelles ancrées conservent le contexte."
             },
             feature3: {
               title: "Sectionnement & annotations épinglées",
@@ -1710,23 +1710,23 @@
             },
             feature5: {
               title: "Calcul d'Épaisseur 3D",
-              description: "Analysez l'épaisseur de paroi dans tout votre modèle en tirant des normales inversées depuis chaque triangle pour détecter la face opposée la plus proche. Un processus en arrière-plan traite le calcul avec suivi de progression en temps réel et prise en charge de l'annulation instantanée. Les résultats s'affichent sous forme de carte thermique en fausses couleurs calée sur les valeurs d'épaisseur min/max, avec des lectures en direct au survol et des épingles cliquables pour marquer les mesures critiques."
+              description: "Des normales inversées cartographient l'épaisseur des parois en carte thermique avec lectures en direct et épingles pour les zones critiques."
             },
             feature6: {
               title: "Épaisseur de Section 2D",
-              description: "Mesurez l'épaisseur dans le plan sur n'importe quel bouchon de section actif en remaillant la tranche en une grille uniforme. Le processus calcule le segment de ligne le plus court passant par chaque centroïde de triangle et se terminant sur le contour de la section, affichant les résultats sous forme de superposition codée par couleur qui reflète la palette d'épaisseur 3D. Survolez pour des lectures d'épaisseur instantanées à n'importe quel point de la surface sectionnée."
+              description: "Re-maillez la coupe en grille uniforme pour afficher l'épaisseur dans le plan en surcouche colorée avec lectures au survol."
             },
             feature7: {
               title: "Boîte Englobante Ajustée",
-              description: "Calculez la boîte englobante orientée à volume minimal en échantillonnant environ 200 orientations différentes dans un processus en arrière-plan. L'algorithme estime la plus petite boîte qui contient entièrement votre géométrie, affichant des cotes de largeur/hauteur/profondeur. Suivez la progression dans une fenêtre modale avec capacité d'annulation instantanée, et basculez la visibilité sans recalcul une fois la résolution terminée."
+              description: "Un traitement en arrière-plan échantillonne ~200 orientations pour fournir la boîte englobante la plus ajustée avec cotes L/H/P."
             },
             feature8: {
               title: "Espace de Croquis 2D",
-              description: "Tracez des profils précis sur les plans XY/YZ/ZX avec des outils de ligne, polyligne, rectangle, cercle, arc, Bézier et congé dotés d'un système d'accrochage intelligent. Le mode croquis verrouille la caméra sur le plan actif, applique une grille adaptative et garde la géométrie prête pour les opérations CAO en aval."
+              description: "L'espace de croquis 2D avec accrochage sur XY/YZ/ZX garde lignes, arcs et Bezier prêts pour la CAO."
             },
             feature9: {
               title: "Création de Solides Paramétriques",
-              description: "Transformez les croquis en solides grâce aux opérations d'extrusion, de révolution et de balayage avec prévisualisation en direct, puis combinez-les à l'aide de booléens union/différence/intersection propulsés par le moteur Manifold 3D pour des flux CSG fiables."
+              description: "Extrusion, révolution et balayage transforment les croquis en solides, puis les booléens Manifold les combinent de manière fiable."
             }
           },
           download: {
@@ -1803,31 +1803,31 @@
             description: "LiliCADをSTL検査と測定に不可欠なアプリケーションにする強力なツールと機能をご覧ください。",
             feature2: {
               title: "測定とマークアップツール",
-              description: "複数の専門ツールで正確な測定を行えます：XYZ座標のポイント選択（0.001に丸め）、ドラッグ可能なオフセットハンドルを備えたポイント間距離、ワイヤーフレームモードでのエッジ長測定、複数の接続されたエッジをチェーンするエッジテープ。表面ポイントに固定されたカスタムテキストマークアップを追加でき、すべて最大精度のためにデフォルトで有効になっているオプションの頂点スナップ付きです。"
+              description: "点・エッジ・テープ工具が頂点スナップで正確に測定し、表面に固定したテキスト注釈で素早くメモを残せます。"
             },
             feature3: {
               title: "断面表示とピン留め注釈",
-              description: "直感的なスライダーで軸合わせの断面平面を動かし、計測値やアウトラインをピン留めして視点を切り替えても注釈がその場に残るようにします。"
+              description: "直感的なスライダーで軸合わせ断面を動かし、測定値やアウトラインをピン留めして注釈を固定します。"
             },
             feature5: {
               title: "3D厚さ計算",
-              description: "すべての三角形から逆法線を発射して最も近い対向面を検出することにより、モデル全体の壁の厚さを分析します。バックグラウンドワーカーがリアルタイムの進行状況追跡と即座のキャンセルサポートで計算を処理します。結果は最小/最大厚さ値に合わせた偽色ヒートマップとして表示され、ホバー時のライブ読み取り値と重要な測定値をマークするためのクリック可能なピンがあります。"
+              description: "逆方向の法線で壁厚をヒートマップ表示し、ホバー値と重要ポイントのピンを提供します。"
             },
             feature6: {
               title: "2D断面厚さ",
-              description: "スライスを均一なグリッドに再メッシュ化することにより、任意のアクティブな断面キャップで面内厚さを測定します。ワーカーは各三角形の重心を通過し、断面アウトラインで終了する最短の線分を計算し、3D厚さパレットを反映するカラーコードされたオーバーレイとして結果を表示します。断面化された表面の任意のポイントで即座の厚さ読み取り値を得るためにホバーします。"
+              description: "断面キャップを均一グリッドに再メッシュして面内厚さを色付きオーバーレイとホバー表示で確認します。"
             },
             feature7: {
               title: "密着境界ボックス",
-              description: "バックグラウンドワーカーで約200の異なる方向をサンプリングすることにより、最小体積の向き境界ボックスを計算します。アルゴリズムはジオメトリを完全に含む最小のボックスを推定し、幅/高さ/深さの寸法注釈を表示します。即座のキャンセル機能を備えたモーダルで進行状況を追跡し、解決が完了したら再計算なしで可視性を切り替えます。"
+              description: "バックグラウンド処理が約200方向をサンプリングし、最もタイトな境界ボックスと幅・高さ・奥行きを返します。"
             },
             feature8: {
               title: "2Dスケッチワークスペース",
-              description: "XY/YZ/ZX平面上でスナップ対応のライン、ポリライン、長方形、円、円弧、ベジエ、フィレットツールを使って精密なプロファイルを作成します。スケッチモードはカメラをアクティブ平面に固定し、適応グリッドスナップを適用して後続のCAD操作に備えたジオメトリを保ちます。"
+              description: "XY/YZ/ZX平面のスナップ対応2Dスケッチでラインやベジエを描き、後工程のCADに備えます。"
             },
             feature9: {
               title: "パラメトリックソリッド作成",
-              description: "押し出し、回転、スイープ操作のライブプレビューでスケッチをソリッドに変換し、Manifold 3Dエンジンによる和/差/交差ブーリアンで信頼できるCSGワークフローを構築します。"
+              description: "押し出し・回転・スイープでスケッチをソリッド化し、Manifoldベースのブーリアンで結合します。"
             }
           },
           download: {
@@ -1904,7 +1904,7 @@
             description: "LiliCAD를 STL 검사 및 측정에 필수적인 애플리케이션으로 만드는 강력한 도구와 기능을 알아보세요.",
             feature2: {
               title: "측정 및 마크업 도구",
-              description: "여러 전문 도구로 정확한 측정을 캡처하세요: XYZ 좌표용 포인트 선택(0.001로 반올림), 드래그 가능한 오프셋 핸들이 있는 포인트 간 거리, 와이어프레임 모드의 에지 길이 측정, 여러 연결된 에지를 체인하는 에지 테이프. 표면 포인트에 고정된 사용자 정의 텍스트 마크업을 추가할 수 있으며, 최대 정확도를 위해 기본적으로 활성화된 선택적 정점 스냅이 모두 포함되어 있습니다."
+              description: "포인트·에지·테이프 도구가 정점 스냅으로 정확히 측정하고, 표면에 고정된 텍스트 마크업이 빠른 메모를 남깁니다."
             },
             feature3: {
               title: "단면 및 고정 주석",
@@ -1912,23 +1912,23 @@
             },
             feature5: {
               title: "3D 두께 계산",
-              description: "모든 삼각형에서 역방향 법선을 발사하여 가장 가까운 대향면을 감지함으로써 전체 모델의 벽 두께를 분석합니다. 백그라운드 워커가 실시간 진행 상황 추적 및 즉각적인 취소 지원으로 계산을 처리합니다. 결과는 최소/최대 두께 값에 맞춘 거짓 색상 히트맵으로 표시되며, 마우스를 올릴 때 라이브 판독값과 중요한 측정값을 표시하기 위한 클릭 가능한 핀이 있습니다."
+              description: "역방향 법선으로 전체 벽 두께를 색상 히트맵으로 표시하고, 호버 값과 핵심 지점을 위한 핀을 제공합니다."
             },
             feature6: {
               title: "2D 단면 두께",
-              description: "슬라이스를 균일한 그리드로 재메싱하여 활성 단면 캡의 평면 내 두께를 측정합니다. 워커는 각 삼각형 중심을 통과하고 단면 윤곽선에서 종료되는 가장 짧은 선분을 계산하여 3D 두께 팔레트를 반영하는 색상 코드 오버레이로 결과를 표시합니다. 단면화된 표면의 모든 지점에서 즉각적인 두께 판독값을 보려면 마우스를 올리세요."
+              description: "단면 캡을 균일한 그리드로 재메시해 평면 내 두께를 색상 오버레이와 호버 판독값으로 보여 줍니다."
             },
             feature7: {
               title: "밀착 경계 상자",
-              description: "백그라운드 워커에서 약 200개의 다른 방향을 샘플링하여 최소 부피 방향 경계 상자를 계산합니다. 알고리즘은 기하학을 완전히 포함하는 가장 작은 상자를 추정하고 너비/높이/깊이 치수 표기를 표시합니다. 즉각적인 취소 기능이 있는 모달에서 진행 상황을 추적하고 해결이 완료되면 재계산 없이 가시성을 전환합니다."
+              description: "백그라운드 워커가 약 200개 방향을 샘플링하여 가장 타이트한 경계 상자와 가로·세로·깊이 치수를 제공합니다."
             },
             feature8: {
               title: "2D 스케치 작업 영역",
-              description: "XY/YZ/ZX 평면에서 스냅 인지형 선, 폴리라인, 직사각형, 원, 호, 베지어, 필렛 도구로 정밀한 프로필을 그립니다. 스케치 모드는 카메라를 활성 평면에 고정하고 적응형 그리드 스냅을 적용해 이후 CAD 작업에 바로 쓸 수 있는 지오메트리를 유지합니다."
+              description: "XY/YZ/ZX 평면의 스냅 인지 스케치가 선과 베지어를 유지해 후속 CAD 작업을 준비합니다."
             },
             feature9: {
               title: "파라메트릭 솔리드 생성",
-              description: "익스ทรู드, 리볼브, 스윕 작업의 실시간 미리보기로 스케치를 솔리드로 변환하고, Manifold 3D 엔진 기반의 합집합/차집합/교집합 부울로 안정적인 CSG 워크플로를 구성합니다."
+              description: "익스ทรู드·리볼브·스윕으로 스케치를 솔리드화한 뒤 Manifold 기반 부울로 결합합니다."
             }
           },
           download: {
@@ -2005,7 +2005,7 @@
             description: "了解使LiliCAD成为STL检查和测量必备应用程序的强大工具和功能。",
             feature2: {
               title: "测量和标记工具",
-              description: "使用多种专业工具捕获精确测量：用于XYZ坐标的点选择（四舍五入到0.001），带可拖动偏移手柄的点对点距离，线框模式下的边缘长度测量，以及用于链接多个连接边缘的边缘链式测量。添加锚定到表面点的自定义文本标记，所有这些都默认启用可选的顶点吸附以实现最大精度。"
+              description: "点、边和链式工具带顶点吸附，可精准测量，并用锚定文本标注快速记录上下文。"
             },
             feature3: {
               title: "剖切与固定标注",
@@ -2013,23 +2013,23 @@
             },
             feature5: {
               title: "3D厚度计算",
-              description: "通过从每个三角形发射反向法线来检测最近的对面，分析整个模型的壁厚。后台工作线程在实时进度跟踪和即时取消支持下处理计算。结果显示为适应最小/最大厚度值的伪彩色热图，具有悬停时的实时读数和可点击的图钉以标记关键测量。"
+              description: "反向法线绘制壁厚热图，提供悬停读数和关键位置图钉。"
             },
             feature6: {
               title: "2D切面厚度",
-              description: "通过将切片重新网格化为均匀网格来测量任何活动切面盖上的平面内厚度。后台工作线程计算通过每个三角形质心并在切面轮廓处终止的最短线段，并将结果显示为反映3D厚度调色板的彩色编码覆盖。悬停以获取切面表面上任意点的即时厚度读数。"
+              description: "将剖面盖重新网格化为均匀网格，将平面厚度以彩色覆盖并可悬停读取。"
             },
             feature7: {
               title: "紧密拟合边界框",
-              description: "通过在后台工作线程中采样约200个不同的方向来计算最小体积的定向边界框。该算法估计完全包含您的几何图形的最小框，显示宽度/高度/深度尺寸标注。在具有即时取消功能的模态中跟踪进度，并在求解完成后切换可见性而无需重新计算。"
+              description: "后台进程采样约200种方向，生成最紧的定向包围盒并显示长宽高标注。"
             },
             feature8: {
               title: "2D草图工作区",
-              description: "在 XY/YZ/ZX 平面上使用支持捕捉的直线、多段线、矩形、圆、圆弧、Bezier 和倒角工具绘制精确轮廓。草图模式会将相机锁定到活动平面，启用自适应网格捕捉，并让几何体随时可用于后续 CAD 操作。"
+              description: "XY/YZ/ZX平面的捕捉式2D草图保留线条、弧线和Bezier，方便后续CAD。"
             },
             feature9: {
               title: "参数化实体创建",
-              description: "通过挤出、旋转和扫掠操作的实时预览将草图转换为实体，再借助 Manifold 3D 引擎驱动的并集/差集/交集布尔运算组合它们，构建可靠的 CSG 工作流。"
+              description: "通过挤出、旋转和扫掠将草图转为实体，再用Manifold布尔稳定组合。"
             }
           },
           download: {
@@ -2106,7 +2106,7 @@
             description: "اكتشف الأدوات والقدرات القوية التي تجعل LiliCAD تطبيقًا أساسيًا لفحص وقياس STL.",
             feature2: {
               title: "أدوات القياس والتعليق التوضيحي",
-              description: "التقط قياسات دقيقة باستخدام أدوات متخصصة متعددة: انتقاء النقاط لإحداثيات XYZ (مقرّبة إلى 0.001)، المسافة من نقطة إلى نقطة مع مقابض إزاحة قابلة للسحب، قياس طول الحافة في أوضاع الإطار السلكي، وشريط الحافة لربط عدة حواف متصلة. أضف تعليقات نصية مخصصة مثبتة على نقاط السطح، مع تفعيل التقاط الرؤوس الاختياري افتراضيًا لأقصى دقة."
+              description: "توفر أدوات النقطة والحافة والشريط مع التقاط الرؤوس قياسات دقيقة، بينما تحفظ التعليقات النصية المثبتة السياق فورًا."
             },
             feature3: {
               title: "التقسيم والتعليقات المثبتة",
@@ -2114,23 +2114,23 @@
             },
             feature5: {
               title: "حساب السمك ثلاثي الأبعاد",
-              description: "قم بتحليل سمك الجدار في جميع أنحاء نموذجك بالكامل عن طريق إطلاق متجهات عمودية معكوسة من كل مثلث للكشف عن أقرب وجه معاكس. يعالج عامل الخلفية الحساب مع تتبع التقدم في الوقت الفعلي ودعم الإلغاء الفوري. تُعرض النتائج كخريطة حرارية بألوان زائفة مضبوطة على قيم السمك الأدنى/الأقصى، مع قراءات مباشرة عند التمرير ودبابيس قابلة للنقر لتحديد القياسات الحرجة."
+              description: "ترسم المتجهات العمودية المعكوسة خريطة سمك الجدار كخريطة حرارية مع قراءات مباشرة ودبابيس للمناطق الحرجة."
             },
             feature6: {
               title: "سمك المقطع ثنائي الأبعاد",
-              description: "قم بقياس السمك في المستوى على أي غطاء مقطع نشط عن طريق إعادة تشبيك الشريحة في شبكة موحدة. يحسب العامل أقصر قطعة خط تمر عبر كل مركز كتلة مثلث وتنتهي عند خط المقطع، ويعرض النتائج كتراكب مشفر بالألوان يعكس لوحة السمك ثلاثي الأبعاد. مرر الماوس للحصول على قراءات سمك فورية في أي نقطة على السطح المقطعي."
+              description: "أعد تشبيك أغطية المقاطع إلى شبكة موحدة لعرض السمك داخل المستوى كتراكب ملون مع قراءات عند التمرير."
             },
             feature7: {
               title: "صندوق إحاطة ضيق",
-              description: "احسب صندوق الإحاطة الموجه بأدنى حجم عن طريق أخذ عينات من حوالي 200 اتجاه مختلف في عامل خلفية. تُقدِّر الخوارزمية أصغر صندوق يحتوي بالكامل على هندستك، وتعرض تعليقات توضيحية للأبعاد العرض/الارتفاع/العمق. تتبع التقدم في نافذة مشروطة مع إمكانية الإلغاء الفوري، وبدّل الرؤية دون إعادة الحساب بمجرد اكتمال الحل."
+              description: "يعين عامل خلفية نحو 200 اتجاه ليعيد أضيق صندوق إحاطة مع توضيحات العرض/الارتفاع/العمق."
             },
             feature8: {
               title: "مساحة رسم ثنائية الأبعاد",
-              description: "ارسم ملفات دقيقة على مستويات XY/YZ/ZX باستخدام أدوات الخط ومتعدد الخطوط والمستطيل والدائرة والقوس وBezier وتدوير الزوايا مع دعم الالتقاط الذكي. يثبّت وضع الرسم الكاميرا على المستوى النشط، ويطبق شبكة تكيفية، ويحافظ على الهندسة جاهزة لعمليات CAD اللاحقة."
+              description: "يحافظ فضاء الرسم ثنائي الأبعاد مع الالتقاط على خطوط وأقواس وبزييه على مستويات XY/YZ/ZX جاهزة لخطوات CAD التالية."
             },
             feature9: {
               title: "إنشاء مجسمات بارامترية",
-              description: "حوّل الرسومات إلى مجسمات باستخدام عمليات البثق والدوران والمسار مع معاينات مباشرة، ثم اجمعها عبر عمليات بوليانية للاتحاد والفرق والتقاطع مدعومة بمحرك Manifold 3D للحصول على تدفقات CSG موثوقة."
+              description: "تحول عمليات البثق والدوران والمسار الرسومات إلى مجسمات ثم تجمعها ببوليانات Manifold الموثوقة."
             }
           },
           download: {
@@ -2207,7 +2207,7 @@
             description: "Откройте для себя мощные инструменты и возможности, которые делают LiliCAD незаменимым приложением для проверки и измерения STL.",
             feature2: {
               title: "Инструменты измерения и разметки",
-              description: "Делайте точные измерения с помощью нескольких специализированных инструментов: выбор точек для координат XYZ (округленных до 0,001), расстояние от точки до точки с перетаскиваемыми смещенными ручками, измерение длины ребра в режимах каркаса и лента ребер для объединения нескольких соединенных ребер в одну цепочку. Добавляйте пользовательские текстовые метки, привязанные к точкам поверхности, все с необязательной привязкой к вершинам, включенной по умолчанию для максимальной точности."
+              description: "Инструменты точки, ребра и ленты с привязкой к вершинам дают точные размеры, а закрепленные текстовые пометки сохраняют контекст."
             },
             feature3: {
               title: "Сечения и закреплённые подсказки",
@@ -2215,23 +2215,23 @@
             },
             feature5: {
               title: "Расчет 3D-толщины",
-              description: "Анализируйте толщину стенок по всей модели, запуская обратные нормали из каждого треугольника для обнаружения ближайшей противоположной грани. Фоновый обработчик обрабатывает вычисление с отслеживанием прогресса в реальном времени и поддержкой мгновенной отмены. Результаты отображаются в виде тепловой карты с ложными цветами, настроенной на минимальные/максимальные значения толщины, с интерактивными показаниями при наведении и кликабельными булавками для отметки критических измерений."
+              description: "Обратные нормали строят тепловую карту толщины стенок с живыми показаниями и метками критичных областей."
             },
             feature6: {
               title: "Толщина 2D-сечения",
-              description: "Измеряйте толщину в плоскости на любой активной крышке сечения, переразбивая срез на равномерную сетку. Обработчик вычисляет кратчайший отрезок линии, проходящий через каждый центроид треугольника и заканчивающийся на контуре сечения, отображая результаты в виде цветового наложения, отражающего палитру 3D-толщины. Наведите курсор для мгновенных показаний толщины в любой точке на поверхности сечения."
+              description: "Перемешайте сечение в равномерную сетку и показывайте толщину в плоскости цветным наложением с подсказками при наведении."
             },
             feature7: {
               title: "Плотно прилегающий ограничивающий прямоугольник",
-              description: "Вычислите ориентированный ограничивающий прямоугольник минимального объема, выборкой примерно 200 различных ориентаций в фоновом обработчике. Алгоритм оценивает наименьший прямоугольник, полностью содержащий вашу геометрию, отображая выноски размеров ширины/высоты/глубины. Отслеживайте прогресс в модальном окне с возможностью мгновенной отмены и переключайте видимость без повторного вычисления после завершения решения."
+              description: "Фоновый обработчик перебирает около 200 ориентаций, чтобы выдать самый тесный ограничивающий параллелепипед с размерами ширины/высоты/глубины."
             },
             feature8: {
               title: "Площадка 2D-эскизов",
-              description: "Создавайте точные профили на плоскостях XY/YZ/ZX с привязкой для линий, полилиний, прямоугольников, окружностей, дуг, кривых Безье и фасок. Режим эскиза фиксирует камеру в активной плоскости, включает адаптивную сетку и готовит геометрию для последующих CAD-операций."
+              description: "2D-площадка на плоскостях XY/YZ/ZX со снапом поддерживает линии, дуги и Безье для дальнейших CAD-операций."
             },
             feature9: {
               title: "Параметрическое создание твёрдых тел",
-              description: "Преобразуйте эскизы в объёмные тела с помощью операций выдавливания, вращения и протяжки с живым предпросмотром, а затем объединяйте их булевыми операциями объединения, разности и пересечения на движке Manifold 3D для надёжных CSG-процессов."
+              description: "Экструзия, вращение и обтекание превращают эскизы в твердые тела, которые затем объединяются устойчивыми булевыми Manifold."
             }
           },
           download: {
