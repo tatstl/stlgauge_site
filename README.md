@@ -1,14 +1,14 @@
-# STLGauge Website
+# LiliCAD Website
 
-Official landing page for [STLGauge](https://stlgauge.com) - a high-fidelity STL inspection application with precision measurement tools.
+Official landing page for [LiliCAD](https://lilicad.com) - a high-fidelity STL inspection application with precision measurement tools.
 
 ## About
 
-This is a single-page static website showcasing STLGauge, a cross-platform desktop application built with Electron for inspecting and measuring STL files. The website features an interactive light/dark mode comparison slider, a feature showcase carousel, and platform-specific download links.
+This is a single-page static website showcasing LiliCAD, a cross-platform desktop application built with Electron for inspecting and measuring STL files. The website features an interactive light/dark mode comparison slider, a feature showcase carousel, and platform-specific download links.
 
 ## Features
 
-- **Interactive Theme Comparison**: Drag-to-compare slider showcasing STLGauge's light and dark modes
+- **Interactive Theme Comparison**: Drag-to-compare slider showcasing LiliCAD's light and dark modes
 - **Feature Showcase Carousel**: Bootstrap-powered image carousel displaying app capabilities
 - **Smart Platform Detection**: Automatically highlights the appropriate download for the visitor's operating system
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
@@ -18,9 +18,9 @@ This is a single-page static website showcasing STLGauge, a cross-platform deskt
 ## Project Structure
 
 ```
-stlgauge_site/
+lilicad_site/
 ├── index.html              # Main landing page
-├── CNAME                   # Custom domain configuration (stlgauge.com)
+├── CNAME                   # Custom domain configuration (lilicad.com)
 ├── fonts/                  # Self-hosted web fonts
 │   ├── FiraSans-Regular.ttf
 │   ├── FiraSans-Bold.ttf
@@ -61,8 +61,8 @@ A modern web browser and a local web server (optional but recommended for testin
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/tatstl/stlgauge_site.git
-   cd stlgauge_site
+   git clone https://github.com/tatstl/lilicad_site.git
+   cd lilicad_site
    ```
 
 2. Serve the site locally using any static file server:
@@ -92,7 +92,7 @@ This site is configured for deployment on GitHub Pages:
 
 1. Push changes to the `main` branch
 2. GitHub Pages automatically serves the site from the repository root
-3. The `CNAME` file configures the custom domain `stlgauge.com`
+3. The `CNAME` file configures the custom domain `lilicad.com`
 
 ### Manual Deployment
 
@@ -105,7 +105,7 @@ To deploy elsewhere, simply upload all files to your web server's root directory
 
 Download links in the website point to GitHub Releases. To update versions:
 
-1. Create a new release in the main STLGauge repository
+1. Create a new release in the main LiliCAD repository
 2. Update the version number and URLs in `index.html` (lines 556-567)
 3. Commit and push changes
 
@@ -133,15 +133,15 @@ The site uses Google Analytics (G-0V8WSD7C3S). To modify or remove:
 
 ## License
 
-Copyright © STLGauge. All rights reserved.
+Copyright © LiliCAD. All rights reserved.
 
 ## Support
 
-For help and support, contact: [support@stlgauge.com](mailto:support@stlgauge.com)
+For help and support, contact: [support@lilicad.com](mailto:support@lilicad.com)
 
 ## Contributing
 
-This is the official website repository. For bug reports or feature requests related to the STLGauge application itself, please contact support.
+This is the official website repository. For bug reports or feature requests related to the LiliCAD application itself, please contact support.
 
 ---
 
