@@ -496,6 +496,15 @@
       padding-bottom: 0;
     }
 
+    .comparison-section {
+      padding-top: clamp(3rem, 6vw, 4rem);
+      padding-bottom: clamp(3rem, 6vw, 4rem);
+    }
+
+    .features-section {
+      padding-top: 0;
+    }
+
     /* Features Section */
     .features-grid {
       display: flex;
@@ -1155,7 +1164,7 @@
     </section>
 
     <!-- Comparison Section -->
-    <section class="section section-alt section-compact" data-i18n-aria="comparison.ariaLabel" aria-label="Cross-platform features">
+    <section class="section section-alt section-compact comparison-section" data-i18n-aria="comparison.ariaLabel" aria-label="Cross-platform features">
       <div class="section-inner">
         <div class="section-header section-header-left">
           <h2 class="section-title" data-i18n="comparison.title">Cross-platform, lightweight &amp; modern</h2>
@@ -1165,7 +1174,7 @@
     </section>
 
   <!-- Features Section -->
-  <section class="section section-alt section-compact" data-i18n-aria="features.ariaLabel" aria-label="Detailed features">
+  <section class="section section-alt section-compact features-section" data-i18n-aria="features.ariaLabel" aria-label="Detailed features">
     <div class="features-grid">
       <div class="feature-item">
         <div class="feature-image">
