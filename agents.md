@@ -1,12 +1,12 @@
-# STLGauge Website Agents
+# LiliCAD Website Agents
 
-Custom agent definitions for working on the STLGauge static website. These agents help with common tasks and ensure consistency when maintaining the site.
+Custom agent definitions for working on the LiliCAD static website. These agents help with common tasks and ensure consistency when maintaining the site.
 
 ## Available Agents
 
 ### 1. Update Version Agent
 
-**Trigger**: When updating the STLGauge app version and download links
+**Trigger**: When updating the LiliCAD app version and download links
 
 **Tasks**:
 - Locate all version references in index.html (currently v0.1.1)
@@ -15,7 +15,7 @@ Custom agent definitions for working on the STLGauge static website. These agent
 - Check that version numbers are consistent across all three download links
 - Update any version references in README.md if needed
 
-**Usage**: "Update STLGauge version to v0.1.2" or "Update download links to latest release"
+**Usage**: "Update LiliCAD version to v0.1.2" or "Update download links to latest release"
 
 ---
 
@@ -106,7 +106,7 @@ Custom agent definitions for working on the STLGauge static website. These agent
 **Trigger**: When improving search engine optimization
 
 **Tasks**:
-- Verify meta title is descriptive (currently "STLGauge · Precision STL Viewer")
+- Verify meta title is descriptive (currently "LiliCAD · Precision STL Viewer")
 - Add/update meta description if missing
 - Check Open Graph tags for social media sharing
 - Verify canonical URL structure
@@ -123,7 +123,7 @@ Custom agent definitions for working on the STLGauge static website. These agent
 **Trigger**: Before deploying changes to production
 
 **Tasks**:
-- Verify CNAME file points to correct domain (stlgauge.com)
+- Verify CNAME file points to correct domain (lilicad.com)
 - Check that all asset paths are relative (no localhost references)
 - Ensure Google Analytics ID is correct (G-0V8WSD7C3S)
 - Verify download links point to production releases (not test/dev)
@@ -173,8 +173,8 @@ Custom agent definitions for working on the STLGauge static website. These agent
 **Site Type**: Single-page static website
 **Framework**: Vanilla HTML/CSS/JS + Bootstrap 5.3.2
 **Hosting**: GitHub Pages
-**Domain**: stlgauge.com
-**Purpose**: Landing page for STLGauge Electron app
+**Domain**: lilicad.com
+**Purpose**: Landing page for LiliCAD Electron app
 
 ## Key Files
 
@@ -215,12 +215,12 @@ npx html-validate index.html
 2. Test with local server
 3. Commit to `main` branch
 4. GitHub Pages auto-deploys
-5. Verify at stlgauge.com
+5. Verify at lilicad.com
 
 ## Notes for Agents
 
 - All code is in `index.html` - no separate CSS/JS files
 - Bootstrap is only used for the carousel component
 - Site is intentionally single-file for simplicity and performance
-- Download links point to GitHub Releases in tatstl/stlgauge_site repo
+- Download links point to GitHub Releases in tatstl/lilicad_site repo
 - Current version: v0.1.1 (update this when version changes)

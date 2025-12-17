@@ -1,6 +1,6 @@
 # Disclaimer Files - Usage Guide
 
-This directory contains disclaimer content in multiple formats for use in both the website and the STLGauge application.
+This directory contains disclaimer content in multiple formats for use in both the website and the LiliCAD application.
 
 ## Files
 

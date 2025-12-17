@@ -1,28 +1,28 @@
-# STLGauge Disclaimer
+# LiliCAD Disclaimer
 
 ## ⚠️ ALPHA SOFTWARE NOTICE
 
-**STLGauge is currently in alpha development status.** This software is expected to contain a significant number of bugs, errors, and incomplete features. **Use at your own risk.**
+**LiliCAD is currently in alpha development status.** This software is expected to contain a significant number of bugs, errors, and incomplete features. **Use at your own risk.**
 
 ---
 
 ## No Warranty
 
-STLGauge is provided **"as is"** without warranty of any kind, either express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, or non-infringement. The developers and distributors of STLGauge make no representations or warranties regarding the accuracy, reliability, completeness, or timeliness of the software or any measurements, calculations, or analyses it produces.
+LiliCAD is provided **"as is"** without warranty of any kind, either express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, or non-infringement. The developers and distributors of LiliCAD make no representations or warranties regarding the accuracy, reliability, completeness, or timeliness of the software or any measurements, calculations, or analyses it produces.
 
 ---
 
 ## Limitation of Liability
 
-In no event shall the developers, contributors, or distributors of STLGauge be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including but not limited to procurement of substitute goods or services, loss of use, data or profits, business interruption, manufacturing defects, or product failures) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.
+In no event shall the developers, contributors, or distributors of LiliCAD be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including but not limited to procurement of substitute goods or services, loss of use, data or profits, business interruption, manufacturing defects, or product failures) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.
 
 ---
 
 ## ⚠️ Verification Required
 
-**Users must independently verify and double-check all measurements, calculations, and analyses produced by STLGauge before relying on them for any purpose.** This verification must be performed manually or using alternate, validated measurement mechanisms.
+**Users must independently verify and double-check all measurements, calculations, and analyses produced by LiliCAD before relying on them for any purpose.** This verification must be performed manually or using alternate, validated measurement mechanisms.
 
-### Never rely solely on STLGauge for:
+### Never rely solely on LiliCAD for:
 
 - ❌ Critical design decisions or engineering specifications
 - ❌ Manufacturing, production, or quality control processes
@@ -34,10 +34,10 @@ In no event shall the developers, contributors, or distributors of STLGauge be l
 
 ## User Responsibility
 
-By using STLGauge, you acknowledge and agree that:
+By using LiliCAD, you acknowledge and agree that:
 
 - ✓ You are **solely responsible** for validating all measurements and calculations
-- ✓ You will **not use STLGauge as the sole basis** for any design, manufacturing, or engineering decision
+- ✓ You will **not use LiliCAD as the sole basis** for any design, manufacturing, or engineering decision
 - ✓ You understand that bugs and errors may produce incorrect results **without warning**
 - ✓ You accept **all risks** associated with using alpha-stage software
 - ✓ You will implement appropriate **verification and validation procedures** for your specific use case
@@ -46,7 +46,7 @@ By using STLGauge, you acknowledge and agree that:
 
 ## Technical Limitations
 
-STLGauge may contain errors, inaccuracies, or limitations including but not limited to:
+LiliCAD may contain errors, inaccuracies, or limitations including but not limited to:
 
 - Numerical precision and floating-point calculation errors
 - Mesh processing and geometric algorithm inaccuracies
@@ -65,4 +65,4 @@ This disclaimer shall be governed by and construed in accordance with applicable
 
 ## Acknowledgment
 
-**By using STLGauge, you acknowledge that you have read this disclaimer, understand it, and agree to be bound by its terms.**
+**By using LiliCAD, you acknowledge that you have read this disclaimer, understand it, and agree to be bound by its terms.**
