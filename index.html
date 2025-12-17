@@ -556,8 +556,15 @@
       inset: 0;
       pointer-events: none;
       z-index: 0;
-      background: linear-gradient(135deg, var(--feature-overlay-color), var(--feature-overlay-accent));
-      opacity: 0.7;
+      opacity: 0.65;
+    }
+
+    .feature-item:nth-child(odd)::after {
+      background: linear-gradient(135deg, var(--feature-overlay-color), rgba(255, 255, 255, 0));
+    }
+
+    .feature-item:nth-child(even)::after {
+      background: linear-gradient(135deg, var(--feature-overlay-accent), rgba(255, 255, 255, 0));
     }
 
     .feature-item:nth-child(odd)::before { background-position: right center; }
@@ -1251,10 +1258,6 @@
   <!-- Download Section -->
   <section class="section" id="download">
     <div class="section-inner">
-      <div class="section-header">
-        <h2 class="section-title" data-i18n="download.title">Download</h2>
-        <p class="section-description" data-i18n="download.description">Choose the build that matches your platform. Each download includes native performance, high-resolution rendering, and automatic theme detection. <u>Note - This is alpha software and the binaries are not signed. Please follow platform specific instructions to bypass the security checks.</u></p>
-      </div>
       <div class="download-grid">
         <a class="download-card" data-os="windows" href="https://github.com/tatstl/lilicad_site/releases/download/v0.6.7/LiliCAD.Setup.0.6.7.exe">
           <strong data-i18n="download.windows">Windows</strong>
