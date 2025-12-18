@@ -78,7 +78,7 @@
     }
 
     :root {
-      color-scheme: light dark;
+      color-scheme: dark;
       --section-gap: clamp(4rem, 8vw, 7rem);
       --content-max: 1400px;
       --nav-height: 72px;
@@ -87,68 +87,6 @@
       --color-magenta: #e669aa;
       --color-teal: #5493b4;
       --color-navy: #305d9a;
-      --hero-gradient: radial-gradient(circle at 20% 20%, rgba(241, 160, 203, 0.18), transparent 55%), radial-gradient(circle at 80% 0%, rgba(84, 147, 180, 0.12), transparent 50%);
-      --section-alt-gradient: var(--bg-secondary);
-      --section-dark-gradient: var(--bg-tertiary);
-      --feature-overlay-color: rgba(241, 160, 203, 0.15);
-      --feature-overlay-accent: rgba(84, 147, 180, 0.2);
-    }
-
-    /* Dark mode (default) */
-    @media (prefers-color-scheme: dark) {
-      :root {
-        color-scheme: dark;
-        --accent: #38bdf8;
-        --accent-hover: #0ea5e9;
-        --surface: rgba(20, 20, 20, 0.95);
-        --surface-elevated: rgba(30, 30, 30, 0.98);
-        --border: rgba(148, 163, 184, 0.15);
-        --text-primary: #f1f5f9;
-        --text-muted: rgba(226, 232, 240, 0.65);
-        --bg-primary: #0a0a0a;
-        --bg-secondary: #111111;
-        --bg-tertiary: #181818;
-        --cta-text: #0b1120;
-        --carousel-indicator: rgba(226, 232, 240, 0.5);
-        --footer-text: rgba(148, 163, 184, 0.6);
-        --nav-bg: rgba(10, 10, 10, 0.85);
-        --hero-gradient: radial-gradient(circle at 25% 20%, rgba(230, 105, 170, 0.25), transparent 65%), radial-gradient(circle at 80% 0%, rgba(84, 147, 180, 0.18), transparent 55%);
-        --section-alt-gradient: linear-gradient(180deg, rgba(48, 93, 154, 0.25), rgba(0, 0, 0, 0)) var(--bg-secondary);
-        --section-dark-gradient: linear-gradient(0deg, rgba(241, 160, 203, 0.12), rgba(0, 0, 0, 0)) var(--bg-tertiary);
-        --feature-overlay-color: rgba(230, 105, 170, 0.18);
-        --feature-overlay-accent: rgba(84, 147, 180, 0.22);
-      }
-    }
-
-    /* Light mode */
-    @media (prefers-color-scheme: light) {
-      :root {
-        color-scheme: light;
-        --accent: #0284c7;
-        --accent-hover: #0369a1;
-        --surface: rgba(255, 255, 255, 0.95);
-        --surface-elevated: rgba(248, 250, 252, 0.98);
-        --border: rgba(100, 116, 139, 0.15);
-        --text-primary: #0f172a;
-        --text-muted: rgba(51, 65, 85, 0.7);
-        --bg-primary: #ffffff;
-        --bg-secondary: #f8fafc;
-        --bg-tertiary: #f1f5f9;
-        --cta-text: #ffffff;
-        --carousel-indicator: rgba(100, 116, 139, 0.4);
-        --footer-text: rgba(100, 116, 139, 0.7);
-        --nav-bg: rgba(255, 255, 255, 0.85);
-        --hero-gradient: radial-gradient(circle at 20% 20%, rgba(241, 160, 203, 0.2), transparent 55%), radial-gradient(circle at 90% 0%, rgba(84, 147, 180, 0.1), transparent 50%);
-        --section-alt-gradient: linear-gradient(180deg, rgba(241, 160, 203, 0.12), rgba(255, 255, 255, 0)) var(--bg-secondary);
-        --section-dark-gradient: linear-gradient(0deg, rgba(84, 147, 180, 0.12), rgba(255, 255, 255, 0)) var(--bg-tertiary);
-        --feature-overlay-color: rgba(241, 160, 203, 0.12);
-        --feature-overlay-accent: rgba(84, 147, 180, 0.18);
-      }
-    }
-
-    /* Manual theme overrides - these take precedence over system preferences */
-    html[data-theme="dark"] {
-      color-scheme: dark;
       --accent: #38bdf8;
       --accent-hover: #0ea5e9;
       --surface: rgba(20, 20, 20, 0.95);
@@ -168,29 +106,6 @@
       --section-dark-gradient: linear-gradient(0deg, rgba(241, 160, 203, 0.12), rgba(0, 0, 0, 0)) var(--bg-tertiary);
       --feature-overlay-color: rgba(230, 105, 170, 0.18);
       --feature-overlay-accent: rgba(84, 147, 180, 0.22);
-    }
-
-    html[data-theme="light"] {
-      color-scheme: light;
-      --accent: #0284c7;
-      --accent-hover: #0369a1;
-      --surface: rgba(255, 255, 255, 0.95);
-      --surface-elevated: rgba(248, 250, 252, 0.98);
-      --border: rgba(100, 116, 139, 0.15);
-      --text-primary: #0f172a;
-      --text-muted: rgba(51, 65, 85, 0.7);
-      --bg-primary: #ffffff;
-      --bg-secondary: #f8fafc;
-      --bg-tertiary: #f1f5f9;
-      --cta-text: #ffffff;
-      --carousel-indicator: rgba(100, 116, 139, 0.4);
-      --footer-text: rgba(100, 116, 139, 0.7);
-      --nav-bg: rgba(255, 255, 255, 0.85);
-      --hero-gradient: radial-gradient(circle at 20% 20%, rgba(241, 160, 203, 0.2), transparent 55%), radial-gradient(circle at 90% 0%, rgba(84, 147, 180, 0.1), transparent 50%);
-      --section-alt-gradient: linear-gradient(180deg, rgba(241, 160, 203, 0.12), rgba(255, 255, 255, 0)) var(--bg-secondary);
-      --section-dark-gradient: linear-gradient(0deg, rgba(84, 147, 180, 0.12), rgba(255, 255, 255, 0)) var(--bg-tertiary);
-      --feature-overlay-color: rgba(241, 160, 203, 0.12);
-      --feature-overlay-accent: rgba(84, 147, 180, 0.18);
     }
 
     * {
@@ -321,35 +236,6 @@
       color: var(--text-primary);
     }
 
-    .theme-toggle {
-      width: 36px;
-      height: 36px;
-      padding: 0;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--text-primary);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .theme-toggle:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    .theme-toggle:focus {
-      outline: none;
-      border-color: var(--accent);
-    }
-
-    .theme-icon {
-      width: 18px;
-      height: 18px;
-      display: block;
-    }
 
     /* Main Content */
     main {
@@ -374,32 +260,13 @@
     .hero-background {
       position: absolute;
       inset: -50px;
+      background-image: url('img/dark.png');
       background-size: cover;
       background-position: center;
       filter: blur(0);
       opacity: 0.3;
       transform: scale(1.0);
       z-index: 0;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .hero-background {
-        background-image: url('img/dark.png');
-      }
-    }
-
-    @media (prefers-color-scheme: light) {
-      .hero-background {
-        background-image: url('img/light.png');
-      }
-    }
-
-    html[data-theme="dark"] .hero-background {
-      background-image: url('img/dark.png');
-    }
-
-    html[data-theme="light"] .hero-background {
-      background-image: url('img/light.png');
     }
 
     .hero-content {
@@ -607,92 +474,6 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Ccircle cx='400' cy='80' r='140' fill='%231a1a1a'/%3E%3Crect x='420' y='180' width='200' height='300' fill='%23222' transform='rotate(10 520 330)'/%3E%3Ccircle cx='320' cy='420' r='180' fill='%232a2a2a'/%3E%3Crect x='460' y='420' width='120' height='200' fill='%23252525' transform='rotate(-25 520 520)'/%3E%3C/svg%3E");
     }
 
-    /* Light theme overrides */
-    @media (prefers-color-scheme: light) {
-      .feature-item:nth-child(1)::before {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Ccircle cx='400' cy='80' r='180' fill='%23e8e8e8'/%3E%3Ccircle cx='480' cy='320' r='240' fill='%23ddd'/%3E%3Ccircle cx='300' cy='500' r='140' fill='%23d0d0d0'/%3E%3Ccircle cx='250' cy='180' r='100' fill='%23e0e0e0'/%3E%3C/svg%3E");
-      }
-      .feature-item:nth-child(2)::before {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect x='20' y='40' width='320' height='320' fill='%23e8e8e8' transform='rotate(15 180 200)'/%3E%3Crect x='60' y='300' width='200' height='360' fill='%23ddd' transform='rotate(-10 160 480)'/%3E%3Crect x='160' y='140' width='140' height='200' fill='%23d0d0d0' transform='rotate(30 230 240)'/%3E%3C/svg%3E");
-      }
-      .feature-item:nth-child(3)::before {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Ccircle cx='420' cy='300' r='360' fill='%23ddd'/%3E%3Crect x='320' y='40' width='120' height='120' fill='%23e8e8e8' transform='rotate(20 380 100)'/%3E%3Crect x='480' y='440' width='100' height='160' fill='%23d0d0d0' transform='rotate(-15 530 520)'/%3E%3C/svg%3E");
-      }
-      .feature-item:nth-child(4)::before {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Ccircle cx='100' cy='100' r='120' fill='%23e8e8e8'/%3E%3Ccircle cx='280' cy='80' r='90' fill='%23e0e0e0'/%3E%3Ccircle cx='60' cy='300' r='100' fill='%23ddd'/%3E%3Ccircle cx='220' cy='280' r='140' fill='%23d0d0d0'/%3E%3Ccircle cx='140' cy='480' r='160' fill='%23e8e8e8'/%3E%3C/svg%3E");
-      }
-      .feature-item:nth-child(5)::before {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect x='250' y='0' width='400' height='160' fill='%23e8e8e8' transform='rotate(45 450 80)'/%3E%3Crect x='340' y='200' width='300' height='120' fill='%23ddd' transform='rotate(45 490 260)'/%3E%3Crect x='280' y='360' width='360' height='140' fill='%23d0d0d0' transform='rotate(45 460 430)'/%3E%3Ccircle cx='520' cy='520' r='80' fill='%23e0e0e0'/%3E%3C/svg%3E");
-      }
-      .feature-item:nth-child(6)::before {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect x='0' y='100' width='280' height='280' fill='%23ddd'/%3E%3Ccircle cx='200' cy='380' r='200' fill='%23e8e8e8'/%3E%3Crect x='40' y='420' width='160' height='240' fill='%23d0d0d0' transform='rotate(-20 120 540)'/%3E%3Ccircle cx='60' cy='80' r='80' fill='%23e0e0e0'/%3E%3C/svg%3E");
-      }
-      .feature-item:nth-child(7)::before {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Ccircle cx='420' cy='250' r='300' fill='%23e8e8e8'/%3E%3Ccircle cx='420' cy='250' r='200' fill='%23ddd'/%3E%3Ccircle cx='420' cy='250' r='100' fill='%23d0d0d0'/%3E%3Crect x='300' y='450' width='320' height='100' fill='%23e0e0e0' transform='rotate(-8 460 500)'/%3E%3C/svg%3E");
-      }
-      .feature-item:nth-child(8)::before {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect x='0' y='60' width='400' height='200' fill='%23e8e8e8'/%3E%3Crect x='20' y='200' width='360' height='180' fill='%23ddd'/%3E%3Crect x='40' y='320' width='320' height='160' fill='%23d0d0d0'/%3E%3Ccircle cx='220' cy='520' r='120' fill='%23e0e0e0'/%3E%3C/svg%3E");
-      }
-      .feature-item:nth-child(9)::before {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Ccircle cx='400' cy='80' r='140' fill='%23e8e8e8'/%3E%3Crect x='420' y='180' width='200' height='300' fill='%23ddd' transform='rotate(10 520 330)'/%3E%3Ccircle cx='320' cy='420' r='180' fill='%23d0d0d0'/%3E%3Crect x='460' y='420' width='120' height='200' fill='%23e0e0e0' transform='rotate(-25 520 520)'/%3E%3C/svg%3E");
-      }
-    }
-
-    html[data-theme="light"] .feature-item:nth-child(1)::before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Ccircle cx='400' cy='80' r='180' fill='%23e8e8e8'/%3E%3Ccircle cx='480' cy='320' r='240' fill='%23ddd'/%3E%3Ccircle cx='300' cy='500' r='140' fill='%23d0d0d0'/%3E%3Ccircle cx='250' cy='180' r='100' fill='%23e0e0e0'/%3E%3C/svg%3E");
-    }
-    html[data-theme="light"] .feature-item:nth-child(2)::before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect x='20' y='40' width='320' height='320' fill='%23e8e8e8' transform='rotate(15 180 200)'/%3E%3Crect x='60' y='300' width='200' height='360' fill='%23ddd' transform='rotate(-10 160 480)'/%3E%3Crect x='160' y='140' width='140' height='200' fill='%23d0d0d0' transform='rotate(30 230 240)'/%3E%3C/svg%3E");
-    }
-    html[data-theme="light"] .feature-item:nth-child(3)::before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Ccircle cx='420' cy='300' r='360' fill='%23ddd'/%3E%3Crect x='320' y='40' width='120' height='120' fill='%23e8e8e8' transform='rotate(20 380 100)'/%3E%3Crect x='480' y='440' width='100' height='160' fill='%23d0d0d0' transform='rotate(-15 530 520)'/%3E%3C/svg%3E");
-    }
-    html[data-theme="light"] .feature-item:nth-child(4)::before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Ccircle cx='100' cy='100' r='120' fill='%23e8e8e8'/%3E%3Ccircle cx='280' cy='80' r='90' fill='%23e0e0e0'/%3E%3Ccircle cx='60' cy='300' r='100' fill='%23ddd'/%3E%3Ccircle cx='220' cy='280' r='140' fill='%23d0d0d0'/%3E%3Ccircle cx='140' cy='480' r='160' fill='%23e8e8e8'/%3E%3C/svg%3E");
-    }
-    html[data-theme="light"] .feature-item:nth-child(5)::before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect x='250' y='0' width='400' height='160' fill='%23e8e8e8' transform='rotate(45 450 80)'/%3E%3Crect x='340' y='200' width='300' height='120' fill='%23ddd' transform='rotate(45 490 260)'/%3E%3Crect x='280' y='360' width='360' height='140' fill='%23d0d0d0' transform='rotate(45 460 430)'/%3E%3Ccircle cx='520' cy='520' r='80' fill='%23e0e0e0'/%3E%3C/svg%3E");
-    }
-    html[data-theme="light"] .feature-item:nth-child(6)::before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect x='0' y='100' width='280' height='280' fill='%23ddd'/%3E%3Ccircle cx='200' cy='380' r='200' fill='%23e8e8e8'/%3E%3Crect x='40' y='420' width='160' height='240' fill='%23d0d0d0' transform='rotate(-20 120 540)'/%3E%3Ccircle cx='60' cy='80' r='80' fill='%23e0e0e0'/%3E%3C/svg%3E");
-    }
-    html[data-theme="light"] .feature-item:nth-child(7)::before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Ccircle cx='420' cy='250' r='300' fill='%23e8e8e8'/%3E%3Ccircle cx='420' cy='250' r='200' fill='%23ddd'/%3E%3Ccircle cx='420' cy='250' r='100' fill='%23d0d0d0'/%3E%3Crect x='300' y='450' width='320' height='100' fill='%23e0e0e0' transform='rotate(-8 460 500)'/%3E%3C/svg%3E");
-    }
-    html[data-theme="light"] .feature-item:nth-child(8)::before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect x='0' y='60' width='400' height='200' fill='%23e8e8e8'/%3E%3Crect x='20' y='200' width='360' height='180' fill='%23ddd'/%3E%3Crect x='40' y='320' width='320' height='160' fill='%23d0d0d0'/%3E%3Ccircle cx='220' cy='520' r='120' fill='%23e0e0e0'/%3E%3C/svg%3E");
-    }
-    html[data-theme="light"] .feature-item:nth-child(9)::before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Ccircle cx='400' cy='80' r='140' fill='%23e8e8e8'/%3E%3Crect x='420' y='180' width='200' height='300' fill='%23ddd' transform='rotate(10 520 330)'/%3E%3Ccircle cx='320' cy='420' r='180' fill='%23d0d0d0'/%3E%3Crect x='460' y='420' width='120' height='200' fill='%23e0e0e0' transform='rotate(-25 520 520)'/%3E%3C/svg%3E");
-    }
-
-    html[data-theme="dark"] .feature-item:nth-child(1)::before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Ccircle cx='400' cy='80' r='180' fill='%231a1a1a'/%3E%3Ccircle cx='480' cy='320' r='240' fill='%23222'/%3E%3Ccircle cx='300' cy='500' r='140' fill='%232a2a2a'/%3E%3Ccircle cx='250' cy='180' r='100' fill='%23252525'/%3E%3C/svg%3E");
-    }
-    html[data-theme="dark"] .feature-item:nth-child(2)::before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect x='20' y='40' width='320' height='320' fill='%231a1a1a' transform='rotate(15 180 200)'/%3E%3Crect x='60' y='300' width='200' height='360' fill='%23222' transform='rotate(-10 160 480)'/%3E%3Crect x='160' y='140' width='140' height='200' fill='%232a2a2a' transform='rotate(30 230 240)'/%3E%3C/svg%3E");
-    }
-    html[data-theme="dark"] .feature-item:nth-child(3)::before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Ccircle cx='420' cy='300' r='360' fill='%23222'/%3E%3Crect x='320' y='40' width='120' height='120' fill='%231a1a1a' transform='rotate(20 380 100)'/%3E%3Crect x='480' y='440' width='100' height='160' fill='%232a2a2a' transform='rotate(-15 530 520)'/%3E%3C/svg%3E");
-    }
-    html[data-theme="dark"] .feature-item:nth-child(4)::before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Ccircle cx='100' cy='100' r='120' fill='%231a1a1a'/%3E%3Ccircle cx='280' cy='80' r='90' fill='%23252525'/%3E%3Ccircle cx='60' cy='300' r='100' fill='%23222'/%3E%3Ccircle cx='220' cy='280' r='140' fill='%232a2a2a'/%3E%3Ccircle cx='140' cy='480' r='160' fill='%231a1a1a'/%3E%3C/svg%3E");
-    }
-    html[data-theme="dark"] .feature-item:nth-child(5)::before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect x='250' y='0' width='400' height='160' fill='%231a1a1a' transform='rotate(45 450 80)'/%3E%3Crect x='340' y='200' width='300' height='120' fill='%23222' transform='rotate(45 490 260)'/%3E%3Crect x='280' y='360' width='360' height='140' fill='%232a2a2a' transform='rotate(45 460 430)'/%3E%3Ccircle cx='520' cy='520' r='80' fill='%23252525'/%3E%3C/svg%3E");
-    }
-    html[data-theme="dark"] .feature-item:nth-child(6)::before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect x='0' y='100' width='280' height='280' fill='%23222'/%3E%3Ccircle cx='200' cy='380' r='200' fill='%231a1a1a'/%3E%3Crect x='40' y='420' width='160' height='240' fill='%232a2a2a' transform='rotate(-20 120 540)'/%3E%3Ccircle cx='60' cy='80' r='80' fill='%23252525'/%3E%3C/svg%3E");
-    }
-    html[data-theme="dark"] .feature-item:nth-child(7)::before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Ccircle cx='420' cy='250' r='300' fill='%231a1a1a'/%3E%3Ccircle cx='420' cy='250' r='200' fill='%23222'/%3E%3Ccircle cx='420' cy='250' r='100' fill='%232a2a2a'/%3E%3Crect x='300' y='450' width='320' height='100' fill='%23252525' transform='rotate(-8 460 500)'/%3E%3C/svg%3E");
-    }
-    html[data-theme="dark"] .feature-item:nth-child(8)::before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect x='0' y='60' width='400' height='200' fill='%231a1a1a'/%3E%3Crect x='20' y='200' width='360' height='180' fill='%23222'/%3E%3Crect x='40' y='320' width='320' height='160' fill='%232a2a2a'/%3E%3Ccircle cx='220' cy='520' r='120' fill='%23252525'/%3E%3C/svg%3E");
-    }
-    html[data-theme="dark"] .feature-item:nth-child(9)::before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Ccircle cx='400' cy='80' r='140' fill='%231a1a1a'/%3E%3Crect x='420' y='180' width='200' height='300' fill='%23222' transform='rotate(10 520 330)'/%3E%3Ccircle cx='320' cy='420' r='180' fill='%232a2a2a'/%3E%3Crect x='460' y='420' width='120' height='200' fill='%23252525' transform='rotate(-25 520 520)'/%3E%3C/svg%3E");
-    }
 
     .feature-image {
       position: relative;
@@ -965,16 +746,6 @@
         padding: 0.35rem 1.5rem 0.35rem 0.5rem;
         font-size: 0.75rem;
       }
-
-      .theme-toggle {
-        width: 32px;
-        height: 32px;
-      }
-
-      .theme-icon {
-        width: 16px;
-        height: 16px;
-      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1138,22 +909,6 @@
         <option value="ko">한국어</option>
         <option value="zh">中文</option>
       </select>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <svg class="theme-icon" id="themeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path class="moon-icon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          <g class="sun-icon" style="display: none;">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </g>
-        </svg>
-      </button>
     </div>
   </nav>
 
@@ -1164,7 +919,7 @@
       <div class="hero-content">
         <h1 class="hero-title">LiliCAD</h1>
         <p class="hero-subtitle" data-i18n="hero.subtitle">
-          From inspection to creation — precise measurement tools, 2D sketching, and parametric 3D modeling. Explore, measure, sketch, and build in both dark and light themes.
+          From inspection to creation — precise measurement tools, 2D sketching, and parametric 3D modeling inside a focused dark interface.
         </p>
         <a href="#download" class="hero-cta" data-i18n="hero.download">Download</a>
       </div>
@@ -1175,7 +930,7 @@
       <div class="section-inner">
         <div class="section-header section-header-left">
           <h2 class="section-title" data-i18n="comparison.title">Cross-platform, lightweight &amp; modern</h2>
-          <p class="section-description" data-i18n="comparison.description">LiliCAD is a cross-platform desktop app with a modern interface supporting light and dark modes. Measure with precision using point, point-to-point, edge, and tape tools with vertex snapping. Section models along standard axes and compute 3D/2D thickness with color-coded heatmaps. Sketch 2D profiles with lines, arcs, circles, and Bezier curves, then build parametric solids using extrude, revolve, and sweep operations. Combine shapes with boolean operations powered by the Manifold 3D engine.</p>
+          <p class="section-description" data-i18n="comparison.description">LiliCAD is a cross-platform desktop app with a modern dark interface tuned for clarity. Measure with precision using point, point-to-point, edge, and tape tools with vertex snapping. Section models along standard axes and compute 3D/2D thickness with color-coded heatmaps. Sketch 2D profiles with lines, arcs, circles, and Bezier curves, then build parametric solids using extrude, revolve, and sweep operations. Combine shapes with boolean operations powered by the Manifold 3D engine.</p>
         </div>
       </div>
     </section>
@@ -1348,119 +1103,18 @@
 
   <script>
     (() => {
-      // Carousel image switching utility
-      const updateCarouselImages = (isDark) => {
-        const themeImages = document.querySelectorAll(".theme-image");
-        const themeFolder = isDark ? "dark" : "light";
-
-        themeImages.forEach((img) => {
-          const imageName = img.dataset.image;
-          img.src = `img/carousel/${themeFolder}/${imageName}`;
-        });
-      };
-
-      // Hero background image switching utility
-      const updateHeroBackground = (isDark) => {
-        const heroBackground = document.querySelector(".hero-background");
-        if (heroBackground) {
-          const imagePath = isDark ? "img/dark.png" : "img/light.png";
-          heroBackground.style.backgroundImage = `url('${imagePath}')`;
-        }
-      };
-
-      // Theme Management System
-      // Initialize theme as early as possible to prevent flash
-      const THEME_KEY = 'lilicad-theme';
-
-      // Get the current theme preference
-      const getThemePreference = () => {
-        const stored = localStorage.getItem(THEME_KEY);
-        if (stored) return stored;
-        // Fall back to system preference
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      };
-
-      // Get the current effective theme (considering manual override)
-      const getCurrentTheme = () => {
-        const manualTheme = document.documentElement.getAttribute('data-theme');
-        if (manualTheme) return manualTheme;
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      };
-
-      // Apply theme to the document
-      const applyTheme = (theme) => {
-        if (theme === 'auto') {
-          document.documentElement.removeAttribute('data-theme');
-        } else {
-          document.documentElement.setAttribute('data-theme', theme);
-        }
-        updateThemeIcon(theme === 'auto' ? getCurrentTheme() : theme);
-      };
-
-      // Update the theme toggle icon
-      const updateThemeIcon = (effectiveTheme) => {
-        const moonIcon = document.querySelector('.moon-icon');
-        const sunIcon = document.querySelector('.sun-icon');
-
-        if (moonIcon && sunIcon) {
-          if (effectiveTheme === 'dark') {
-            // Show sun icon in dark mode (clicking will switch to light)
-            moonIcon.style.display = 'none';
-            sunIcon.style.display = 'block';
-          } else {
-            // Show moon icon in light mode (clicking will switch to dark)
-            moonIcon.style.display = 'block';
-            sunIcon.style.display = 'none';
-          }
-        }
-      };
-
-      // Initialize theme immediately
-      const initialTheme = getThemePreference();
-      if (initialTheme !== 'auto') {
-        applyTheme(initialTheme);
-      }
-
-      // Set initial carousel images and hero background
-      updateCarouselImages(getCurrentTheme() === 'dark');
-      updateHeroBackground(getCurrentTheme() === 'dark');
-
-      // Set up theme toggle button
-      document.addEventListener('DOMContentLoaded', () => {
-        const themeToggle = document.getElementById('themeToggle');
-
-        if (themeToggle) {
-          // Initialize icon
-          const currentTheme = getCurrentTheme();
-          updateThemeIcon(currentTheme);
-
-          // Handle theme toggle
-          themeToggle.addEventListener('click', () => {
-            const currentTheme = getCurrentTheme();
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-            localStorage.setItem(THEME_KEY, newTheme);
-            applyTheme(newTheme);
-
-            // Update carousel images and hero background
-            updateCarouselImages(newTheme === 'dark');
-            updateHeroBackground(newTheme === 'dark');
-          });
-        }
-      });
-
       // Internationalization (i18n) System
       const translations = {
         en: {
           pageTitle: "LiliCAD · Precision STL Viewer",
           hero: {
-            subtitle: "From inspection to creation — precise measurement tools, 2D sketching, and parametric 3D modeling. Explore, measure, sketch, and build in both dark and light themes.",
+            subtitle: "From inspection to creation — precise measurement tools, 2D sketching, and parametric 3D modeling inside a focused dark interface.",
             download: "Download"
           },
           comparison: {
             ariaLabel: "Cross-platform features",
             title: "Cross-platform, lightweight & modern",
-            description: "LiliCAD is a cross-platform desktop app with a modern interface supporting light and dark modes. Measure with precision using point, point-to-point, edge, and tape tools with vertex snapping. Section models along standard axes and compute 3D/2D thickness with color-coded heatmaps. Sketch 2D profiles with lines, arcs, circles, and Bezier curves, then build parametric solids using extrude, revolve, and sweep operations. Combine shapes with boolean operations powered by the Manifold 3D engine."
+            description: "LiliCAD is a cross-platform desktop app with a modern dark interface tuned for clarity. Measure with precision using point, point-to-point, edge, and tape tools with vertex snapping. Section models along standard axes and compute 3D/2D thickness with color-coded heatmaps. Sketch 2D profiles with lines, arcs, circles, and Bezier curves, then build parametric solids using extrude, revolve, and sweep operations. Combine shapes with boolean operations powered by the Manifold 3D engine."
           },
           carousel: {
             ariaLabel: "Feature showcase",
@@ -1555,13 +1209,13 @@
         es: {
           pageTitle: "LiliCAD · Visor de STL de Precisión",
           hero: {
-            subtitle: "De la inspección a la creación — herramientas de medición precisas, bocetos 2D y modelado paramétrico 3D. Explore, mida, dibuje y construya en temas claros y oscuros.",
+            subtitle: "De la inspección a la creación — herramientas de medición precisas, bocetos 2D y modelado paramétrico 3D dentro de una interfaz oscura enfocada.",
             download: "Descargar"
           },
           comparison: {
             ariaLabel: "Características multiplataforma",
             title: "Multiplataforma, ligero y moderno",
-            description: "LiliCAD es una aplicación de escritorio multiplataforma con una interfaz moderna que admite modos claro y oscuro. Mida con precisión usando herramientas de punto, punto a punto, arista y cinta con ajuste a vértice. Seccione modelos a lo largo de ejes estándar y calcule grosor 3D/2D con mapas de calor codificados por colores. Dibuje perfiles 2D con líneas, arcos, círculos y curvas Bezier, luego construya sólidos paramétricos usando operaciones de extrusión, revolución y barrido. Combine formas con operaciones booleanas impulsadas por el motor Manifold 3D."
+            description: "LiliCAD es una aplicación de escritorio multiplataforma con una interfaz oscura moderna optimizada para la claridad. Mida con precisión usando herramientas de punto, punto a punto, arista y cinta con ajuste a vértice. Seccione modelos a lo largo de ejes estándar y calcule grosor 3D/2D con mapas de calor codificados por colores. Dibuje perfiles 2D con líneas, arcos, círculos y curvas Bezier, luego construya sólidos paramétricos usando operaciones de extrusión, revolución y barrido. Combine formas con operaciones booleanas impulsadas por el motor Manifold 3D."
           },
           carousel: {
             ariaLabel: "Exhibición de características",
@@ -1656,13 +1310,13 @@
         de: {
           pageTitle: "LiliCAD · Präzisions-STL-Viewer",
           hero: {
-            subtitle: "Von der Inspektion zur Erstellung — präzise Messwerkzeuge, 2D-Skizzen und parametrische 3D-Modellierung. Erkunden, messen, skizzieren und erstellen Sie in hellem und dunklem Modus.",
+            subtitle: "Von der Inspektion zur Erstellung — präzise Messwerkzeuge, 2D-Skizzen und parametrische 3D-Modellierung in einer fokussierten dunklen Oberfläche.",
             download: "Herunterladen"
           },
           comparison: {
             ariaLabel: "Plattformübergreifende Funktionen",
             title: "Plattformübergreifend, leichtgewichtig & modern",
-            description: "LiliCAD ist eine plattformübergreifende Desktop-App mit moderner Oberfläche für helle und dunkle Modi. Messen Sie präzise mit Punkt-, Punkt-zu-Punkt-, Kanten- und Tape-Werkzeugen mit Vertex-Snap. Schneiden Sie Modelle entlang der Standardachsen und berechnen Sie 3D/2D-Dicke mit farbkodierten Heatmaps. Skizzieren Sie 2D-Profile mit Linien, Bögen, Kreisen und Bezier-Kurven, erstellen Sie dann parametrische Volumenkörper mit Extrusions-, Rotations- und Sweep-Operationen. Kombinieren Sie Formen mit Booleschen Operationen auf Basis der Manifold 3D-Engine."
+            description: "LiliCAD ist eine plattformübergreifende Desktop-App mit einer modernen dunklen Oberfläche, die auf Klarheit ausgelegt ist. Messen Sie präzise mit Punkt-, Punkt-zu-Punkt-, Kanten- und Tape-Werkzeugen mit Vertex-Snap. Schneiden Sie Modelle entlang der Standardachsen und berechnen Sie 3D/2D-Dicke mit farbkodierten Heatmaps. Skizzieren Sie 2D-Profile mit Linien, Bögen, Kreisen und Bezier-Kurven, erstellen Sie dann parametrische Volumenkörper mit Extrusions-, Rotations- und Sweep-Operationen. Kombinieren Sie Formen mit Booleschen Operationen auf Basis der Manifold 3D-Engine."
           },
           carousel: {
             ariaLabel: "Funktionspräsentation",
@@ -1757,13 +1411,13 @@
         fr: {
           pageTitle: "LiliCAD · Visualiseur STL de Précision",
           hero: {
-            subtitle: "De l'inspection à la création — outils de mesure précis, croquis 2D et modélisation paramétrique 3D. Explorez, mesurez, dessinez et construisez dans les thèmes clairs et sombres.",
+            subtitle: "De l'inspection à la création — outils de mesure précis, croquis 2D et modélisation 3D paramétrique au sein d'une interface sombre axée sur la clarté.",
             download: "Télécharger"
           },
           comparison: {
             ariaLabel: "Fonctionnalités multiplateformes",
             title: "Multiplateforme, léger et moderne",
-            description: "LiliCAD est une application de bureau multiplateforme avec une interface moderne prenant en charge les modes clair et sombre. Mesurez avec précision à l'aide d'outils point, point à point, arête et ruban avec alignement sur les sommets. Sectionnez les modèles le long des axes standard et calculez l'épaisseur 3D/2D avec des cartes thermiques colorées. Dessinez des profils 2D avec des lignes, arcs, cercles et courbes de Bézier, puis créez des solides paramétriques avec des opérations d'extrusion, révolution et balayage. Combinez des formes avec des opérations booléennes propulsées par le moteur Manifold 3D."
+            description: "LiliCAD est une application de bureau multiplateforme dotée d'une interface sombre moderne optimisée pour la clarté. Mesurez avec précision à l'aide d'outils point, point à point, arête et ruban avec alignement sur les sommets. Sectionnez les modèles le long des axes standard et calculez l'épaisseur 3D/2D avec des cartes thermiques colorées. Dessinez des profils 2D avec des lignes, arcs, cercles et courbes de Bézier, puis créez des solides paramétriques avec des opérations d'extrusion, révolution et balayage. Combinez des formes avec des opérations booléennes propulsées par le moteur Manifold 3D."
           },
           carousel: {
             ariaLabel: "Présentation des fonctionnalités",
@@ -1858,13 +1512,13 @@
         ja: {
           pageTitle: "LiliCAD · 精密STLビューア",
           hero: {
-            subtitle: "検査から創造へ — 精密な測定ツール、2Dスケッチ、パラメトリック3Dモデリング。ダークテーマとライトテーマで探索、測定、スケッチ、構築が可能です。",
+            subtitle: "検査から創造へ — 精密な測定ツール、2Dスケッチ、パラメトリック3Dモデリングを集中しやすいダークインターフェースにまとめました。",
             download: "ダウンロード"
           },
           comparison: {
             ariaLabel: "クロスプラットフォーム機能",
             title: "クロスプラットフォーム、軽量でモダン",
-            description: "LiliCADはライトモードとダークモードに対応したモダンなインターフェースを持つクロスプラットフォームのデスクトップアプリです。頂点スナップ付きのポイント、ポイント間、エッジ、テープツールで精密に測定できます。標準軸に沿ってモデルを断面化し、カラーコード化されたヒートマップで3D/2D厚さを計算します。ライン、アーク、円、ベジエ曲線で2Dプロファイルをスケッチし、押し出し、回転、スイープ操作でパラメトリックソリッドを構築します。Manifold 3Dエンジンによるブーリアン演算で形状を組み合わせます。"
+            description: "LiliCADは視認性を高めたモダンなダークインターフェースを備えたクロスプラットフォームのデスクトップアプリです。頂点スナップ付きのポイント、ポイント間、エッジ、テープツールで精密に測定できます。標準軸に沿ってモデルを断面化し、カラーコード化されたヒートマップで3D/2D厚さを計算します。ライン、アーク、円、ベジエ曲線で2Dプロファイルをスケッチし、押し出し、回転、スイープ操作でパラメトリックソリッドを構築します。Manifold 3Dエンジンによるブーリアン演算で形状を組み合わせます。"
           },
           carousel: {
             ariaLabel: "機能紹介",
@@ -1959,13 +1613,13 @@
         ko: {
           pageTitle: "LiliCAD · 정밀 STL 뷰어",
           hero: {
-            subtitle: "검사에서 창작으로 — 정밀 측정 도구, 2D 스케치, 파라메트릭 3D 모델링. 밝은 테마와 어두운 테마에서 탐색, 측정, 스케치, 구축하세요.",
+            subtitle: "검사에서 창작으로 — 정밀 측정 도구, 2D 스케치, 파라메트릭 3D 모델링을 집중감 있는 다크 인터페이스에 담았습니다.",
             download: "다운로드"
           },
           comparison: {
             ariaLabel: "크로스 플랫폼 기능",
             title: "크로스 플랫폼, 경량 및 현대적",
-            description: "LiliCAD는 밝은 모드와 어두운 모드를 지원하는 현대적인 인터페이스를 갖춘 크로스 플랫폼 데스크톱 앱입니다. 정점 스냅이 있는 포인트, 포인트 간, 에지 및 테이프 도구로 정밀하게 측정합니다. 표준 축을 따라 모델을 단면화하고 색상 코드 히트맵으로 3D/2D 두께를 계산합니다. 선, 호, 원 및 베지어 곡선으로 2D 프로파일을 스케치한 다음 돌출, 회전 및 스윕 작업으로 파라메트릭 솔리드를 구축합니다. Manifold 3D 엔진으로 구동되는 부울 연산으로 도형을 결합합니다."
+            description: "LiliCAD는 선명도를 위해 다듬은 현대적인 다크 인터페이스를 갖춘 크로스 플랫폼 데스크톱 앱입니다. 정점 스냅이 있는 포인트, 포인트 간, 에지 및 테이프 도구로 정밀하게 측정합니다. 표준 축을 따라 모델을 단면화하고 색상 코드 히트맵으로 3D/2D 두께를 계산합니다. 선, 호, 원 및 베지어 곡선으로 2D 프로파일을 스케치한 다음 돌출, 회전 및 스윕 작업으로 파라메트릭 솔리드를 구축합니다. Manifold 3D 엔진으로 구동되는 부울 연산으로 도형을 결합합니다."
           },
           carousel: {
             ariaLabel: "기능 쇼케이스",
@@ -2060,13 +1714,13 @@
         zh: {
           pageTitle: "LiliCAD · 精密STL查看器",
           hero: {
-            subtitle: "从检查到创作 — 精密测量工具、2D草图和参数化3D建模。在深色和浅色主题中探索、测量、绘制和构建。",
+            subtitle: "从检查到创作 — 在专注的深色界面中提供精密测量工具、2D草图和参数化3D建模。",
             download: "下载"
           },
           comparison: {
             ariaLabel: "跨平台功能",
             title: "跨平台、轻量级且现代",
-            description: "LiliCAD是一款支持浅色和深色模式的现代界面跨平台桌面应用。使用带顶点吸附的点、点对点、边缘和链式测量工具进行精确测量。沿标准轴对模型进行切面并使用彩色热图计算3D/2D厚度。使用直线、圆弧、圆和贝塞尔曲线绘制2D轮廓，然后通过挤出、旋转和扫掠操作构建参数化实体。使用Manifold 3D引擎驱动的布尔运算组合形状。"
+            description: "LiliCAD是一款配备现代深色界面的跨平台桌面应用，专为清晰度而调校。使用带顶点吸附的点、点对点、边缘和链式测量工具进行精确测量。沿标准轴对模型进行切面并使用彩色热图计算3D/2D厚度。使用直线、圆弧、圆和贝塞尔曲线绘制2D轮廓，然后通过挤出、旋转和扫掠操作构建参数化实体。使用Manifold 3D引擎驱动的布尔运算组合形状。"
           },
           carousel: {
             ariaLabel: "功能展示",
@@ -2161,13 +1815,13 @@
         ar: {
           pageTitle: "LiliCAD · عارض STL دقيق",
           hero: {
-            subtitle: "من الفحص إلى الإنشاء — أدوات قياس دقيقة ورسم ثنائي الأبعاد ونمذجة بارامترية ثلاثية الأبعاد. استكشف وقِس وارسم وابنِ في المظهرين الفاتح والداكن.",
+            subtitle: "من الفحص إلى الإنشاء — أدوات قياس دقيقة ورسم ثنائي الأبعاد ونمذجة بارامترية ثلاثية الأبعاد داخل واجهة داكنة مركزة.",
             download: "تحميل"
           },
           comparison: {
             ariaLabel: "ميزات متعددة المنصات",
             title: "متعدد المنصات وخفيف الوزن وعصري",
-            description: "LiliCAD هو تطبيق سطح مكتب متعدد المنصات بواجهة عصرية تدعم الوضعين الفاتح والداكن. قم بالقياس بدقة باستخدام أدوات النقطة والنقطة إلى النقطة والحافة والشريط مع التقاط الرؤوس. قسّم النماذج على طول المحاور القياسية واحسب السمك ثلاثي/ثنائي الأبعاد بخرائط حرارية ملونة. ارسم ملفات تعريف ثنائية الأبعاد بالخطوط والأقواس والدوائر ومنحنيات Bezier، ثم ابنِ مجسمات بارامترية باستخدام عمليات البثق والدوران والمسار. اجمع الأشكال بعمليات بوليانية مدعومة بمحرك Manifold 3D."
+            description: "LiliCAD هو تطبيق سطح مكتب متعدد المنصات بواجهة داكنة عصرية مضبوطة للوضوح. قم بالقياس بدقة باستخدام أدوات النقطة والنقطة إلى النقطة والحافة والشريط مع التقاط الرؤوس. قسّم النماذج على طول المحاور القياسية واحسب السمك ثلاثي/ثنائي الأبعاد بخرائط حرارية ملونة. ارسم ملفات تعريف ثنائية الأبعاد بالخطوط والأقواس والدوائر ومنحنيات Bezier، ثم ابنِ مجسمات بارامترية باستخدام عمليات البثق والدوران والمسار. اجمع الأشكال بعمليات بوليانية مدعومة بمحرك Manifold 3D."
           },
           carousel: {
             ariaLabel: "عرض الميزات",
@@ -2262,13 +1916,13 @@
         ru: {
           pageTitle: "LiliCAD · Точный просмотрщик STL",
           hero: {
-            subtitle: "От проверки к созданию — точные инструменты измерения, 2D-эскизы и параметрическое 3D-моделирование. Исследуйте, измеряйте, рисуйте и создавайте в светлой и тёмной теме.",
+            subtitle: "От проверки к созданию — точные инструменты измерения, 2D-эскизы и параметрическое 3D-моделирование в сфокусированном тёмном интерфейсе.",
             download: "Скачать"
           },
           comparison: {
             ariaLabel: "Кроссплатформенные функции",
             title: "Кроссплатформенный, легкий и современный",
-            description: "LiliCAD — кроссплатформенное настольное приложение с современным интерфейсом, поддерживающим светлую и тёмную тему. Измеряйте точно с помощью инструментов точки, точки к точке, ребра и ленты с привязкой к вершинам. Делайте сечения моделей вдоль стандартных осей и вычисляйте 3D/2D-толщину с цветовыми тепловыми картами. Рисуйте 2D-профили линиями, дугами, окружностями и кривыми Безье, затем создавайте параметрические твёрдые тела с помощью операций выдавливания, вращения и протяжки. Объединяйте формы булевыми операциями на движке Manifold 3D."
+            description: "LiliCAD — кроссплатформенное настольное приложение с современной тёмной оболочкой, настроенной на максимальную ясность. Измеряйте точно с помощью инструментов точки, точки к точке, ребра и ленты с привязкой к вершинам. Делайте сечения моделей вдоль стандартных осей и вычисляйте 3D/2D-толщину с цветовыми тепловыми картами. Рисуйте 2D-профили линиями, дугами, окружностями и кривыми Безье, затем создавайте параметрические твёрдые тела с помощью операций выдавливания, вращения и протяжки. Объединяйте формы булевыми операциями на движке Manifold 3D."
           },
           carousel: {
             ariaLabel: "Демонстрация функций",
@@ -2497,16 +2151,6 @@
         } else {
           card.classList.remove("is-active");
           card.removeAttribute("aria-current");
-        }
-      });
-
-      // Listen for system theme changes (only update if no manual theme is set)
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-      prefersDark.addEventListener("change", (e) => {
-        // Only auto-update if user hasn't set a manual preference
-        if (!localStorage.getItem('lilicad-theme')) {
-          updateCarouselImages(e.matches);
-          updateHeroBackground(e.matches);
         }
       });
 
