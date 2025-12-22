@@ -234,8 +234,34 @@
       background-position: center;
       filter: blur(0);
       opacity: 0.3;
-      transform: scale(1.0);
+      transform: scale(1.15);
       z-index: 0;
+      animation: hero-drift 45s ease-in-out infinite;
+    }
+
+    @keyframes hero-drift {
+      0%, 100% {
+        transform: scale(1.15) translate(0, 0);
+      }
+      20% {
+        transform: scale(1.17) translate(-1.5%, 1%);
+      }
+      40% {
+        transform: scale(1.14) translate(1%, -0.5%);
+      }
+      60% {
+        transform: scale(1.16) translate(0.5%, 1.5%);
+      }
+      80% {
+        transform: scale(1.15) translate(-1%, -1%);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-background {
+        animation: none;
+        transform: scale(1.0);
+      }
     }
 
     .hero-content {
