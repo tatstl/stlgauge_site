@@ -374,16 +374,17 @@
       background-color: var(--bg-secondary);
     }
 
-    /* Abstract SVG backgrounds for feature items */
+    /* Abstract SVG backgrounds for feature items - hidden, replaced by inline shapes */
     .feature-item::before {
       content: "";
       position: absolute;
       inset: 0;
       pointer-events: none;
-      opacity: 1;
+      opacity: 0;
       z-index: 0;
       background-repeat: no-repeat;
       background-size: 60% auto;
+      display: none;
     }
 
     .feature-item::after {
@@ -449,6 +450,274 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Ccircle cx='400' cy='80' r='140' fill='%231a1a1a'/%3E%3Crect x='420' y='180' width='200' height='300' fill='%23222' transform='rotate(10 520 330)'/%3E%3Ccircle cx='320' cy='420' r='180' fill='%232a2a2a'/%3E%3Crect x='460' y='420' width='120' height='200' fill='%23252525' transform='rotate(-25 520 520)'/%3E%3C/svg%3E");
     }
 
+    /* ============================
+       Abstract Shape Animations
+       ============================ */
+
+    /* Shape container positioning */
+    .feature-shapes {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    /* Individual shape base styles */
+    .feature-shapes .shape {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.8s ease-out, transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* When feature becomes visible, shapes animate in */
+    .feature-item.is-visible .shape {
+      opacity: 1;
+    }
+
+    /* =========================
+       Feature 1: Clustered Circles
+       ========================= */
+    .feature-item:nth-child(1) .shape-1 {
+      width: 45%; right: -5%; top: -20%;
+      transform: scale(0.5) translateY(40px);
+    }
+    .feature-item:nth-child(1) .shape-2 {
+      width: 55%; right: -10%; top: 20%;
+      transform: scale(0.4) translateX(60px);
+    }
+    .feature-item:nth-child(1) .shape-3 {
+      width: 35%; right: 15%; bottom: -15%;
+      transform: scale(0.5) translateY(-40px);
+    }
+    .feature-item:nth-child(1) .shape-4 {
+      width: 28%; right: 35%; top: 10%;
+      transform: scale(0.4) rotate(-20deg);
+    }
+    .feature-item:nth-child(1).is-visible .shape-1 {
+      transform: scale(1) translateY(0);
+      animation: float-1 8s ease-in-out infinite 1.2s;
+    }
+    .feature-item:nth-child(1).is-visible .shape-2 {
+      transform: scale(1) translateX(0);
+      animation: float-2 10s ease-in-out infinite 1.4s;
+    }
+    .feature-item:nth-child(1).is-visible .shape-3 {
+      transform: scale(1) translateY(0);
+      animation: float-3 9s ease-in-out infinite 1.6s;
+    }
+    .feature-item:nth-child(1).is-visible .shape-4 {
+      transform: scale(1) rotate(0deg);
+      animation: pulse-rotate 12s ease-in-out infinite 1.8s;
+    }
+
+    /* =========================
+       Feature 2: Scattered Rectangles
+       ========================= */
+    .feature-item:nth-child(2) .shape-1 {
+      width: 40%; left: -8%; top: -10%;
+      transform: rotate(-25deg) scale(0.6) translateX(-50px);
+    }
+    .feature-item:nth-child(2) .shape-2 {
+      width: 30%; left: 5%; bottom: -20%;
+      transform: rotate(15deg) scale(0.5) translateY(60px);
+    }
+    .feature-item:nth-child(2) .shape-3 {
+      width: 25%; left: 20%; top: 25%;
+      transform: rotate(35deg) scale(0.4) translateX(-40px);
+    }
+    .feature-item:nth-child(2).is-visible .shape-1 {
+      transform: rotate(15deg) scale(1) translateX(0);
+      animation: drift-rotate-1 11s ease-in-out infinite 1.2s;
+    }
+    .feature-item:nth-child(2).is-visible .shape-2 {
+      transform: rotate(-10deg) scale(1) translateY(0);
+      animation: drift-rotate-2 13s ease-in-out infinite 1.5s;
+    }
+    .feature-item:nth-child(2).is-visible .shape-3 {
+      transform: rotate(30deg) scale(1) translateX(0);
+      animation: drift-rotate-3 9s ease-in-out infinite 1.8s;
+    }
+
+    /* =========================
+       Feature 3: Large Circle + Rectangles
+       ========================= */
+    .feature-item:nth-child(3) .shape-1 {
+      width: 80%; right: -25%; top: -30%;
+      transform: scale(0.3);
+    }
+    .feature-item:nth-child(3) .shape-2 {
+      width: 18%; right: 5%; top: 5%;
+      transform: rotate(-30deg) scale(0.4) translateY(-30px);
+    }
+    .feature-item:nth-child(3) .shape-3 {
+      width: 15%; right: -5%; bottom: 10%;
+      transform: rotate(20deg) scale(0.4) translateX(40px);
+    }
+    .feature-item:nth-child(3).is-visible .shape-1 {
+      transform: scale(1);
+      animation: pulse-slow 10s ease-in-out infinite 1.2s;
+    }
+    .feature-item:nth-child(3).is-visible .shape-2 {
+      transform: rotate(20deg) scale(1) translateY(0);
+      animation: orbit-small-1 14s ease-in-out infinite 1.5s;
+    }
+    .feature-item:nth-child(3).is-visible .shape-3 {
+      transform: rotate(-15deg) scale(1) translateX(0);
+      animation: orbit-small-2 12s ease-in-out infinite 1.8s;
+    }
+
+    /* =========================
+       Feature 4: Grid of Circles
+       ========================= */
+    .feature-item:nth-child(4) .shape-1 {
+      width: 30%; left: -5%; top: -10%;
+      transform: scale(0.3) translateY(50px);
+    }
+    .feature-item:nth-child(4) .shape-2 {
+      width: 22%; left: 20%; top: -5%;
+      transform: scale(0.3) translateY(60px);
+    }
+    .feature-item:nth-child(4) .shape-3 {
+      width: 26%; left: -8%; top: 35%;
+      transform: scale(0.3) translateX(-40px);
+    }
+    .feature-item:nth-child(4) .shape-4 {
+      width: 34%; left: 12%; top: 30%;
+      transform: scale(0.3) translateY(40px);
+    }
+    .feature-item:nth-child(4) .shape-5 {
+      width: 38%; left: -5%; bottom: -25%;
+      transform: scale(0.3) translateY(-50px);
+    }
+    .feature-item:nth-child(4).is-visible .shape-1 {
+      transform: scale(1) translateY(0);
+      animation: float-1 9s ease-in-out infinite 1.0s;
+    }
+    .feature-item:nth-child(4).is-visible .shape-2 {
+      transform: scale(1) translateY(0);
+      animation: float-2 11s ease-in-out infinite 1.2s;
+    }
+    .feature-item:nth-child(4).is-visible .shape-3 {
+      transform: scale(1) translateX(0);
+      animation: float-3 8s ease-in-out infinite 1.4s;
+    }
+    .feature-item:nth-child(4).is-visible .shape-4 {
+      transform: scale(1) translateY(0);
+      animation: pulse-slow 10s ease-in-out infinite 1.6s;
+    }
+    .feature-item:nth-child(4).is-visible .shape-5 {
+      transform: scale(1) translateY(0);
+      animation: float-1 12s ease-in-out infinite 1.8s;
+    }
+
+    /* =========================
+       Feature 5: Diagonal Rectangles + Circle
+       ========================= */
+    .feature-item:nth-child(5) .shape-1 {
+      width: 45%; right: -15%; top: -20%;
+      transform: rotate(45deg) scale(0.4) translate(60px, -40px);
+    }
+    .feature-item:nth-child(5) .shape-2 {
+      width: 38%; right: -10%; top: 25%;
+      transform: rotate(45deg) scale(0.4) translate(50px, 30px);
+    }
+    .feature-item:nth-child(5) .shape-3 {
+      width: 42%; right: -5%; bottom: -15%;
+      transform: rotate(45deg) scale(0.4) translate(40px, 40px);
+    }
+    .feature-item:nth-child(5) .shape-4 {
+      width: 20%; right: 5%; bottom: 5%;
+      transform: scale(0.3) translateY(30px);
+    }
+    .feature-item:nth-child(5).is-visible .shape-1 {
+      transform: rotate(45deg) scale(1) translate(0, 0);
+      animation: drift-diagonal-1 13s ease-in-out infinite 1.2s;
+    }
+    .feature-item:nth-child(5).is-visible .shape-2 {
+      transform: rotate(45deg) scale(1) translate(0, 0);
+      animation: drift-diagonal-2 11s ease-in-out infinite 1.5s;
+    }
+    .feature-item:nth-child(5).is-visible .shape-3 {
+      transform: rotate(45deg) scale(1) translate(0, 0);
+      animation: drift-diagonal-3 14s ease-in-out infinite 1.8s;
+    }
+    .feature-item:nth-child(5).is-visible .shape-4 {
+      transform: scale(1) translateY(0);
+      animation: pulse-rotate 10s ease-in-out infinite 2.0s;
+    }
+
+    /* =========================
+       Keyframe Animations
+       Using only relative movements (no transform in 0%/100%) to avoid flash
+       ========================= */
+    @keyframes float-1 {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 -12px; }
+    }
+    @keyframes float-2 {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 10px 0; }
+    }
+    @keyframes float-3 {
+      0%, 100% { translate: 0 0; }
+      33% { translate: 6px -8px; }
+      66% { translate: -4px 4px; }
+    }
+    @keyframes pulse-slow {
+      0%, 100% { scale: 1; }
+      50% { scale: 1.03; }
+    }
+    @keyframes pulse-rotate {
+      0%, 100% { scale: 1; rotate: 0deg; }
+      50% { scale: 1.04; rotate: 3deg; }
+    }
+    @keyframes drift-rotate-1 {
+      0%, 100% { translate: 0 0; rotate: 0deg; }
+      50% { translate: 8px 0; rotate: 3deg; }
+    }
+    @keyframes drift-rotate-2 {
+      0%, 100% { translate: 0 0; rotate: 0deg; }
+      50% { translate: 0 -10px; rotate: 3deg; }
+    }
+    @keyframes drift-rotate-3 {
+      0%, 100% { translate: 0 0; rotate: 0deg; }
+      50% { translate: -6px 6px; rotate: 3deg; }
+    }
+    @keyframes orbit-small-1 {
+      0%, 100% { translate: 0 0; rotate: 0deg; }
+      25% { translate: 5px -5px; rotate: 3deg; }
+      75% { translate: -5px 5px; rotate: -3deg; }
+    }
+    @keyframes orbit-small-2 {
+      0%, 100% { translate: 0 0; rotate: 0deg; }
+      33% { translate: -6px -4px; rotate: 3deg; }
+      66% { translate: 4px 6px; rotate: -3deg; }
+    }
+    @keyframes drift-diagonal-1 {
+      0%, 100% { translate: 0 0; rotate: 0deg; }
+      50% { translate: 8px -6px; rotate: 2deg; }
+    }
+    @keyframes drift-diagonal-2 {
+      0%, 100% { translate: 0 0; rotate: 0deg; }
+      50% { translate: -6px 8px; rotate: -2deg; }
+    }
+    @keyframes drift-diagonal-3 {
+      0%, 100% { translate: 0 0; rotate: 0deg; }
+      33% { translate: 5px 5px; rotate: 3deg; }
+      66% { translate: -5px -5px; rotate: -3deg; }
+    }
+
+    /* Respect reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      .feature-shapes .shape {
+        transition: opacity 0.3s ease-out;
+        animation: none !important;
+        translate: none !important;
+        scale: none !important;
+        rotate: none !important;
+      }
+    }
 
     .feature-image {
       position: relative;
@@ -909,6 +1178,12 @@
   <section class="section section-alt section-compact features-section" data-i18n-aria="features.ariaLabel" aria-label="Detailed features">
     <div class="features-grid">
       <div class="feature-item">
+        <div class="feature-shapes" aria-hidden="true">
+          <svg class="shape shape-1" viewBox="0 0 200 200"><circle cx="100" cy="100" r="100" fill="#1a1a1a"/></svg>
+          <svg class="shape shape-2" viewBox="0 0 200 200"><circle cx="100" cy="100" r="100" fill="#222"/></svg>
+          <svg class="shape shape-3" viewBox="0 0 200 200"><circle cx="100" cy="100" r="100" fill="#2a2a2a"/></svg>
+          <svg class="shape shape-4" viewBox="0 0 200 200"><circle cx="100" cy="100" r="100" fill="#252525"/></svg>
+        </div>
         <div class="feature-image">
           <img class="theme-image" data-image="one.png" src="img/carousel/dark/one.png" alt="Measurement and markup tools">
         </div>
@@ -919,6 +1194,11 @@
       </div>
 
       <div class="feature-item">
+        <div class="feature-shapes" aria-hidden="true">
+          <svg class="shape shape-1" viewBox="0 0 200 200"><rect width="200" height="200" fill="#1a1a1a"/></svg>
+          <svg class="shape shape-2" viewBox="0 0 200 200"><rect width="200" height="200" fill="#222"/></svg>
+          <svg class="shape shape-3" viewBox="0 0 200 200"><rect width="200" height="200" fill="#2a2a2a"/></svg>
+        </div>
         <div class="feature-image">
           <img class="theme-image" data-image="two.png" src="img/carousel/dark/two.png" alt="Sectioning with 2D thickness overlay">
         </div>
@@ -929,6 +1209,11 @@
       </div>
 
       <div class="feature-item">
+        <div class="feature-shapes" aria-hidden="true">
+          <svg class="shape shape-1" viewBox="0 0 200 200"><circle cx="100" cy="100" r="100" fill="#222"/></svg>
+          <svg class="shape shape-2" viewBox="0 0 200 200"><rect width="200" height="200" fill="#1a1a1a"/></svg>
+          <svg class="shape shape-3" viewBox="0 0 200 200"><rect width="200" height="200" fill="#2a2a2a"/></svg>
+        </div>
         <div class="feature-image">
           <img class="theme-image" data-image="three.png" src="img/carousel/dark/three.png" alt="3D thickness analysis">
         </div>
@@ -939,6 +1224,13 @@
       </div>
 
       <div class="feature-item">
+        <div class="feature-shapes" aria-hidden="true">
+          <svg class="shape shape-1" viewBox="0 0 200 200"><circle cx="100" cy="100" r="100" fill="#1a1a1a"/></svg>
+          <svg class="shape shape-2" viewBox="0 0 200 200"><circle cx="100" cy="100" r="100" fill="#252525"/></svg>
+          <svg class="shape shape-3" viewBox="0 0 200 200"><circle cx="100" cy="100" r="100" fill="#222"/></svg>
+          <svg class="shape shape-4" viewBox="0 0 200 200"><circle cx="100" cy="100" r="100" fill="#2a2a2a"/></svg>
+          <svg class="shape shape-5" viewBox="0 0 200 200"><circle cx="100" cy="100" r="100" fill="#1a1a1a"/></svg>
+        </div>
         <div class="feature-image">
           <img class="theme-image" data-image="four.png" src="img/carousel/dark/four.png" alt="2D sketching workspace">
         </div>
@@ -949,6 +1241,12 @@
       </div>
 
       <div class="feature-item">
+        <div class="feature-shapes" aria-hidden="true">
+          <svg class="shape shape-1" viewBox="0 0 200 200"><rect width="200" height="200" fill="#1a1a1a"/></svg>
+          <svg class="shape shape-2" viewBox="0 0 200 200"><rect width="200" height="200" fill="#222"/></svg>
+          <svg class="shape shape-3" viewBox="0 0 200 200"><rect width="200" height="200" fill="#2a2a2a"/></svg>
+          <svg class="shape shape-4" viewBox="0 0 200 200"><circle cx="100" cy="100" r="100" fill="#252525"/></svg>
+        </div>
         <div class="feature-image">
           <img class="theme-image" data-image="five.png" src="img/carousel/dark/five.png" alt="Parametric solid creation">
         </div>
@@ -1601,6 +1899,29 @@
           closeModal();
         }
       });
+
+      // Feature section visibility animations
+      const featureItems = document.querySelectorAll('.feature-item');
+      if (featureItems.length && 'IntersectionObserver' in window) {
+        const featureObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+              }
+            });
+          },
+          {
+            root: null,
+            rootMargin: '0px 0px -15% 0px',
+            threshold: 0.1
+          }
+        );
+
+        featureItems.forEach((item) => {
+          featureObserver.observe(item);
+        });
+      }
     })();
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
