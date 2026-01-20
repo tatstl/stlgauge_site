@@ -45,6 +45,38 @@
       font-display: swap;
     }
 
+    @font-face {
+      font-family: "Noto Sans JP";
+      src: url("fonts/NotoSansJP-VariableFont_wght.ttf") format("truetype");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Noto Sans KR";
+      src: url("fonts/NotoSansKR-VariableFont_wght.ttf") format("truetype");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Noto Sans SC";
+      src: url("fonts/NotoSansSC-VariableFont_wght.ttf") format("truetype");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Noto Sans Arabic";
+      src: url("fonts/NotoSansArabic-VariableFont_wdth,wght.ttf") format("truetype");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
 
     :root {
       color-scheme: dark;
@@ -1154,6 +1186,58 @@
         padding: 1.5rem;
       }
     }
+
+    /* RTL (Right-to-Left) Support for Arabic */
+    [dir="rtl"] {
+      text-align: right;
+    }
+
+    [dir="rtl"] .top-nav {
+      flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .nav-brand {
+      flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .nav-links {
+      flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .nav-controls {
+      flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .lang-select {
+      background-position: left 0.6rem center;
+      padding: 0.45rem 0.75rem 0.45rem 2rem;
+    }
+
+    [dir="rtl"] .feature-card {
+      text-align: right;
+    }
+
+    [dir="rtl"] .download-card {
+      text-align: right;
+    }
+
+    [dir="rtl"] .modal-header {
+      flex-direction: row-reverse;
+    }
+
+    [dir="rtl"] .modal-close {
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    [dir="rtl"] .disclaimer-list {
+      padding-right: 1.5rem;
+      padding-left: 0;
+    }
+
+    [dir="rtl"] .footer-content {
+      direction: rtl;
+    }
   </style>
 </head>
 <body>
@@ -1173,6 +1257,13 @@
         <option value="es">Español</option>
         <option value="de">Deutsch</option>
         <option value="fr">Français</option>
+        <option value="it">Italiano</option>
+        <option value="nl">Nederlands</option>
+        <option value="ru">Русский</option>
+        <option value="ar">العربية</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="zh">中文</option>
       </select>
     </div>
   </nav>
@@ -1750,6 +1841,657 @@
             governingLawText: "Cet avertissement sera régi et interprété conformément aux lois applicables. Si une disposition de cet avertissement est jugée inapplicable ou invalide, cette disposition sera limitée ou éliminée dans la mesure minimale nécessaire pour que cet avertissement reste par ailleurs pleinement en vigueur.",
             acknowledgment: "En utilisant LiliCAD, vous reconnaissez avoir lu cet avertissement, le comprendre et accepter d'être lié par ses conditions."
           }
+        },
+        it: {
+          pageTitle: "LiliCAD · Visualizzatore STL di Precisione",
+          hero: {
+            subtitle: "Dall'ispezione alla creazione — strumenti di misurazione precisi, schizzi 2D e modellazione parametrica 3D in un'interfaccia scura e focalizzata.",
+            download: "Scarica"
+          },
+          comparison: {
+            ariaLabel: "Funzionalità multipiattaforma",
+            title: "Multipiattaforma, leggero e moderno",
+            description: "LiliCAD è un'applicazione desktop multipiattaforma con un'interfaccia scura moderna ottimizzata per la chiarezza. Misura con precisione utilizzando strumenti punto, punto-punto, bordo e metro con aggancio ai vertici. Seziona i modelli lungo gli assi standard e calcola lo spessore 3D/2D con mappe di calore codificate per colore. Disegna profili 2D con linee, archi, cerchi e curve di Bezier, quindi costruisci solidi parametrici usando operazioni di estrusione, rivoluzione e sweep. Combina forme con operazioni booleane alimentate dal motore Manifold 3D."
+          },
+          carousel: {
+            ariaLabel: "Vetrina delle funzionalità",
+            title: "Funzionalità in Azione",
+            description: "Esplora le capacità di LiliCAD attraverso questi screenshot che mostrano l'interfaccia e gli strumenti dell'applicazione.",
+            previous: "Precedente",
+            next: "Successivo"
+          },
+          features: {
+            ariaLabel: "Funzionalità dettagliate",
+            title: "Funzionalità in Dettaglio",
+            description: "Scopri gli strumenti potenti e le capacità che rendono LiliCAD un'applicazione essenziale per l'ispezione e la misurazione STL.",
+            feature2: {
+              title: "Strumenti di Misurazione e Annotazione",
+              description: "Gli strumenti punto, bordo e metro si agganciano ai vertici per distanze precise, mentre le annotazioni di testo ancorate catturano rapidamente il contesto ovunque sulla mesh."
+            },
+            feature3: {
+              title: "Sezionamento e Callout Fissati",
+              description: "Regola i piani di sezione allineati agli assi con uno slider, rimodella il cappuccio in una mappa di calore di spessore uniforme e fissa misurazioni o contorni in modo che i callout rimangano fermi quando cambi vista."
+            },
+            feature5: {
+              title: "Calcolo Spessore 3D",
+              description: "Le normali inverse mappano lo spessore globale delle pareti come una mappa di calore a colori con letture live e pin per le aree critiche."
+            },
+            feature8: {
+              title: "Area di Lavoro Schizzi 2D",
+              description: "Linee, archi, polilinee e Bezier con aggancio sui piani XY/YZ/ZX rimangono pronti per il lavoro CAD successivo."
+            },
+            feature9: {
+              title: "Creazione Solidi Parametrici",
+              description: "Estrusione, rivoluzione e sweep trasformano gli schizzi in solidi, poi combinali con operazioni booleane potenziate da Manifold."
+            }
+          },
+          download: {
+            title: "Scarica",
+            description: "Scegli la build che corrisponde alla tua piattaforma. Ogni download include prestazioni native, rendering ad alta risoluzione e rilevamento automatico del tema. <u>Nota - Questo è un software alfa e i binari non sono firmati. Segui le istruzioni specifiche della piattaforma per bypassare i controlli di sicurezza.</u>",
+            windows: "Windows",
+            windowsDesc: "Pacchetto di installazione · 64 bit",
+            macos: "macOS",
+            macosDesc: "Immagine disco · Apple silicon",
+            linux: "Linux",
+            linuxDesc: "Deb · Distribuzioni basate su Debian a 64 bit",
+            youtubeButton: "Visita il Nostro Canale YouTube"
+          },
+          footer: {
+            text: "&middot; Per aiuto e supporto contattaci a <a href='mailto:support@lilicad.com'>support@lilicad.com</a> &middot;",
+            disclaimer: "Disclaimer"
+          },
+          disclaimer: {
+            title: "Disclaimer",
+            alphaWarning: "AVVISO SOFTWARE ALFA:",
+            alphaText: "LiliCAD è attualmente in stato di sviluppo alfa. Si prevede che questo software contenga un numero significativo di bug, errori e funzionalità incomplete. Usare a proprio rischio.",
+            noWarrantyTitle: "Nessuna Garanzia",
+            noWarrantyText: "LiliCAD è fornito \"così com'è\" senza garanzia di alcun tipo, espressa o implicita, incluse ma non limitate alle garanzie implicite di commerciabilità, idoneità per uno scopo particolare o non violazione. Gli sviluppatori e distributori di LiliCAD non rilasciano dichiarazioni o garanzie riguardo l'accuratezza, affidabilità, completezza o tempestività del software o qualsiasi misurazione, calcolo o analisi che produce.",
+            liabilityTitle: "Limitazione di Responsabilità",
+            liabilityText: "In nessun caso gli sviluppatori, contributori o distributori di LiliCAD saranno responsabili per danni diretti, indiretti, incidentali, speciali, esemplari o consequenziali (inclusi ma non limitati all'approvvigionamento di beni o servizi sostitutivi, perdita di utilizzo, dati o profitti, interruzione dell'attività, difetti di produzione o guasti del prodotto) comunque causati e su qualsiasi teoria di responsabilità, sia contrattuale, responsabilità oggettiva o illecito civile (inclusa negligenza o altro) derivanti in qualsiasi modo dall'uso di questo software, anche se avvisati della possibilità di tali danni.",
+            verificationTitle: "Verifica Richiesta",
+            verificationText: "Gli utenti devono verificare e ricontrollare indipendentemente tutte le misurazioni, calcoli e analisi prodotti da LiliCAD prima di fare affidamento su di essi per qualsiasi scopo. Questa verifica deve essere eseguita manualmente o utilizzando meccanismi di misurazione alternativi validati. Non fare mai affidamento esclusivamente su LiliCAD per:",
+            verification1: "Decisioni di progettazione critiche o specifiche ingegneristiche",
+            verification2: "Processi di produzione, fabbricazione o controllo qualità",
+            verification3: "Applicazioni o valutazioni critiche per la sicurezza",
+            verification4: "Applicazioni mediche, aerospaziali, automobilistiche o altre industrie regolamentate",
+            verification5: "Qualsiasi applicazione dove l'accuratezza delle misurazioni è essenziale per la sicurezza o funzionalità",
+            userResponsibilityTitle: "Responsabilità dell'Utente",
+            userResponsibilityText: "Utilizzando LiliCAD, riconosci e accetti che:",
+            responsibility1: "Sei l'unico responsabile della validazione di tutte le misurazioni e calcoli",
+            responsibility2: "Non utilizzerai LiliCAD come unica base per qualsiasi decisione di progettazione, produzione o ingegneria",
+            responsibility3: "Comprendi che bug ed errori possono produrre risultati errati senza preavviso",
+            responsibility4: "Accetti tutti i rischi associati all'utilizzo di software in fase alfa",
+            responsibility5: "Implementerai procedure appropriate di verifica e validazione per il tuo caso d'uso specifico",
+            technicalLimitationsTitle: "Limitazioni Tecniche",
+            technicalLimitationsText: "LiliCAD può contenere errori, imprecisioni o limitazioni inclusi ma non limitati a:",
+            limitation1: "Errori di precisione numerica e calcolo in virgola mobile",
+            limitation2: "Imprecisioni nell'elaborazione mesh e algoritmi geometrici",
+            limitation3: "Discrepanze di rendering e visualizzazione",
+            limitation4: "Perdita o corruzione dati nell'importazione/esportazione file",
+            limitation5: "Problemi di prestazioni con modelli grandi o complessi",
+            limitation6: "Implementazione incompleta o errata degli algoritmi di misurazione",
+            governingLawTitle: "Legge Applicabile",
+            governingLawText: "Questo disclaimer sarà regolato e interpretato in conformità con le leggi applicabili. Se qualsiasi disposizione di questo disclaimer risulta inapplicabile o non valida, tale disposizione sarà limitata o eliminata nella misura minima necessaria affinché questo disclaimer rimanga altrimenti in pieno vigore ed effetto.",
+            acknowledgment: "Utilizzando LiliCAD, riconosci di aver letto questo disclaimer, di comprenderlo e di accettare di essere vincolato dai suoi termini."
+          }
+        },
+        nl: {
+          pageTitle: "LiliCAD · Precisie STL Viewer",
+          hero: {
+            subtitle: "Van inspectie tot creatie — nauwkeurige meetgereedschappen, 2D-schetsen en parametrische 3D-modellering in een gerichte donkere interface.",
+            download: "Downloaden"
+          },
+          comparison: {
+            ariaLabel: "Cross-platform functies",
+            title: "Cross-platform, lichtgewicht en modern",
+            description: "LiliCAD is een cross-platform desktopapplicatie met een moderne donkere interface afgestemd op helderheid. Meet nauwkeurig met punt-, punt-naar-punt-, rand- en lintmeetgereedschappen met vertex-snapping. Doorsnijd modellen langs standaard assen en bereken 3D/2D-dikte met kleurgecodeerde heatmaps. Schets 2D-profielen met lijnen, bogen, cirkels en Bezier-curves, bouw vervolgens parametrische solids met extrusie-, rotatie- en sweep-bewerkingen. Combineer vormen met booleaanse bewerkingen aangedreven door de Manifold 3D-engine."
+          },
+          carousel: {
+            ariaLabel: "Functie showcase",
+            title: "Functies in Actie",
+            description: "Ontdek de mogelijkheden van LiliCAD via deze screenshots die de interface en tools van de app tonen.",
+            previous: "Vorige",
+            next: "Volgende"
+          },
+          features: {
+            ariaLabel: "Gedetailleerde functies",
+            title: "Functies in Detail",
+            description: "Ontdek de krachtige tools en mogelijkheden die LiliCAD een essentiële applicatie maken voor STL-inspectie en -meting.",
+            feature2: {
+              title: "Meet- en Markeergereedschappen",
+              description: "Punt-, rand- en lintgereedschappen snappen naar vertices voor nauwkeurige afstanden, terwijl verankerde tekstmarkeringen snel context vastleggen overal op de mesh."
+            },
+            feature3: {
+              title: "Doorsnijden en Vastgezette Callouts",
+              description: "Pas as-uitgelijnde sectievlakken aan met een schuifregelaar, hermesh de kap in een uniforme dikte-heatmap en pin metingen of contouren vast zodat callouts op hun plaats blijven bij het wisselen van weergaven."
+            },
+            feature5: {
+              title: "3D Dikteberekening",
+              description: "Omgekeerde normalen brengen globale wanddikte in kaart als een kleur-heatmap met live uitlezingen en pinnen voor kritieke gebieden."
+            },
+            feature8: {
+              title: "2D Schets Werkruimte",
+              description: "Snap-bewuste lijnen, bogen, polylijnen en Beziers op XY/YZ/ZX-vlakken blijven klaar voor downstream CAD-werk."
+            },
+            feature9: {
+              title: "Parametrische Solid Creatie",
+              description: "Extrudeer, roteer en sweep schetsen naar solids, combineer ze vervolgens met manifold-aangedreven booleaanse bewerkingen."
+            }
+          },
+          download: {
+            title: "Downloaden",
+            description: "Kies de build die bij uw platform past. Elke download bevat native prestaties, high-resolution rendering en automatische themadetectie. <u>Let op - Dit is alfa-software en de binaries zijn niet ondertekend. Volg platformspecifieke instructies om de beveiligingscontroles te omzeilen.</u>",
+            windows: "Windows",
+            windowsDesc: "Installatiepakket · 64-bit",
+            macos: "macOS",
+            macosDesc: "Schijfkopie · Apple silicon",
+            linux: "Linux",
+            linuxDesc: "Deb · 64-bit Debian-gebaseerde distributies",
+            youtubeButton: "Bezoek Ons YouTube Kanaal"
+          },
+          footer: {
+            text: "&middot; Voor hulp en ondersteuning neem contact met ons op via <a href='mailto:support@lilicad.com'>support@lilicad.com</a> &middot;",
+            disclaimer: "Disclaimer"
+          },
+          disclaimer: {
+            title: "Disclaimer",
+            alphaWarning: "ALFA SOFTWARE KENNISGEVING:",
+            alphaText: "LiliCAD bevindt zich momenteel in alfa-ontwikkelingsstatus. Deze software zal naar verwachting een aanzienlijk aantal bugs, fouten en onvolledige functies bevatten. Gebruik op eigen risico.",
+            noWarrantyTitle: "Geen Garantie",
+            noWarrantyText: "LiliCAD wordt geleverd \"zoals het is\" zonder enige vorm van garantie, expliciet of impliciet, inclusief maar niet beperkt tot de impliciete garanties van verkoopbaarheid, geschiktheid voor een bepaald doel of niet-inbreuk. De ontwikkelaars en distributeurs van LiliCAD geven geen verklaringen of garanties met betrekking tot de nauwkeurigheid, betrouwbaarheid, volledigheid of tijdigheid van de software of metingen, berekeningen of analyses die het produceert.",
+            liabilityTitle: "Beperking van Aansprakelijkheid",
+            liabilityText: "In geen geval zullen de ontwikkelaars, bijdragers of distributeurs van LiliCAD aansprakelijk zijn voor directe, indirecte, incidentele, speciale, exemplarische of gevolgschade (inclusief maar niet beperkt tot aanschaf van vervangende goederen of diensten, verlies van gebruik, gegevens of winst, bedrijfsonderbreking, fabricagefouten of productdefecten) ongeacht de oorzaak en onder elke theorie van aansprakelijkheid, hetzij contractueel, strikte aansprakelijkheid of onrechtmatige daad (inclusief nalatigheid of anderszins) die op enigerlei wijze voortvloeit uit het gebruik van deze software, zelfs indien gewaarschuwd voor de mogelijkheid van dergelijke schade.",
+            verificationTitle: "Verificatie Vereist",
+            verificationText: "Gebruikers moeten alle metingen, berekeningen en analyses geproduceerd door LiliCAD onafhankelijk verifiëren en dubbel controleren voordat ze erop vertrouwen voor welk doel dan ook. Deze verificatie moet handmatig worden uitgevoerd of met behulp van alternatieve, gevalideerde meetmechanismen. Vertrouw nooit uitsluitend op LiliCAD voor:",
+            verification1: "Kritieke ontwerpbeslissingen of technische specificaties",
+            verification2: "Productie-, fabricage- of kwaliteitscontroleprocessen",
+            verification3: "Veiligheidskritieke toepassingen of beoordelingen",
+            verification4: "Medische, lucht- en ruimtevaart-, automobiel- of andere gereguleerde industrietoepassingen",
+            verification5: "Elke toepassing waar meetnauwkeurigheid essentieel is voor veiligheid of functionaliteit",
+            userResponsibilityTitle: "Verantwoordelijkheid Gebruiker",
+            userResponsibilityText: "Door LiliCAD te gebruiken, erkent en gaat u akkoord dat:",
+            responsibility1: "U bent als enige verantwoordelijk voor het valideren van alle metingen en berekeningen",
+            responsibility2: "U zult LiliCAD niet gebruiken als enige basis voor enige ontwerp-, productie- of technische beslissing",
+            responsibility3: "U begrijpt dat bugs en fouten onjuiste resultaten kunnen produceren zonder waarschuwing",
+            responsibility4: "U accepteert alle risico's verbonden aan het gebruik van alfa-fase software",
+            responsibility5: "U zult passende verificatie- en validatieprocedures implementeren voor uw specifieke gebruikssituatie",
+            technicalLimitationsTitle: "Technische Beperkingen",
+            technicalLimitationsText: "LiliCAD kan fouten, onnauwkeurigheden of beperkingen bevatten, inclusief maar niet beperkt tot:",
+            limitation1: "Numerieke precisie en floating-point berekeningsfouten",
+            limitation2: "Mesh-verwerking en geometrische algoritme-onnauwkeurigheden",
+            limitation3: "Rendering- en visualisatieverschillen",
+            limitation4: "Gegevensverlies of -corruptie bij bestandsimport/-export",
+            limitation5: "Prestatieproblemen met grote of complexe modellen",
+            limitation6: "Onvolledige of onjuiste implementatie van meetalgoritmen",
+            governingLawTitle: "Toepasselijk Recht",
+            governingLawText: "Deze disclaimer wordt beheerst door en geïnterpreteerd in overeenstemming met toepasselijk recht. Als enige bepaling van deze disclaimer onuitvoerbaar of ongeldig wordt bevonden, zal die bepaling worden beperkt of geëlimineerd tot het minimum noodzakelijke zodat deze disclaimer anderszins volledig van kracht blijft.",
+            acknowledgment: "Door LiliCAD te gebruiken, erkent u dat u deze disclaimer hebt gelezen, deze begrijpt en ermee instemt gebonden te zijn aan de voorwaarden."
+          }
+        },
+        ru: {
+          pageTitle: "LiliCAD · Точный просмотрщик STL",
+          hero: {
+            subtitle: "От инспекции до создания — точные инструменты измерения, 2D-эскизы и параметрическое 3D-моделирование в сфокусированном тёмном интерфейсе.",
+            download: "Скачать"
+          },
+          comparison: {
+            ariaLabel: "Кроссплатформенные функции",
+            title: "Кроссплатформенный, лёгкий и современный",
+            description: "LiliCAD — кроссплатформенное настольное приложение с современным тёмным интерфейсом, настроенным на чёткость. Измеряйте с точностью, используя инструменты точки, точка-к-точке, ребра и ленты с привязкой к вершинам. Сечение моделей вдоль стандартных осей и вычисление 3D/2D толщины с цветовыми тепловыми картами. Рисуйте 2D-профили с линиями, дугами, окружностями и кривыми Безье, затем создавайте параметрические тела с помощью операций выдавливания, вращения и протягивания. Комбинируйте формы с булевыми операциями на движке Manifold 3D."
+          },
+          carousel: {
+            ariaLabel: "Демонстрация функций",
+            title: "Функции в действии",
+            description: "Исследуйте возможности LiliCAD через эти скриншоты, демонстрирующие интерфейс и инструменты приложения.",
+            previous: "Назад",
+            next: "Далее"
+          },
+          features: {
+            ariaLabel: "Подробные функции",
+            title: "Функции подробно",
+            description: "Откройте для себя мощные инструменты и возможности, которые делают LiliCAD незаменимым приложением для инспекции и измерения STL.",
+            feature2: {
+              title: "Инструменты измерения и разметки",
+              description: "Инструменты точки, ребра и ленты привязываются к вершинам для точных расстояний, а закреплённые текстовые пометки быстро фиксируют контекст в любом месте сетки."
+            },
+            feature3: {
+              title: "Сечение и закреплённые выноски",
+              description: "Настройте секущие плоскости вдоль осей с помощью ползунка, перестройте крышку в равномерную тепловую карту толщины и закрепите измерения или контуры, чтобы выноски оставались на месте при смене вида."
+            },
+            feature5: {
+              title: "Расчёт толщины 3D",
+              description: "Обратные нормали отображают глобальную толщину стенок в виде цветовой тепловой карты с живыми показаниями и метками для критических областей."
+            },
+            feature8: {
+              title: "Рабочее пространство 2D-эскизов",
+              description: "Линии, дуги, полилинии и кривые Безье с привязкой на плоскостях XY/YZ/ZX готовы для последующей работы в CAD."
+            },
+            feature9: {
+              title: "Создание параметрических тел",
+              description: "Выдавливание, вращение и протягивание превращают эскизы в тела, которые затем комбинируются с булевыми операциями Manifold."
+            }
+          },
+          download: {
+            title: "Скачать",
+            description: "Выберите сборку, соответствующую вашей платформе. Каждая загрузка включает нативную производительность, рендеринг высокого разрешения и автоматическое определение темы. <u>Примечание — Это альфа-версия программы, и бинарные файлы не подписаны. Пожалуйста, следуйте инструкциям для вашей платформы, чтобы обойти проверки безопасности.</u>",
+            windows: "Windows",
+            windowsDesc: "Установочный пакет · 64-бит",
+            macos: "macOS",
+            macosDesc: "Образ диска · Apple silicon",
+            linux: "Linux",
+            linuxDesc: "Deb · 64-битные дистрибутивы на базе Debian",
+            youtubeButton: "Посетите наш канал YouTube"
+          },
+          footer: {
+            text: "&middot; Для помощи и поддержки свяжитесь с нами по адресу <a href='mailto:support@lilicad.com'>support@lilicad.com</a> &middot;",
+            disclaimer: "Отказ от ответственности"
+          },
+          disclaimer: {
+            title: "Отказ от ответственности",
+            alphaWarning: "УВЕДОМЛЕНИЕ ОБ АЛЬФА-ВЕРСИИ:",
+            alphaText: "LiliCAD в настоящее время находится в стадии альфа-разработки. Ожидается, что это программное обеспечение содержит значительное количество ошибок, недочётов и незавершённых функций. Используйте на свой страх и риск.",
+            noWarrantyTitle: "Отсутствие гарантии",
+            noWarrantyText: "LiliCAD предоставляется «как есть» без каких-либо гарантий, явных или подразумеваемых, включая, но не ограничиваясь, подразумеваемые гарантии товарной пригодности, пригодности для определённой цели или ненарушения прав. Разработчики и распространители LiliCAD не делают никаких заявлений или гарантий относительно точности, надёжности, полноты или своевременности программного обеспечения или любых измерений, расчётов или анализов, которые оно производит.",
+            liabilityTitle: "Ограничение ответственности",
+            liabilityText: "Ни при каких обстоятельствах разработчики, участники или распространители LiliCAD не несут ответственности за любые прямые, косвенные, случайные, особые, примерные или косвенные убытки (включая, но не ограничиваясь, приобретение заменяющих товаров или услуг, потерю использования, данных или прибыли, прерывание бизнеса, производственные дефекты или отказы продукции), как бы они ни были вызваны и по любой теории ответственности, будь то договор, строгая ответственность или деликт (включая халатность или иное), возникающие каким-либо образом из использования этого программного обеспечения, даже если были предупреждены о возможности такого ущерба.",
+            verificationTitle: "Требуется проверка",
+            verificationText: "Пользователи должны самостоятельно проверять и перепроверять все измерения, расчёты и анализы, произведённые LiliCAD, прежде чем полагаться на них для любых целей. Эта проверка должна выполняться вручную или с использованием альтернативных, проверенных механизмов измерения. Никогда не полагайтесь исключительно на LiliCAD для:",
+            verification1: "Критических проектных решений или инженерных спецификаций",
+            verification2: "Производственных процессов или процессов контроля качества",
+            verification3: "Критически важных для безопасности приложений или оценок",
+            verification4: "Медицинских, аэрокосмических, автомобильных или других регулируемых отраслевых применений",
+            verification5: "Любого применения, где точность измерений важна для безопасности или функциональности",
+            userResponsibilityTitle: "Ответственность пользователя",
+            userResponsibilityText: "Используя LiliCAD, вы признаёте и соглашаетесь, что:",
+            responsibility1: "Вы несёте единоличную ответственность за проверку всех измерений и расчётов",
+            responsibility2: "Вы не будете использовать LiliCAD как единственную основу для любого проектного, производственного или инженерного решения",
+            responsibility3: "Вы понимаете, что ошибки и недочёты могут давать неправильные результаты без предупреждения",
+            responsibility4: "Вы принимаете все риски, связанные с использованием программного обеспечения на стадии альфа",
+            responsibility5: "Вы внедрите соответствующие процедуры проверки и валидации для вашего конкретного случая использования",
+            technicalLimitationsTitle: "Технические ограничения",
+            technicalLimitationsText: "LiliCAD может содержать ошибки, неточности или ограничения, включая, но не ограничиваясь:",
+            limitation1: "Ошибки численной точности и вычислений с плавающей точкой",
+            limitation2: "Неточности обработки сеток и геометрических алгоритмов",
+            limitation3: "Расхождения рендеринга и визуализации",
+            limitation4: "Потеря или повреждение данных при импорте/экспорте файлов",
+            limitation5: "Проблемы производительности с большими или сложными моделями",
+            limitation6: "Неполная или неправильная реализация алгоритмов измерения",
+            governingLawTitle: "Применимое право",
+            governingLawText: "Настоящий отказ от ответственности регулируется и толкуется в соответствии с применимым законодательством. Если какое-либо положение настоящего отказа будет признано неисполнимым или недействительным, это положение будет ограничено или исключено в минимально необходимой степени, чтобы настоящий отказ в остальном оставался в полной силе и действии.",
+            acknowledgment: "Используя LiliCAD, вы подтверждаете, что прочитали этот отказ от ответственности, понимаете его и соглашаетесь соблюдать его условия."
+          }
+        },
+        ar: {
+          pageTitle: "LiliCAD · عارض STL دقيق",
+          hero: {
+            subtitle: "من الفحص إلى الإنشاء — أدوات قياس دقيقة، رسم ثنائي الأبعاد، ونمذجة ثلاثية الأبعاد بارامترية في واجهة داكنة مركزة.",
+            download: "تحميل"
+          },
+          comparison: {
+            ariaLabel: "ميزات متعددة المنصات",
+            title: "متعدد المنصات، خفيف وحديث",
+            description: "LiliCAD هو تطبيق سطح مكتب متعدد المنصات مع واجهة داكنة حديثة مضبوطة للوضوح. قم بالقياس بدقة باستخدام أدوات النقطة، من نقطة إلى نقطة، الحافة، والشريط مع الانجذاب للرؤوس. قص النماذج على طول المحاور القياسية واحسب السمك ثلاثي/ثنائي الأبعاد مع خرائط حرارية مرمزة بالألوان. ارسم ملفات تعريف ثنائية الأبعاد بالخطوط، الأقواس، الدوائر، ومنحنيات بيزيه، ثم ابنِ أجساماً بارامترية باستخدام عمليات البثق، الدوران، والمسح. ادمج الأشكال مع العمليات المنطقية المدعومة بمحرك Manifold 3D."
+          },
+          carousel: {
+            ariaLabel: "عرض الميزات",
+            title: "الميزات في العمل",
+            description: "استكشف إمكانيات LiliCAD من خلال لقطات الشاشة هذه التي تعرض واجهة التطبيق وأدواته.",
+            previous: "السابق",
+            next: "التالي"
+          },
+          features: {
+            ariaLabel: "ميزات مفصلة",
+            title: "الميزات بالتفصيل",
+            description: "اكتشف الأدوات القوية والإمكانيات التي تجعل LiliCAD تطبيقاً أساسياً لفحص وقياس STL.",
+            feature2: {
+              title: "أدوات القياس والتوضيح",
+              description: "أدوات النقطة، الحافة، والشريط تنجذب للرؤوس للحصول على مسافات دقيقة، بينما تلتقط التوضيحات النصية المثبتة السياق بسرعة في أي مكان على الشبكة."
+            },
+            feature3: {
+              title: "التقطيع والتعليقات المثبتة",
+              description: "اضبط مستويات القطع المحاذية للمحاور باستخدام شريط التمرير، أعد تشكيل الغطاء إلى خريطة حرارية موحدة للسمك، وثبت القياسات أو الخطوط العريضة لتبقى التعليقات في مكانها عند تبديل العروض."
+            },
+            feature5: {
+              title: "حساب السمك ثلاثي الأبعاد",
+              description: "تعكس الاتجاهات المعكوسة سمك الجدار الكلي كخريطة حرارية ملونة مع قراءات مباشرة ودبابيس للمناطق الحرجة."
+            },
+            feature8: {
+              title: "مساحة عمل الرسم ثنائي الأبعاد",
+              description: "خطوط وأقواس وخطوط متعددة ومنحنيات بيزيه مع الانجذاب على مستويات XY/YZ/ZX جاهزة لعمل CAD اللاحق."
+            },
+            feature9: {
+              title: "إنشاء الأجسام البارامترية",
+              description: "البثق والدوران والمسح يحول الرسومات إلى أجسام، ثم ادمجها مع العمليات المنطقية المدعومة من Manifold."
+            }
+          },
+          download: {
+            title: "تحميل",
+            description: "اختر الإصدار الذي يتوافق مع منصتك. كل تحميل يتضمن أداء أصلي، عرض عالي الدقة، واكتشاف تلقائي للسمة. <u>ملاحظة - هذا برنامج ألفا والملفات الثنائية غير موقعة. يرجى اتباع التعليمات الخاصة بالمنصة لتجاوز فحوصات الأمان.</u>",
+            windows: "Windows",
+            windowsDesc: "حزمة التثبيت · 64 بت",
+            macos: "macOS",
+            macosDesc: "صورة القرص · Apple silicon",
+            linux: "Linux",
+            linuxDesc: "Deb · توزيعات 64 بت المبنية على Debian",
+            youtubeButton: "قم بزيارة قناتنا على YouTube"
+          },
+          footer: {
+            text: "&middot; للمساعدة والدعم اتصل بنا على <a href='mailto:support@lilicad.com'>support@lilicad.com</a> &middot;",
+            disclaimer: "إخلاء المسؤولية"
+          },
+          disclaimer: {
+            title: "إخلاء المسؤولية",
+            alphaWarning: "إشعار برنامج ألفا:",
+            alphaText: "LiliCAD حالياً في مرحلة تطوير ألفا. من المتوقع أن يحتوي هذا البرنامج على عدد كبير من الأخطاء والعيوب والميزات غير المكتملة. استخدمه على مسؤوليتك الخاصة.",
+            noWarrantyTitle: "لا ضمان",
+            noWarrantyText: "يتم توفير LiliCAD \"كما هو\" دون أي ضمان من أي نوع، صريح أو ضمني، بما في ذلك على سبيل المثال لا الحصر الضمانات الضمنية للتسويق، الملاءمة لغرض معين، أو عدم الانتهاك. لا يقدم مطورو وموزعو LiliCAD أي تعهدات أو ضمانات بشأن دقة أو موثوقية أو اكتمال أو توقيت البرنامج أو أي قياسات أو حسابات أو تحليلات ينتجها.",
+            liabilityTitle: "تحديد المسؤولية",
+            liabilityText: "في أي حال من الأحوال، لن يكون المطورون أو المساهمون أو الموزعون لـ LiliCAD مسؤولين عن أي أضرار مباشرة أو غير مباشرة أو عرضية أو خاصة أو تأديبية أو تبعية (بما في ذلك على سبيل المثال لا الحصر شراء سلع أو خدمات بديلة، فقدان الاستخدام أو البيانات أو الأرباح، انقطاع العمل، عيوب التصنيع، أو فشل المنتج) مهما كان السبب وتحت أي نظرية للمسؤولية، سواء في العقد أو المسؤولية الصارمة أو الضرر (بما في ذلك الإهمال أو غير ذلك) الناشئة بأي شكل من الأشكال عن استخدام هذا البرنامج، حتى لو تم التحذير من احتمال حدوث مثل هذا الضرر.",
+            verificationTitle: "التحقق مطلوب",
+            verificationText: "يجب على المستخدمين التحقق بشكل مستقل ومراجعة جميع القياسات والحسابات والتحليلات التي ينتجها LiliCAD قبل الاعتماد عليها لأي غرض. يجب إجراء هذا التحقق يدوياً أو باستخدام آليات قياس بديلة ومعتمدة. لا تعتمد أبداً فقط على LiliCAD من أجل:",
+            verification1: "قرارات التصميم الحرجة أو المواصفات الهندسية",
+            verification2: "عمليات التصنيع أو الإنتاج أو مراقبة الجودة",
+            verification3: "التطبيقات أو التقييمات الحرجة للسلامة",
+            verification4: "تطبيقات الصناعات الطبية أو الفضائية أو السيارات أو غيرها من الصناعات المنظمة",
+            verification5: "أي تطبيق تكون فيه دقة القياس ضرورية للسلامة أو الوظائف",
+            userResponsibilityTitle: "مسؤولية المستخدم",
+            userResponsibilityText: "باستخدام LiliCAD، أنت تقر وتوافق على أن:",
+            responsibility1: "أنت وحدك المسؤول عن التحقق من صحة جميع القياسات والحسابات",
+            responsibility2: "لن تستخدم LiliCAD كأساس وحيد لأي قرار تصميم أو تصنيع أو هندسة",
+            responsibility3: "تفهم أن الأخطاء والعيوب قد تنتج نتائج غير صحيحة دون تحذير",
+            responsibility4: "تقبل جميع المخاطر المرتبطة باستخدام برنامج في مرحلة ألفا",
+            responsibility5: "ستنفذ إجراءات التحقق والتصديق المناسبة لحالة الاستخدام الخاصة بك",
+            technicalLimitationsTitle: "القيود التقنية",
+            technicalLimitationsText: "قد يحتوي LiliCAD على أخطاء أو عدم دقة أو قيود بما في ذلك على سبيل المثال لا الحصر:",
+            limitation1: "أخطاء الدقة العددية وحسابات النقطة العائمة",
+            limitation2: "عدم دقة معالجة الشبكة والخوارزميات الهندسية",
+            limitation3: "تناقضات العرض والتصور",
+            limitation4: "فقدان البيانات أو تلفها عند استيراد/تصدير الملفات",
+            limitation5: "مشاكل الأداء مع النماذج الكبيرة أو المعقدة",
+            limitation6: "تنفيذ غير كامل أو غير صحيح لخوارزميات القياس",
+            governingLawTitle: "القانون الحاكم",
+            governingLawText: "يخضع إخلاء المسؤولية هذا ويُفسر وفقاً للقوانين المعمول بها. إذا وُجد أن أي حكم من أحكام إخلاء المسؤولية هذا غير قابل للتنفيذ أو غير صالح، فسيتم تقييد هذا الحكم أو إلغاؤه إلى الحد الأدنى الضروري بحيث يظل إخلاء المسؤولية هذا سارياً بالكامل.",
+            acknowledgment: "باستخدام LiliCAD، أنت تقر بأنك قرأت إخلاء المسؤولية هذا، وتفهمه، وتوافق على الالتزام بشروطه."
+          }
+        },
+        ja: {
+          pageTitle: "LiliCAD · 精密STLビューア",
+          hero: {
+            subtitle: "検査から作成まで — 精密な測定ツール、2Dスケッチ、パラメトリック3Dモデリングを集中したダークインターフェースで。",
+            download: "ダウンロード"
+          },
+          comparison: {
+            ariaLabel: "クロスプラットフォーム機能",
+            title: "クロスプラットフォーム、軽量、モダン",
+            description: "LiliCADは、明瞭さを追求したモダンなダークインターフェースを持つクロスプラットフォームのデスクトップアプリです。頂点スナップ付きのポイント、ポイント間、エッジ、テープツールで精密に測定。標準軸に沿ってモデルを断面化し、カラーコード化されたヒートマップで3D/2D厚さを計算。線、円弧、円、ベジェ曲線で2Dプロファイルをスケッチし、押し出し、回転、スイープ操作でパラメトリックソリッドを構築。Manifold 3Dエンジンによるブーリアン演算で形状を結合。"
+          },
+          carousel: {
+            ariaLabel: "機能ショーケース",
+            title: "機能の実演",
+            description: "アプリのインターフェースとツールを紹介するスクリーンショットでLiliCADの機能を探索してください。",
+            previous: "前へ",
+            next: "次へ"
+          },
+          features: {
+            ariaLabel: "詳細機能",
+            title: "機能の詳細",
+            description: "LiliCADをSTL検査・測定に不可欠なアプリケーションにする強力なツールと機能を発見してください。",
+            feature2: {
+              title: "測定・マークアップツール",
+              description: "ポイント、エッジ、テープツールが頂点にスナップして正確な距離を測定し、アンカー付きテキストマークアップがメッシュ上のどこでも素早くコンテキストをキャプチャします。"
+            },
+            feature3: {
+              title: "断面と固定コールアウト",
+              description: "スライダーで軸整列断面平面を調整し、キャップを均一な厚さヒートマップにリメッシュし、測定やアウトラインを固定してビュー切り替え時もコールアウトを保持。"
+            },
+            feature5: {
+              title: "3D厚さ計算",
+              description: "反転法線がグローバル壁厚をカラーヒートマップとしてマッピングし、重要な領域にはライブ読み取りとピンを表示。"
+            },
+            feature8: {
+              title: "2Dスケッチワークスペース",
+              description: "XY/YZ/ZX平面でのスナップ対応の線、円弧、ポリライン、ベジェが下流のCAD作業に対応。"
+            },
+            feature9: {
+              title: "パラメトリックソリッド作成",
+              description: "押し出し、回転、スイープでスケッチをソリッドに変換し、Manifold駆動のブーリアン演算で結合。"
+            }
+          },
+          download: {
+            title: "ダウンロード",
+            description: "プラットフォームに合ったビルドを選択してください。各ダウンロードには、ネイティブパフォーマンス、高解像度レンダリング、自動テーマ検出が含まれています。<u>注意 - これはアルファ版ソフトウェアであり、バイナリは署名されていません。セキュリティチェックをバイパスするには、プラットフォーム固有の手順に従ってください。</u>",
+            windows: "Windows",
+            windowsDesc: "インストーラパッケージ · 64ビット",
+            macos: "macOS",
+            macosDesc: "ディスクイメージ · Apple silicon",
+            linux: "Linux",
+            linuxDesc: "Deb · 64ビット Debianベースディストリビューション",
+            youtubeButton: "YouTubeチャンネルを訪問"
+          },
+          footer: {
+            text: "&middot; ヘルプとサポートについては <a href='mailto:support@lilicad.com'>support@lilicad.com</a> までお問い合わせください &middot;",
+            disclaimer: "免責事項"
+          },
+          disclaimer: {
+            title: "免責事項",
+            alphaWarning: "アルファソフトウェア通知：",
+            alphaText: "LiliCADは現在アルファ開発段階にあります。このソフトウェアには多数のバグ、エラー、不完全な機能が含まれることが予想されます。自己責任でご使用ください。",
+            noWarrantyTitle: "保証なし",
+            noWarrantyText: "LiliCADは、商品性、特定目的への適合性、非侵害の黙示的保証を含むがこれに限定されない、明示または黙示を問わず、いかなる種類の保証もなく「現状のまま」提供されます。LiliCADの開発者および配布者は、ソフトウェアまたはそれが生成する測定、計算、分析の正確性、信頼性、完全性、適時性について、いかなる表明または保証も行いません。",
+            liabilityTitle: "責任の制限",
+            liabilityText: "いかなる場合においても、LiliCADの開発者、貢献者、または配布者は、代替品やサービスの調達、使用、データまたは利益の損失、事業中断、製造上の欠陥、製品の故障を含むがこれに限定されない、直接的、間接的、偶発的、特別、懲罰的、または結果的損害について、契約、厳格責任、不法行為（過失またはその他を含む）のいずれの責任理論においても、このソフトウェアの使用から生じるいかなる方法においても、そのような損害の可能性を知らされていたとしても、責任を負いません。",
+            verificationTitle: "検証が必要",
+            verificationText: "ユーザーは、いかなる目的でもLiliCADが生成したすべての測定、計算、分析を独立して検証し、再確認する必要があります。この検証は、手動または代替の検証済み測定メカニズムを使用して実行する必要があります。以下の目的でLiliCADだけに依存しないでください：",
+            verification1: "重要な設計決定またはエンジニアリング仕様",
+            verification2: "製造、生産、または品質管理プロセス",
+            verification3: "安全性が重要なアプリケーションまたは評価",
+            verification4: "医療、航空宇宙、自動車、またはその他の規制産業アプリケーション",
+            verification5: "測定精度が安全性または機能性に不可欠なアプリケーション",
+            userResponsibilityTitle: "ユーザーの責任",
+            userResponsibilityText: "LiliCADを使用することにより、以下を認め、同意するものとします：",
+            responsibility1: "すべての測定と計算の検証について、あなたが単独で責任を負います",
+            responsibility2: "設計、製造、またはエンジニアリングの決定の唯一の基礎としてLiliCADを使用しません",
+            responsibility3: "バグやエラーが警告なしに誤った結果を生成する可能性があることを理解しています",
+            responsibility4: "アルファ段階のソフトウェアの使用に関連するすべてのリスクを受け入れます",
+            responsibility5: "特定のユースケースに適した検証および妥当性確認手順を実施します",
+            technicalLimitationsTitle: "技術的制限",
+            technicalLimitationsText: "LiliCADには、以下を含むがこれに限定されないエラー、不正確さ、または制限が含まれる場合があります：",
+            limitation1: "数値精度と浮動小数点計算エラー",
+            limitation2: "メッシュ処理と幾何学アルゴリズムの不正確さ",
+            limitation3: "レンダリングと視覚化の不一致",
+            limitation4: "ファイルのインポート/エクスポート時のデータ損失または破損",
+            limitation5: "大規模または複雑なモデルでのパフォーマンスの問題",
+            limitation6: "測定アルゴリズムの不完全または不正確な実装",
+            governingLawTitle: "準拠法",
+            governingLawText: "この免責事項は、適用法に準拠し、それに従って解釈されるものとします。この免責事項のいずれかの条項が執行不能または無効であると判断された場合、その条項は、この免責事項が完全に有効であり続けるために必要な最小限の範囲で制限または排除されるものとします。",
+            acknowledgment: "LiliCADを使用することにより、あなたはこの免責事項を読み、理解し、その条件に拘束されることに同意したことを認めます。"
+          }
+        },
+        ko: {
+          pageTitle: "LiliCAD · 정밀 STL 뷰어",
+          hero: {
+            subtitle: "검사에서 창조까지 — 정밀한 측정 도구, 2D 스케치, 집중된 다크 인터페이스의 파라메트릭 3D 모델링.",
+            download: "다운로드"
+          },
+          comparison: {
+            ariaLabel: "크로스 플랫폼 기능",
+            title: "크로스 플랫폼, 경량, 현대적",
+            description: "LiliCAD는 명확성을 위해 조정된 현대적인 다크 인터페이스를 갖춘 크로스 플랫폼 데스크톱 앱입니다. 정점 스냅이 있는 점, 점대점, 모서리, 테이프 도구로 정밀하게 측정하세요. 표준 축을 따라 모델을 단면화하고 색상 코드화된 히트맵으로 3D/2D 두께를 계산합니다. 선, 호, 원, 베지어 곡선으로 2D 프로파일을 스케치한 다음 돌출, 회전, 스윕 작업으로 파라메트릭 솔리드를 구축합니다. Manifold 3D 엔진으로 구동되는 불리언 연산으로 형상을 결합합니다."
+          },
+          carousel: {
+            ariaLabel: "기능 쇼케이스",
+            title: "기능 시연",
+            description: "앱의 인터페이스와 도구를 보여주는 스크린샷으로 LiliCAD의 기능을 탐색하세요.",
+            previous: "이전",
+            next: "다음"
+          },
+          features: {
+            ariaLabel: "상세 기능",
+            title: "기능 상세",
+            description: "LiliCAD를 STL 검사 및 측정에 필수적인 애플리케이션으로 만드는 강력한 도구와 기능을 발견하세요.",
+            feature2: {
+              title: "측정 및 마크업 도구",
+              description: "점, 모서리, 테이프 도구가 정점에 스냅하여 정확한 거리를 제공하고, 앵커된 텍스트 마크업이 메시 어디서나 빠르게 컨텍스트를 캡처합니다."
+            },
+            feature3: {
+              title: "단면 및 고정 콜아웃",
+              description: "슬라이더로 축 정렬 단면 평면을 조정하고, 캡을 균일한 두께 히트맵으로 리메시하고, 측정이나 윤곽선을 고정하여 뷰를 전환해도 콜아웃이 유지됩니다."
+            },
+            feature5: {
+              title: "3D 두께 계산",
+              description: "역방향 노멀이 전역 벽 두께를 라이브 판독 및 중요 영역 핀과 함께 컬러 히트맵으로 매핑합니다."
+            },
+            feature8: {
+              title: "2D 스케치 작업 공간",
+              description: "XY/YZ/ZX 평면에서 스냅 인식 선, 호, 폴리라인, 베지어가 다운스트림 CAD 작업에 준비됩니다."
+            },
+            feature9: {
+              title: "파라메트릭 솔리드 생성",
+              description: "돌출, 회전, 스윕이 스케치를 솔리드로 변환하고, Manifold 기반 불리언 연산으로 결합합니다."
+            }
+          },
+          download: {
+            title: "다운로드",
+            description: "플랫폼에 맞는 빌드를 선택하세요. 각 다운로드에는 네이티브 성능, 고해상도 렌더링, 자동 테마 감지가 포함됩니다. <u>참고 - 이것은 알파 소프트웨어이며 바이너리가 서명되지 않았습니다. 보안 검사를 우회하려면 플랫폼별 지침을 따르세요.</u>",
+            windows: "Windows",
+            windowsDesc: "설치 패키지 · 64비트",
+            macos: "macOS",
+            macosDesc: "디스크 이미지 · Apple silicon",
+            linux: "Linux",
+            linuxDesc: "Deb · 64비트 Debian 기반 배포판",
+            youtubeButton: "YouTube 채널 방문"
+          },
+          footer: {
+            text: "&middot; 도움과 지원은 <a href='mailto:support@lilicad.com'>support@lilicad.com</a>으로 연락하세요 &middot;",
+            disclaimer: "면책 조항"
+          },
+          disclaimer: {
+            title: "면책 조항",
+            alphaWarning: "알파 소프트웨어 공지:",
+            alphaText: "LiliCAD는 현재 알파 개발 상태입니다. 이 소프트웨어에는 상당수의 버그, 오류 및 불완전한 기능이 포함될 것으로 예상됩니다. 자신의 책임 하에 사용하세요.",
+            noWarrantyTitle: "보증 없음",
+            noWarrantyText: "LiliCAD는 상품성, 특정 목적에의 적합성 또는 비침해에 대한 묵시적 보증을 포함하되 이에 국한되지 않는 명시적이든 묵시적이든 어떠한 종류의 보증 없이 \"있는 그대로\" 제공됩니다. LiliCAD의 개발자 및 배포자는 소프트웨어 또는 그것이 생성하는 측정, 계산 또는 분석의 정확성, 신뢰성, 완전성 또는 적시성에 관해 어떠한 진술이나 보증도 하지 않습니다.",
+            liabilityTitle: "책임의 제한",
+            liabilityText: "어떠한 경우에도 LiliCAD의 개발자, 기여자 또는 배포자는 대체 상품이나 서비스의 조달, 사용, 데이터 또는 이익의 손실, 사업 중단, 제조 결함 또는 제품 고장을 포함하되 이에 국한되지 않는 직접, 간접, 부수적, 특별, 징벌적 또는 결과적 손해에 대해, 계약, 엄격 책임 또는 불법 행위(과실 또는 기타 포함) 등 어떤 책임 이론 하에서든, 이 소프트웨어의 사용으로 인해 발생하는 어떤 방식으로든, 그러한 손해의 가능성을 알고 있었더라도 책임을 지지 않습니다.",
+            verificationTitle: "검증 필요",
+            verificationText: "사용자는 어떤 목적으로든 LiliCAD가 생성한 모든 측정, 계산 및 분석을 신뢰하기 전에 독립적으로 검증하고 재확인해야 합니다. 이 검증은 수동으로 또는 대체 검증된 측정 메커니즘을 사용하여 수행해야 합니다. 다음의 경우 LiliCAD에만 의존하지 마세요:",
+            verification1: "중요한 설계 결정 또는 엔지니어링 사양",
+            verification2: "제조, 생산 또는 품질 관리 프로세스",
+            verification3: "안전에 중요한 애플리케이션 또는 평가",
+            verification4: "의료, 항공우주, 자동차 또는 기타 규제 산업 애플리케이션",
+            verification5: "측정 정확도가 안전 또는 기능에 필수적인 모든 애플리케이션",
+            userResponsibilityTitle: "사용자 책임",
+            userResponsibilityText: "LiliCAD를 사용함으로써 귀하는 다음을 인정하고 동의합니다:",
+            responsibility1: "모든 측정 및 계산의 검증에 대해 귀하가 전적으로 책임집니다",
+            responsibility2: "설계, 제조 또는 엔지니어링 결정의 유일한 기초로 LiliCAD를 사용하지 않습니다",
+            responsibility3: "버그와 오류가 경고 없이 잘못된 결과를 생성할 수 있음을 이해합니다",
+            responsibility4: "알파 단계 소프트웨어 사용과 관련된 모든 위험을 수용합니다",
+            responsibility5: "특정 사용 사례에 적합한 검증 및 유효성 검사 절차를 구현합니다",
+            technicalLimitationsTitle: "기술적 제한",
+            technicalLimitationsText: "LiliCAD에는 다음을 포함하되 이에 국한되지 않는 오류, 부정확성 또는 제한이 포함될 수 있습니다:",
+            limitation1: "수치 정밀도 및 부동 소수점 계산 오류",
+            limitation2: "메시 처리 및 기하학적 알고리즘 부정확성",
+            limitation3: "렌더링 및 시각화 불일치",
+            limitation4: "파일 가져오기/내보내기 데이터 손실 또는 손상",
+            limitation5: "크거나 복잡한 모델의 성능 문제",
+            limitation6: "측정 알고리즘의 불완전하거나 잘못된 구현",
+            governingLawTitle: "준거법",
+            governingLawText: "이 면책 조항은 해당 법률에 따라 규율되고 해석됩니다. 이 면책 조항의 조항이 시행 불가능하거나 무효로 판명될 경우, 해당 조항은 이 면책 조항이 완전한 효력을 유지하는 데 필요한 최소한의 범위로 제한되거나 제거됩니다.",
+            acknowledgment: "LiliCAD를 사용함으로써 귀하는 이 면책 조항을 읽고 이해하며 그 조건에 구속되는 것에 동의함을 인정합니다."
+          }
+        },
+        zh: {
+          pageTitle: "LiliCAD · 精密STL查看器",
+          hero: {
+            subtitle: "从检查到创建 — 精确的测量工具、2D草图和参数化3D建模，尽在专注的深色界面中。",
+            download: "下载"
+          },
+          comparison: {
+            ariaLabel: "跨平台功能",
+            title: "跨平台、轻量级且现代",
+            description: "LiliCAD是一款跨平台桌面应用程序，具有为清晰度而调整的现代深色界面。使用点、点到点、边缘和卷尺工具配合顶点捕捉进行精确测量。沿标准轴切割模型，并使用颜色编码的热力图计算3D/2D厚度。使用线条、圆弧、圆形和贝塞尔曲线绘制2D轮廓，然后使用挤出、旋转和扫掠操作构建参数化实体。使用Manifold 3D引擎驱动的布尔运算组合形状。"
+          },
+          carousel: {
+            ariaLabel: "功能展示",
+            title: "功能演示",
+            description: "通过这些展示应用界面和工具的截图探索LiliCAD的功能。",
+            previous: "上一个",
+            next: "下一个"
+          },
+          features: {
+            ariaLabel: "详细功能",
+            title: "功能详情",
+            description: "发现使LiliCAD成为STL检查和测量必备应用的强大工具和功能。",
+            feature2: {
+              title: "测量和标记工具",
+              description: "点、边缘和卷尺工具捕捉到顶点以获得精确距离，而锚定的文本标记可以在网格上的任何位置快速捕获上下文。"
+            },
+            feature3: {
+              title: "剖切和固定标注",
+              description: "使用滑块调整轴对齐的剖面，将盖重新网格化为均匀厚度的热力图，并固定测量或轮廓，以便在切换视图时标注保持不变。"
+            },
+            feature5: {
+              title: "3D厚度计算",
+              description: "反向法线将全局壁厚映射为带有实时读数和关键区域标记的颜色热力图。"
+            },
+            feature8: {
+              title: "2D草图工作区",
+              description: "在XY/YZ/ZX平面上具有捕捉感知的线条、圆弧、多段线和贝塞尔曲线，为下游CAD工作做好准备。"
+            },
+            feature9: {
+              title: "参数化实体创建",
+              description: "挤出、旋转和扫掠将草图转换为实体，然后使用Manifold驱动的布尔运算进行组合。"
+            }
+          },
+          download: {
+            title: "下载",
+            description: "选择与您的平台匹配的构建版本。每个下载都包含原生性能、高分辨率渲染和自动主题检测。<u>注意 - 这是alpha软件，二进制文件未签名。请按照特定平台的说明绕过安全检查。</u>",
+            windows: "Windows",
+            windowsDesc: "安装包 · 64位",
+            macos: "macOS",
+            macosDesc: "磁盘映像 · Apple silicon",
+            linux: "Linux",
+            linuxDesc: "Deb · 64位基于Debian的发行版",
+            youtubeButton: "访问我们的YouTube频道"
+          },
+          footer: {
+            text: "&middot; 如需帮助和支持，请联系 <a href='mailto:support@lilicad.com'>support@lilicad.com</a> &middot;",
+            disclaimer: "免责声明"
+          },
+          disclaimer: {
+            title: "免责声明",
+            alphaWarning: "ALPHA软件通知：",
+            alphaText: "LiliCAD目前处于alpha开发阶段。预计本软件将包含大量错误、缺陷和不完整的功能。使用风险自负。",
+            noWarrantyTitle: "无保证",
+            noWarrantyText: "LiliCAD按「原样」提供，不附带任何明示或暗示的保证，包括但不限于对适销性、特定用途适用性或不侵权的暗示保证。LiliCAD的开发者和分发者不对软件或其产生的任何测量、计算或分析的准确性、可靠性、完整性或及时性做出任何陈述或保证。",
+            liabilityTitle: "责任限制",
+            liabilityText: "在任何情况下，LiliCAD的开发者、贡献者或分发者均不对任何直接、间接、附带、特殊、惩戒性或后果性损害负责（包括但不限于采购替代商品或服务、使用损失、数据或利润损失、业务中断、制造缺陷或产品故障），无论是基于合同、严格责任还是侵权行为（包括疏忽或其他），以任何方式因使用本软件而引起，即使已被告知可能发生此类损害。",
+            verificationTitle: "需要验证",
+            verificationText: "用户必须在依赖LiliCAD产生的任何测量、计算和分析之前，独立验证和复核。此验证必须手动执行或使用经过验证的替代测量机制。切勿仅依赖LiliCAD用于：",
+            verification1: "关键设计决策或工程规格",
+            verification2: "制造、生产或质量控制流程",
+            verification3: "安全关键应用或评估",
+            verification4: "医疗、航空航天、汽车或其他受监管行业应用",
+            verification5: "任何测量精度对安全或功能至关重要的应用",
+            userResponsibilityTitle: "用户责任",
+            userResponsibilityText: "使用LiliCAD即表示您承认并同意：",
+            responsibility1: "您对验证所有测量和计算承担全部责任",
+            responsibility2: "您不会将LiliCAD作为任何设计、制造或工程决策的唯一依据",
+            responsibility3: "您理解错误和缺陷可能在没有警告的情况下产生不正确的结果",
+            responsibility4: "您接受使用alpha阶段软件相关的所有风险",
+            responsibility5: "您将为您的特定用例实施适当的验证和确认程序",
+            technicalLimitationsTitle: "技术限制",
+            technicalLimitationsText: "LiliCAD可能包含错误、不准确或限制，包括但不限于：",
+            limitation1: "数值精度和浮点计算错误",
+            limitation2: "网格处理和几何算法不准确",
+            limitation3: "渲染和可视化差异",
+            limitation4: "文件导入/导出数据丢失或损坏",
+            limitation5: "大型或复杂模型的性能问题",
+            limitation6: "测量算法实现不完整或不正确",
+            governingLawTitle: "适用法律",
+            governingLawText: "本免责声明应受适用法律管辖并据其解释。如果本免责声明的任何条款被认定为不可执行或无效，则该条款应在必要的最小范围内受到限制或删除，以使本免责声明的其余部分保持完全有效。",
+            acknowledgment: "使用LiliCAD即表示您承认您已阅读本免责声明，理解其内容，并同意受其条款约束。"
+          }
         }
       };
 
@@ -1764,7 +2506,14 @@
           'en': 'en',
           'es': 'es',
           'de': 'de',
-          'fr': 'fr'
+          'fr': 'fr',
+          'it': 'it',
+          'nl': 'nl',
+          'ru': 'ru',
+          'ar': 'ar',
+          'ja': 'ja',
+          'ko': 'ko',
+          'zh': 'zh'
         };
 
         // Check exact match first
@@ -1818,11 +2567,17 @@
         currentLang = safeLang;
         localStorage.setItem(LANGUAGE_STORAGE_KEY, safeLang);
         document.documentElement.setAttribute('lang', safeLang);
+        document.documentElement.setAttribute('dir', safeLang === 'ar' ? 'rtl' : 'ltr');
         document.title = translations[safeLang].pageTitle;
         syncLangSelect(safeLang);
 
         // Update font-family based on language (placeholder for future overrides)
-        const fontMap = {};
+        const fontMap = {
+          ja: '"Noto Sans JP", "Fira Sans", system-ui, sans-serif',
+          ko: '"Noto Sans KR", "Fira Sans", system-ui, sans-serif',
+          zh: '"Noto Sans SC", "Fira Sans", system-ui, sans-serif',
+          ar: '"Noto Sans Arabic", "Fira Sans", system-ui, sans-serif'
+        };
         const defaultFont = '"Fira Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
         document.body.style.fontFamily = fontMap[safeLang] || defaultFont;
 
