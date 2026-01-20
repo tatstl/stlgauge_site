@@ -1213,6 +1213,61 @@
       padding: 0.45rem 0.75rem 0.45rem 2rem;
     }
 
+    /* RTL: Section headers */
+    [dir="rtl"] .section-header,
+    [dir="rtl"] .section-header-left {
+      text-align: right;
+    }
+
+    /* RTL: Feature items - mirror the layout for Arabic */
+    /* Odd items: flip grid so image is on right, overflows right */
+    [dir="rtl"] .feature-item:nth-child(odd) {
+      direction: rtl;
+    }
+
+    [dir="rtl"] .feature-item:nth-child(odd) > * {
+      direction: rtl;
+    }
+
+    [dir="rtl"] .feature-item:nth-child(odd) .feature-image {
+      justify-content: flex-end;
+      margin-left: 0;
+      margin-right: -30%;
+      padding-left: clamp(0.5rem, 1.5vw, 1.25rem);
+      padding-right: clamp(1.5rem, 3vw, 3rem);
+    }
+
+    [dir="rtl"] .feature-item:nth-child(odd) .feature-content {
+      text-align: right;
+      align-items: flex-end;
+      padding-left: clamp(1.5rem, 3vw, 2.5rem);
+      padding-right: clamp(0.5rem, 1.5vw, 1.5rem);
+    }
+
+    /* Even items: override to ltr so image is on left, overflows left */
+    [dir="rtl"] .feature-item:nth-child(even) {
+      direction: ltr;
+    }
+
+    [dir="rtl"] .feature-item:nth-child(even) > * {
+      direction: rtl;
+    }
+
+    [dir="rtl"] .feature-item:nth-child(even) .feature-image {
+      justify-content: flex-start;
+      margin-right: 0;
+      margin-left: -30%;
+      padding-right: clamp(0.5rem, 1.5vw, 1.25rem);
+      padding-left: clamp(1.5rem, 3vw, 3rem);
+    }
+
+    [dir="rtl"] .feature-item:nth-child(even) .feature-content {
+      text-align: right;
+      align-items: flex-end;
+      padding-right: clamp(1.5rem, 3vw, 2.5rem);
+      padding-left: clamp(0.5rem, 1.5vw, 1.5rem);
+    }
+
     [dir="rtl"] .feature-card {
       text-align: right;
     }
