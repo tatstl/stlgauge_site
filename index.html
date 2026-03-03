@@ -706,6 +706,78 @@
     }
 
     /* =========================
+       Feature 6: Mixed Shapes Cluster
+       ========================= */
+    .feature-item:nth-child(6) .shape-1 {
+      width: 40%; left: -8%; top: -10%;
+      transform: rotate(-15deg) scale(0.5) translateX(-50px);
+    }
+    .feature-item:nth-child(6) .shape-2 {
+      width: 30%; left: 5%; bottom: -20%;
+      transform: rotate(10deg) scale(0.4) translateY(60px);
+    }
+    .feature-item:nth-child(6) .shape-3 {
+      width: 25%; left: 22%; top: 20%;
+      transform: rotate(25deg) scale(0.4) translateX(-40px);
+    }
+    .feature-item:nth-child(6) .shape-4 {
+      width: 32%; left: -3%; top: 45%;
+      transform: scale(0.3) translateY(40px);
+    }
+    .feature-item:nth-child(6).is-visible .shape-1 {
+      transform: rotate(15deg) scale(1) translateX(0);
+      animation: drift-rotate-1 11s ease-in-out infinite 1.2s;
+    }
+    .feature-item:nth-child(6).is-visible .shape-2 {
+      transform: rotate(-10deg) scale(1) translateY(0);
+      animation: drift-rotate-2 13s ease-in-out infinite 1.5s;
+    }
+    .feature-item:nth-child(6).is-visible .shape-3 {
+      transform: rotate(25deg) scale(1) translateX(0);
+      animation: drift-rotate-3 9s ease-in-out infinite 1.8s;
+    }
+    .feature-item:nth-child(6).is-visible .shape-4 {
+      transform: scale(1) translateY(0);
+      animation: pulse-slow 10s ease-in-out infinite 2.0s;
+    }
+
+    /* =========================
+       Feature 7: Circles + Rectangles
+       ========================= */
+    .feature-item:nth-child(7) .shape-1 {
+      width: 42%; right: -5%; top: -15%;
+      transform: scale(0.4) translateY(50px);
+    }
+    .feature-item:nth-child(7) .shape-2 {
+      width: 28%; right: 12%; top: 15%;
+      transform: rotate(20deg) scale(0.4) translateX(40px);
+    }
+    .feature-item:nth-child(7) .shape-3 {
+      width: 32%; right: -8%; bottom: -10%;
+      transform: rotate(-15deg) scale(0.4) translateY(-40px);
+    }
+    .feature-item:nth-child(7) .shape-4 {
+      width: 24%; right: 28%; bottom: 10%;
+      transform: scale(0.3) translateY(30px);
+    }
+    .feature-item:nth-child(7).is-visible .shape-1 {
+      transform: scale(1) translateY(0);
+      animation: float-1 9s ease-in-out infinite 1.2s;
+    }
+    .feature-item:nth-child(7).is-visible .shape-2 {
+      transform: rotate(20deg) scale(1) translateX(0);
+      animation: orbit-small-1 12s ease-in-out infinite 1.5s;
+    }
+    .feature-item:nth-child(7).is-visible .shape-3 {
+      transform: rotate(-15deg) scale(1) translateY(0);
+      animation: drift-rotate-2 11s ease-in-out infinite 1.8s;
+    }
+    .feature-item:nth-child(7).is-visible .shape-4 {
+      transform: scale(1) translateY(0);
+      animation: pulse-rotate 10s ease-in-out infinite 2.0s;
+    }
+
+    /* =========================
        Keyframe Animations
        Using only relative movements (no transform in 0%/100%) to avoid flash
        ========================= */
